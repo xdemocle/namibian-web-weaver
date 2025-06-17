@@ -10,21 +10,21 @@ const Products = () => {
       description: "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
       features: ["Gluten-friendly", "High in fiber", "100% Namibian millet", "Various shapes available"],
       color: "bg-red-600",
-      image: "photo-1618160702438-9b02ab6515c9" // pasta/grain products
+      image: "/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
     },
     {
       title: "Ready-Made Pasta Sauces",
       description: "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
       features: ["Made from real tomatoes", "Local flavors", "Bolognaise variety", "Tomato Purée & Chilli"],
       color: "bg-green-600",
-      image: "photo-1535268647677-300dbf3d78d1" // sauce/condiment products
+      image: "/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
     },
     {
       title: "Mozzarella Cheese",
       description: "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
       features: ["Soft and stretchy", "Perfect for cooking", "Ideal for pizzas", "Great for salads"],
       color: "bg-yellow-500",
-      image: "photo-1493962853295-0fd70327578a" // dairy/cheese products
+      image: "/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
     }
   ];
 
@@ -47,7 +47,7 @@ const Products = () => {
             <Card className="overflow-hidden">
               <AspectRatio ratio={16 / 9}>
                 <img
-                  src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                  src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
                   alt="LizWise Investment CC authentic Namibian products"
                   className="object-cover w-full h-full"
                 />
@@ -69,7 +69,7 @@ const Products = () => {
                 <div className={`${product.color} h-2`}></div>
                 <AspectRatio ratio={4 / 3} className="bg-gray-100">
                   <img
-                    src={`https://images.unsplash.com/${product.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                    src={product.image}
                     alt={product.title}
                     className="object-cover w-full h-full"
                   />
@@ -92,37 +92,68 @@ const Products = () => {
             ))}
           </div>
 
-          {/* Product Showcase Grid */}
+          {/* Product Details Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Product Showcase</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="overflow-hidden">
-                <AspectRatio ratio={16 / 10}>
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Product Details</h2>
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-6 text-red-600">Mahangu Pasta Varieties</h3>
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-red-600 pl-4">
+                      <h4 className="font-semibold text-lg">Fusilli</h4>
+                      <p className="text-gray-600">Spiral-shaped pasta perfect for holding sauces</p>
+                    </div>
+                    <div className="border-l-4 border-red-600 pl-4">
+                      <h4 className="font-semibold text-lg">Radiatori</h4>
+                      <p className="text-gray-600">Unique radiator-shaped pasta with excellent texture</p>
+                    </div>
+                    <div className="border-l-4 border-red-600 pl-4">
+                      <h4 className="font-semibold text-lg">Shells & Maccheroni</h4>
+                      <p className="text-gray-600">Classic shapes for versatile cooking applications</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8">
                   <img
-                    src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
                     alt="Mahangu pasta varieties"
-                    className="object-cover w-full h-full"
+                    className="w-full h-64 object-cover rounded-lg"
                   />
-                </AspectRatio>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Traditional Mahangu Grains</h3>
-                  <p className="text-gray-600 text-sm">Premium quality millet grains processed into nutritious pasta</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="overflow-hidden">
-                <AspectRatio ratio={16 / 10}>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sauce Varieties Section */}
+          <div className="mb-16">
+            <div className="bg-green-50 rounded-2xl p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
                   <img
-                    src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                    alt="Fresh pasta sauces"
-                    className="object-cover w-full h-full"
+                    src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
+                    alt="Pasta sauce varieties"
+                    className="w-full h-64 object-cover rounded-lg"
                   />
-                </AspectRatio>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Fresh Pasta Sauces</h3>
-                  <p className="text-gray-600 text-sm">Made from locally grown tomatoes with authentic Namibian flavors</p>
-                </CardContent>
-              </Card>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-6 text-green-600">Sauce Collection</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <h4 className="font-semibold text-lg text-gray-800">Bolognaise</h4>
+                      <p className="text-gray-600">Rich, hearty meat sauce with authentic flavors</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <h4 className="font-semibold text-lg text-gray-800">Tomato Purée</h4>
+                      <p className="text-gray-600">Pure tomato goodness for versatile cooking</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <h4 className="font-semibold text-lg text-gray-800">Chilli</h4>
+                      <p className="text-gray-600">Spicy tomato sauce with a kick of local flavor</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -38,27 +38,11 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white bg-opacity-20 rounded-2xl p-8 backdrop-blur-sm">
-                <h3 className="text-2xl font-bold mb-6">Why Choose LizWise?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Heart className="text-yellow-300" size={20} />
-                    <span>100% Local Ingredients</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Award className="text-yellow-300" size={20} />
-                    <span>Traditional Recipes</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Star className="text-yellow-300" size={20} />
-                    <span>Premium Quality</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="text-yellow-300" size={20} />
-                    <span>Community Focused</span>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
+                alt="LizWise Investment CC Products"
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -72,6 +56,42 @@ const Index = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our range of authentic Namibian food products, made with love and local ingredients
             </p>
+          </div>
+
+          {/* Featured Product Showcase */}
+          <div className="mb-16">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold text-gray-800 mb-6">Authentic Namibian Products</h3>
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    From our family to yours - traditional recipes crafted with locally sourced ingredients, 
+                    bringing the authentic taste of Namibia to your table.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <Heart className="text-red-600" size={20} />
+                      <span className="text-gray-700">100% Local Ingredients</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Award className="text-yellow-500" size={20} />
+                      <span className="text-gray-700">Traditional Recipes</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Star className="text-green-600" size={20} />
+                      <span className="text-gray-700">Premium Quality</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <img
+                    src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
+                    alt="LizWise Product Range"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
