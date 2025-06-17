@@ -1,13 +1,218 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
+import { Phone, Mail, Star, Award, Users, Heart } from 'lucide-react';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-red-600 via-red-500 to-yellow-500 text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Taste Namibia with
+                <span className="block text-yellow-300">LizWise</span>
+              </h1>
+              <p className="text-xl mb-8 leading-relaxed">
+                Locally made. Naturally nourishing. Proudly Namibian.
+              </p>
+              <p className="text-lg mb-8 opacity-90">
+                We specialize in mahangu (pearl millet) pasta, rich pasta sauces, 
+                and creamy mozzarella—crafted with care, tradition, and innovation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/products"
+                  className="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-center"
+                >
+                  Explore Our Products
+                </Link>
+                <a
+                  href="tel:+26481394675"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors duration-200 text-center"
+                >
+                  Call Now
+                </a>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-white bg-opacity-20 rounded-2xl p-8 backdrop-blur-sm">
+                <h3 className="text-2xl font-bold mb-6">Why Choose LizWise?</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Heart className="text-yellow-300" size={20} />
+                    <span>100% Local Ingredients</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Award className="text-yellow-300" size={20} />
+                    <span>Traditional Recipes</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Star className="text-yellow-300" size={20} />
+                    <span>Premium Quality</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Users className="text-yellow-300" size={20} />
+                    <span>Community Focused</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Preview Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Products</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover our range of authentic Namibian food products, made with love and local ingredients
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-8 h-8 bg-red-600 rounded-full"></div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Mahangu Pasta</h3>
+              <p className="text-gray-600 mb-6">
+                Wholesome, gluten-friendly, and high in fiber. Made from 100% Namibian millet 
+                in various shapes including Fusilli and Radiatori.
+              </p>
+              <ul className="text-sm text-gray-500 space-y-1">
+                <li>✓ Gluten-friendly</li>
+                <li>✓ High in fiber</li>
+                <li>✓ Various shapes</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-8 h-8 bg-green-600 rounded-full"></div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Pasta Sauces</h3>
+              <p className="text-gray-600 mb-6">
+                Ready-made sauces bursting with local flavor, made from real tomatoes. 
+                Available in Bolognaise, Tomato Purée and Chilli varieties.
+              </p>
+              <ul className="text-sm text-gray-500 space-y-1">
+                <li>✓ Real tomatoes</li>
+                <li>✓ Local flavors</li>
+                <li>✓ Multiple varieties</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-8 h-8 bg-yellow-500 rounded-full"></div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Mozzarella Cheese</h3>
+              <p className="text-gray-600 mb-6">
+                Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, 
+                sandwiches, and fresh salads.
+              </p>
+              <ul className="text-sm text-gray-500 space-y-1">
+                <li>✓ Soft & stretchy</li>
+                <li>✓ Perfect for cooking</li>
+                <li>✓ Versatile use</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/products"
+              className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 inline-block"
+            >
+              View All Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Preview Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                At LizWise Investment CC, we believe in turning local ingredients into nutritious, 
+                delicious products that feed families and fuel futures. We specialize in traditional 
+                Namibian foods crafted with care, tradition, and innovation.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Our commitment to supporting local farmers and celebrating Namibian culture drives 
+                everything we do. From farm to table, we ensure quality and authenticity in every product.
+              </p>
+              <Link
+                to="/about"
+                className="bg-yellow-400 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-200 inline-block"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+            <div className="bg-gradient-to-br from-yellow-400 to-red-500 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6">Our Vision</h3>
+              <p className="text-lg leading-relaxed mb-6">
+                "To empower healthy living across Africa with locally sourced, proudly Namibian 
+                food products that celebrate our roots and nourish our communities."
+              </p>
+              <div className="grid grid-cols-2 gap-4 text-center">
+                <div>
+                  <div className="text-3xl font-bold">100%</div>
+                  <div className="text-sm opacity-90">Local Sourced</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold">15+</div>
+                  <div className="text-sm opacity-90">Years Experience</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA Section */}
+      <section className="py-20 bg-gray-800 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Taste Namibia?</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
+            Contact us today to learn more about our products or place an order. 
+            We're here to bring authentic Namibian flavors to your table.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
+            <a
+              href="tel:+26481394675"
+              className="flex items-center justify-center space-x-3 bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
+            >
+              <Phone size={20} />
+              <span>+264 81 394 6757</span>
+            </a>
+            <a
+              href="mailto:ekambode@gmail.com"
+              className="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
+            >
+              <Mail size={20} />
+              <span>Email Us</span>
+            </a>
+          </div>
+
+          <Link
+            to="/contact"
+            className="bg-yellow-400 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-200 inline-block"
+          >
+            Visit Our Contact Page
+          </Link>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
