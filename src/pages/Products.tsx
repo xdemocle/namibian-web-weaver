@@ -228,7 +228,7 @@ const Products = () => {
                 Call +264 81 394 6757
               </a>
               <a 
-                href="mailto:ekambode@gmail.com" 
+                href="mailto:ekambode@lizwise.online" 
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors duration-200"
               >
                 Email Us

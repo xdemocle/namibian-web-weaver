@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { Phone, Mail, Star, Award, Users, Heart } from 'lucide-react';
@@ -85,8 +84,8 @@ const Index = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png"
-                    alt="LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia"
+                    src="/lovable-uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.png"
+                    alt="LizWise Product Collection - Authentic Namibian Food Products"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -228,7 +227,7 @@ const Index = () => {
               <span>+264 81 394 6757</span>
             </a>
             <a
-              href="mailto:ekambode@gmail.com"
+              href="mailto:ekambode@lizwise.online"
               className="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               <Mail size={20} />
