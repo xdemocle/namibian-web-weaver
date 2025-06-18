@@ -22,8 +22,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">LW</span>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src="/android-chrome-192x192.png" 
+                alt="LizWise Logo" 
+                className="w-full h-full object-contain" 
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-800">LizWise</h1>
