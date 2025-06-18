@@ -62,11 +62,11 @@ const Index = () => {
                 </a>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <img
                 src="/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg"
                 alt="LizWise Mahangu Pasta - Shell variety made from pearl millet"
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                className="w-auto h-auto rounded-2xl shadow-2xl max-h-[500px]"
               />
             </div>
           </div>
