@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
-import { Phone, Mail, Star, Award, Users, Heart } from 'lucide-react';
+import { Phone, Mail, Star, Award, Heart } from 'lucide-react';
 
 const Index = () => {
   return (

@@ -17,11 +17,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-12">
             {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h2>
-              
+            <div>             
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg">
                   <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
@@ -74,7 +72,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            {/* <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Send us a Message</h2>
               
               <form className="space-y-6">
@@ -154,7 +152,7 @@ const Contact = () => {
                   Send Message
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
