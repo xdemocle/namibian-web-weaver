@@ -39,8 +39,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
-                alt="LizWise Investment CC Products"
+                src="/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png"
+                alt="LizWise Mahangu Pasta - Shell variety made from pearl millet"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
             </div>
@@ -85,8 +85,8 @@ const Index = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
-                    alt="LizWise Product Range"
+                    src="/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png"
+                    alt="LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -96,8 +96,12 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-8 h-8 bg-red-600 rounded-full"></div>
+              <div className="mb-6">
+                <img
+                  src="/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png"
+                  alt="Fusilli Mahangu Pasta - Pearl Millet 500g"
+                  className="w-full h-48 object-cover rounded-lg mx-auto"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Mahangu Pasta</h3>
               <p className="text-gray-600 mb-6">
@@ -112,8 +116,12 @@ const Index = () => {
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-8 h-8 bg-green-600 rounded-full"></div>
+              <div className="mb-6">
+                <img
+                  src="/lovable-uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.png"
+                  alt="Bolognaise Sauce - The Sauce Harvest 250ml"
+                  className="w-full h-48 object-cover rounded-lg mx-auto"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Pasta Sauces</h3>
               <p className="text-gray-600 mb-6">
@@ -128,8 +136,12 @@ const Index = () => {
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-8 h-8 bg-yellow-500 rounded-full"></div>
+              <div className="mb-6">
+                <img
+                  src="/lovable-uploads/334bac1f-2873-4490-bad4-d86057baaf2e.png"
+                  alt="Smoked Mozzarella Cheese - Dairy Crafters 250g"
+                  className="w-full h-48 object-cover rounded-lg mx-auto"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Mozzarella Cheese</h3>
               <p className="text-gray-600 mb-6">

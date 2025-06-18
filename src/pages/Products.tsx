@@ -10,21 +10,21 @@ const Products = () => {
       description: "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
       features: ["Gluten-friendly", "High in fiber", "100% Namibian millet", "Various shapes available"],
       color: "bg-red-600",
-      image: "/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
+      image: "/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png"
     },
     {
       title: "Ready-Made Pasta Sauces",
       description: "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
       features: ["Made from real tomatoes", "Local flavors", "Bolognaise variety", "Tomato Purée & Chilli"],
       color: "bg-green-600",
-      image: "/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
+      image: "/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png"
     },
     {
       title: "Mozzarella Cheese",
       description: "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
       features: ["Soft and stretchy", "Perfect for cooking", "Ideal for pizzas", "Great for salads"],
       color: "bg-yellow-500",
-      image: "/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
+      image: "/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png"
     }
   ];
 
@@ -47,8 +47,8 @@ const Products = () => {
             <Card className="overflow-hidden">
               <AspectRatio ratio={16 / 9}>
                 <img
-                  src="/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
-                  alt="LizWise Investment CC complete product range showcasing Namibian heritage"
+                  src="/lovable-uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.png"
+                  alt="LizWise Bolognaise Sauce - The Sauce Harvest handmade goodness"
                   className="object-cover w-full h-full"
                 />
               </AspectRatio>
@@ -94,32 +94,35 @@ const Products = () => {
 
           {/* Product Details Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Product Details</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Pasta Varieties</h2>
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-6 text-red-600">Mahangu Pasta Varieties</h3>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-red-600 pl-4">
-                      <h4 className="font-semibold text-lg">Fusilli</h4>
-                      <p className="text-gray-600">Spiral-shaped pasta perfect for holding sauces</p>
-                    </div>
-                    <div className="border-l-4 border-red-600 pl-4">
-                      <h4 className="font-semibold text-lg">Radiatori</h4>
-                      <p className="text-gray-600">Unique radiator-shaped pasta with excellent texture</p>
-                    </div>
-                    <div className="border-l-4 border-red-600 pl-4">
-                      <h4 className="font-semibold text-lg">Shells & Maccheroni</h4>
-                      <p className="text-gray-600">Classic shapes for versatile cooking applications</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+                <div>
                   <img
-                    src="/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
-                    alt="Mahangu pasta varieties including Fusilli and Radiatori"
-                    className="w-full h-64 object-cover rounded-lg"
+                    src="/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png"
+                    alt="Fusilli Mahangu Pasta - Pearl Millet 500g"
+                    className="w-full h-64 object-cover rounded-lg mb-4"
                   />
+                  <h4 className="font-semibold text-lg text-red-600">Fusilli</h4>
+                  <p className="text-gray-600">Spiral-shaped pasta perfect for holding sauces</p>
+                </div>
+                <div>
+                  <img
+                    src="/lovable-uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.png"
+                    alt="Radiatori Mahangu Pasta - Pearl Millet 500g"
+                    className="w-full h-64 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-lg text-red-600">Radiatori</h4>
+                  <p className="text-gray-600">Unique radiator-shaped pasta with excellent texture</p>
+                </div>
+                <div>
+                  <img
+                    src="/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png"
+                    alt="Shell Mahangu Pasta - Pearl Millet 500g"
+                    className="w-full h-64 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-lg text-red-600">Shells</h4>
+                  <p className="text-gray-600">Classic shell shapes for versatile cooking applications</p>
                 </div>
               </div>
             </div>
@@ -127,31 +130,62 @@ const Products = () => {
 
           {/* Sauce Varieties Section */}
           <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Sauce Collection</h2>
             <div className="bg-green-50 rounded-2xl p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <img
+                    src="/lovable-uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.png"
+                    alt="Bolognaise Sauce - The Sauce Harvest 250ml"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-lg text-gray-800">Bolognaise</h4>
+                  <p className="text-gray-600">Rich, hearty meat sauce with authentic flavors</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <img
+                    src="/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png"
+                    alt="Tomato Purée - The Sauce Harvest 250ml"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-lg text-gray-800">Tomato Purée</h4>
+                  <p className="text-gray-600">Pure tomato goodness for versatile cooking</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <img
+                    src="/lovable-uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.png"
+                    alt="Tomato Purée Chilli - The Sauce Harvest 250ml"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-lg text-gray-800">Chilli</h4>
+                  <p className="text-gray-600">Spicy tomato sauce with a kick of local flavor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cheese Varieties Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Dairy Crafters Cheese</h2>
+            <div className="bg-yellow-50 rounded-2xl p-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <img
-                    src="/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
-                    alt="LizWise pasta sauce varieties - Bolognaise and Tomato with Chilli"
-                    className="w-full h-64 object-cover rounded-lg"
+                    src="/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png"
+                    alt="LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia"
+                    className="w-full h-64 object-cover rounded-lg mb-4"
                   />
+                  <h4 className="font-semibold text-lg text-gray-800">Classic Mozzarella</h4>
+                  <p className="text-gray-600">Soft, stretchy cheese perfect for pizzas and pasta dishes</p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-6 text-green-600">Sauce Collection</h3>
-                  <div className="space-y-4">
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold text-lg text-gray-800">Bolognaise</h4>
-                      <p className="text-gray-600">Rich, hearty meat sauce with authentic flavors</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold text-lg text-gray-800">Tomato Purée</h4>
-                      <p className="text-gray-600">Pure tomato goodness for versatile cooking</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold text-lg text-gray-800">Chilli</h4>
-                      <p className="text-gray-600">Spicy tomato sauce with a kick of local flavor</p>
-                    </div>
-                  </div>
+                  <img
+                    src="/lovable-uploads/334bac1f-2873-4490-bad4-d86057baaf2e.png"
+                    alt="Smoked Mozzarella Cheese - Dairy Crafters 250g"
+                    className="w-full h-64 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-lg text-gray-800">Smoked Mozzarella</h4>
+                  <p className="text-gray-600">Rich, smoky flavor perfect for gourmet dishes and salads</p>
                 </div>
               </div>
             </div>
