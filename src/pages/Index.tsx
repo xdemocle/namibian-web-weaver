@@ -64,7 +64,7 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src="/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png"
+                src="/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg"
                 alt="LizWise Mahangu Pasta - Shell variety made from pearl millet"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
@@ -110,7 +110,7 @@ const Index = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="/lovable-uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.png"
+                    src="/uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.jpg"
                     alt="LizWise Product Collection - Authentic Namibian Food Products"
                     className="w-full h-full object-cover"
                   />
@@ -123,7 +123,7 @@ const Index = () => {
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="mb-6">
                 <img
-                  src="/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png"
+                  src="/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg"
                   alt="Fusilli Mahangu Pasta - Pearl Millet 500g"
                   className="w-full h-48 object-cover rounded-lg mx-auto"
                 />
@@ -143,7 +143,7 @@ const Index = () => {
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="mb-6">
                 <img
-                  src="/lovable-uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.png"
+                  src="/uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.jpg"
                   alt="Bolognaise Sauce - The Sauce Harvest 250ml"
                   className="w-full h-48 object-cover rounded-lg mx-auto"
                 />
@@ -163,7 +163,7 @@ const Index = () => {
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="mb-6">
                 <img
-                  src="/lovable-uploads/334bac1f-2873-4490-bad4-d86057baaf2e.png"
+                  src="/uploads/334bac1f-2873-4490-bad4-d86057baaf2e.jpg"
                   alt="Smoked Mozzarella Cheese - Dairy Crafters 250g"
                   className="w-full h-48 object-cover rounded-lg mx-auto"
                 />

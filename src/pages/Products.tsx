@@ -25,7 +25,7 @@ const Products = () => {
         "position": 1,
         "name": "Mahangu Pasta",
         "description": "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
-        "image": "https://lizwise.online/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png",
+        "image": "https://lizwise.online/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg",
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/InStock"
@@ -36,7 +36,7 @@ const Products = () => {
         "position": 2,
         "name": "Ready-Made Pasta Sauces",
         "description": "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
-        "image": "https://lizwise.online/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png",
+        "image": "https://lizwise.online/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg",
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/InStock"
@@ -47,7 +47,7 @@ const Products = () => {
         "position": 3,
         "name": "Mozzarella Cheese",
         "description": "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
-        "image": "https://lizwise.online/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png",
+        "image": "https://lizwise.online/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg",
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/InStock"
@@ -62,21 +62,21 @@ const Products = () => {
       description: "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
       features: ["Gluten-friendly", "High in fiber", "100% Namibian millet", "Various shapes available"],
       color: "bg-red-600",
-      image: "/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png"
+      image: "/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg"
     },
     {
       title: "Ready-Made Pasta Sauces",
       description: "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
       features: ["Made from real tomatoes", "Local flavors", "Bolognaise variety", "Tomato Purée & Chilli"],
       color: "bg-green-600",
-      image: "/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png"
+      image: "/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg"
     },
     {
       title: "Mozzarella Cheese",
       description: "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
       features: ["Soft and stretchy", "Perfect for cooking", "Ideal for pizzas", "Great for salads"],
       color: "bg-yellow-500",
-      image: "/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png"
+      image: "/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg"
     }
   ];
 
@@ -106,10 +106,10 @@ const Products = () => {
             <Card className="overflow-hidden">
               <AspectRatio ratio={16 / 9}>
                 <img
-                  src="/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png"
+                  src="/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg"
                   alt="LizWise Fusilli Mahangu Pasta - Pearl Millet 500g"
                   className="object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300"
-                  onClick={() => handleImageClick("/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png", "LizWise Fusilli Mahangu Pasta - Pearl Millet 500g")}
+                  onClick={() => handleImageClick("/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg", "LizWise Fusilli Mahangu Pasta - Pearl Millet 500g")}
                 />
               </AspectRatio>
               <CardContent className="p-6 bg-white">
@@ -160,30 +160,30 @@ const Products = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
                 <div>
                   <img
-                    src="/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png"
+                    src="/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg"
                     alt="Fusilli Mahangu Pasta - Pearl Millet 500g"
                     className="w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/9c051a7f-709a-429c-b78b-765f2d109ced.png", "Fusilli Mahangu Pasta - Pearl Millet 500g")}
+                    onClick={() => handleImageClick("/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg", "Fusilli Mahangu Pasta - Pearl Millet 500g")}
                   />
                   <h4 className="font-semibold text-lg text-red-600">Fusilli</h4>
                   <p className="text-gray-600">Spiral-shaped pasta perfect for holding sauces</p>
                 </div>
                 <div>
                   <img
-                    src="/lovable-uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.png"
+                    src="/uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.jpg"
                     alt="Radiatori Mahangu Pasta - Pearl Millet 500g"
                     className="w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.png", "Radiatori Mahangu Pasta - Pearl Millet 500g")}
+                    onClick={() => handleImageClick("/uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.jpg", "Radiatori Mahangu Pasta - Pearl Millet 500g")}
                   />
                   <h4 className="font-semibold text-lg text-red-600">Radiatori</h4>
                   <p className="text-gray-600">Unique radiator-shaped pasta with excellent texture</p>
                 </div>
                 <div>
                   <img
-                    src="/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png"
+                    src="/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg"
                     alt="Shell Mahangu Pasta - Pearl Millet 500g"
                     className="w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png", "Shell Mahangu Pasta - Pearl Millet 500g")}
+                    onClick={() => handleImageClick("/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg", "Shell Mahangu Pasta - Pearl Millet 500g")}
                   />
                   <h4 className="font-semibold text-lg text-red-600">Shells</h4>
                   <p className="text-gray-600">Classic shell shapes for versatile cooking applications</p>
@@ -199,30 +199,30 @@ const Products = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                   <img
-                    src="/lovable-uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.png"
+                    src="/uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.jpg"
                     alt="Bolognaise Sauce - The Sauce Harvest 250ml"
                     className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.png", "Bolognaise Sauce - The Sauce Harvest 250ml")}
+                    onClick={() => handleImageClick("/uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.jpg", "Bolognaise Sauce - The Sauce Harvest 250ml")}
                   />
                   <h4 className="font-semibold text-lg text-gray-800">Bolognaise</h4>
                   <p className="text-gray-600">Rich, hearty meat sauce with authentic flavors</p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                   <img
-                    src="/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png"
+                    src="/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg"
                     alt="Tomato Purée - The Sauce Harvest 250ml"
                     className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png", "Tomato Purée - The Sauce Harvest 250ml")}
+                    onClick={() => handleImageClick("/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg", "Tomato Purée - The Sauce Harvest 250ml")}
                   />
                   <h4 className="font-semibold text-lg text-gray-800">Tomato Purée</h4>
                   <p className="text-gray-600">Pure tomato goodness for versatile cooking</p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                   <img
-                    src="/lovable-uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.png"
+                    src="/uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.jpg"
                     alt="Tomato Purée Chilli - The Sauce Harvest 250ml"
                     className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.png", "Tomato Purée Chilli - The Sauce Harvest 250ml")}
+                    onClick={() => handleImageClick("/uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.jpg", "Tomato Purée Chilli - The Sauce Harvest 250ml")}
                   />
                   <h4 className="font-semibold text-lg text-gray-800">Chilli</h4>
                   <p className="text-gray-600">Spicy tomato sauce with a kick of local flavor</p>
@@ -238,20 +238,20 @@ const Products = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <img
-                    src="/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png"
+                    src="/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg"
                     alt="LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia"
                     className="w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png", "LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia")}
+                    onClick={() => handleImageClick("/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg", "LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia")}
                   />
                   <h4 className="font-semibold text-lg text-gray-800">Classic Mozzarella</h4>
                   <p className="text-gray-600">Soft, stretchy cheese perfect for pizzas and pasta dishes</p>
                 </div>
                 <div>
                   <img
-                    src="/lovable-uploads/334bac1f-2873-4490-bad4-d86057baaf2e.png"
+                    src="/uploads/334bac1f-2873-4490-bad4-d86057baaf2e.jpg"
                     alt="Smoked Mozzarella Cheese - Dairy Crafters 250g"
                     className="w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-                    onClick={() => handleImageClick("/lovable-uploads/334bac1f-2873-4490-bad4-d86057baaf2e.png", "Smoked Mozzarella Cheese - Dairy Crafters 250g")}
+                    onClick={() => handleImageClick("/uploads/334bac1f-2873-4490-bad4-d86057baaf2e.jpg", "Smoked Mozzarella Cheese - Dairy Crafters 250g")}
                   />
                   <h4 className="font-semibold text-lg text-gray-800">Smoked Mozzarella</h4>
                   <p className="text-gray-600">Rich, smoky flavor perfect for gourmet dishes and salads</p>
