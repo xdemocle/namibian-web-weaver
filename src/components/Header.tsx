@@ -19,10 +19,10 @@ const Header = () => {
   return (
     <header className="bg-white shadow-lg relative z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="w-16 h-16 flex items-center justify-center">
               <img 
                 src="/android-chrome-64x64.png" 
                 alt="LizWise Logo" 
