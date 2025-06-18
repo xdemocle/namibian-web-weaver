@@ -24,7 +24,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img 
-                src="/android-chrome-192x192.png" 
+                src="/android-chrome-64x64.png" 
                 alt="LizWise Logo" 
                 className="w-full h-full object-contain" 
               />
