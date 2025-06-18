@@ -2,16 +2,18 @@ import react from "@vitejs/plugin-react-swc";
 import path from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import ViteSitemap from 'vite-plugin-sitemap';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
+// Define the routes for SSG
 const routes = [
-  { path: '/', name: 'Home' },
-  { path: '/about', name: 'About' },
-  { path: '/products', name: 'Products' },
-  { path: '/contact', name: 'Contact' },
-  { path: '/not-found', name: 'Not Found' },
+  '/',
+  '/about',
+  '/products',
+  '/contact',
+  '/not-found'
 ];
 
+// https://vitejs.dev/config/
 export default defineConfig({
   server: {
     host: "::",
@@ -19,18 +21,22 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    ViteSitemap({
-      dynamicRoutes: routes.map(route => route.path),
-      generateRobotsTxt: true,
-    }),
     createHtmlPlugin({
       minify: true,
       inject: {
         data: {
-          title: 'Default Title',
-          description: 'Default Description',
+          title: 'LizWise Investment CC',
+          description: 'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.',
         },
       },
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/*',
+          dest: ''
+        }
+      ]
     }),
   ],
   build: {
@@ -41,6 +47,19 @@ export default defineConfig({
         },
       },
     },
+    // Generate static HTML for each route
+    outDir: 'dist',
+    emptyOutDir: true,
+    // Improve performance with these settings
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    // Generate static HTML for each route
+    ssrManifest: true,
   },
   resolve: {
     alias: {
