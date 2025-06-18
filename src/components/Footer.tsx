@@ -1,5 +1,6 @@
 
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaLinkedin, FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -48,8 +49,48 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-8 pt-8 text-center">
-          <p className="text-gray-300">
+        {/* Social Media Links */}
+        <div className="mt-8 pt-4 border-t border-gray-600">
+          <h3 className="text-center text-lg font-semibold mb-3">Connect With Us</h3>
+          <div className="flex justify-center space-x-8 mb-4">
+            <a 
+              href="https://www.facebook.com/elisabethtuindie.calabrese" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="Facebook"
+            >
+              <FaFacebookF size={24} />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/elisabeth-t-kambode-1015a721b" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a 
+              href="https://www.instagram.com/lizwise_investment" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={24} />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@lizwiseinvestmentcc" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="TikTok"
+            >
+              <FaTiktok size={24} />
+            </a>
+          </div>
+          <p className="text-gray-300 text-center">
             © {new Date().getFullYear()} LizWise Investment CC. All rights reserved.
           </p>
         </div>
