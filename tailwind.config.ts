@@ -96,5 +96,6 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	// @ts-expect-error - Import is used by Tailwind
+	plugins: [import("tailwindcss-animate")],
 } satisfies Config;
