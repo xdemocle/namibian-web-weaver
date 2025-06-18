@@ -1,7 +1,7 @@
-
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import Lightbox from '../components/Lightbox';
+import Seo from '../components/Seo';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -14,6 +14,46 @@ const Products = () => {
 
   const closeLightbox = () => {
     setLightboxImage(null);
+  };
+  
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "position": 1,
+        "name": "Mahangu Pasta",
+        "description": "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
+        "image": "https://lizwise.online/lovable-uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.png",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "position": 2,
+        "name": "Ready-Made Pasta Sauces",
+        "description": "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
+        "image": "https://lizwise.online/lovable-uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.png",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "position": 3,
+        "name": "Mozzarella Cheese",
+        "description": "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
+        "image": "https://lizwise.online/lovable-uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.png",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
   };
 
   const products = [
@@ -42,6 +82,13 @@ const Products = () => {
 
   return (
     <Layout>
+      <Seo 
+        title="LizWise Products - Mahangu Pasta, Sauces & Mozzarella | Namibian Food" 
+        description="Discover our range of proudly Namibian products: gluten-friendly Mahangu pasta made from pearl millet, flavorful pasta sauces, and creamy mozzarella cheese - all locally made with care." 
+        canonical="https://lizwise.online/products" 
+        image="https://lizwise.online/products-og-image.png"
+        schemaMarkup={schemaMarkup}
+      />
       <div className="py-16 bg-gradient-to-br from-red-50 to-yellow-50">
         <div className="container mx-auto px-4">
           {/* Hero Section */}

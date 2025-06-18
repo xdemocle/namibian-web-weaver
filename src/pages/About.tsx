@@ -1,9 +1,36 @@
-
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 const About = () => {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "LizWise Investment CC",
+      "description": "Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.",
+      "foundingDate": "2018",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Windhoek",
+          "addressRegion": "Khomas",
+          "addressCountry": "Namibia"
+        }
+      }
+    }
+  };
+
   return (
     <Layout>
+      <Seo 
+        title="About LizWise - Our Story & Mission | Proudly Namibian Food Products" 
+        description="Learn about LizWise Investment CC, a proudly Namibian company dedicated to creating high-quality, locally-sourced food products that celebrate our heritage and support local communities." 
+        canonical="https://lizwise.online/about" 
+        image="https://lizwise.online/about-og-image.png"
+        schemaMarkup={schemaMarkup}
+      />
       <div className="py-16 bg-gradient-to-br from-red-50 to-yellow-50">
         <div className="container mx-auto px-4">
           {/* Hero Section */}

@@ -1,10 +1,36 @@
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { Phone, Mail, Star, Award, Heart } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const Index = () => {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LizWise Investment CC",
+    "description": "Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.",
+    "url": "https://lizwise.online",
+    "logo": "https://lizwise.online/logo.png",
+    "sameAs": [
+      "https://facebook.com/lizwiseinvestment",
+      "https://instagram.com/lizwise_namibia"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+264 81 124 4150",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <Layout>
+      <Seo 
+        title="LizWise - Taste Namibia with Locally Made Food Products" 
+        description="Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation." 
+        canonical="https://lizwise.online" 
+        image="https://lizwise.online/og-image.png"
+        schemaMarkup={schemaMarkup}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-600 via-red-500 to-yellow-500 text-white py-20">
         <div className="container mx-auto px-4">

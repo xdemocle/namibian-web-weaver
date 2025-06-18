@@ -1,10 +1,44 @@
-
 import Layout from '../components/Layout';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const Contact = () => {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "LizWise Investment CC",
+      "telephone": "+264 81 124 4150",
+      "email": "info@lizwise.online",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Erf 1, Lafrenz Industrial Area",
+        "addressLocality": "Windhoek",
+        "addressRegion": "Khomas",
+        "postalCode": "9000",
+        "addressCountry": "Namibia"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ]
+    }
+  };
+
   return (
     <Layout>
+      <Seo 
+        title="Contact LizWise - Get in Touch | Order Our Namibian Food Products" 
+        description="Contact LizWise Investment CC for inquiries about our Namibian food products. Place orders, ask questions, or provide feedback - we're here to help you enjoy our locally made products." 
+        canonical="https://lizwise.online/contact" 
+        image="https://lizwise.online/contact-og-image.png"
+        schemaMarkup={schemaMarkup}
+      />
       <div className="py-16 bg-gradient-to-br from-red-50 to-yellow-50">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
