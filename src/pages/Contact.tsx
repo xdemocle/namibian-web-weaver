@@ -10,7 +10,7 @@ const Contact = () => {
       "@type": "Organization",
       "name": "LizWise Investment CC",
       "telephone": "+264 81 124 4150",
-      "email": "info@lizwise.online",
+      "email": "ekambode@lizwise.online",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Erf 1, Lafrenz Industrial Area",
