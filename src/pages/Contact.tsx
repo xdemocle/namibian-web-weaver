@@ -54,7 +54,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 gap-12">
             {/* Contact Information */}
             <div>             
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg">
                   <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
                     <Phone className="text-red-600" size={24} />
