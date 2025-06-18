@@ -10,21 +10,21 @@ const Products = () => {
       description: "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
       features: ["Gluten-friendly", "High in fiber", "100% Namibian millet", "Various shapes available"],
       color: "bg-red-600",
-      image: "/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
+      image: "/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
     },
     {
       title: "Ready-Made Pasta Sauces",
       description: "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
       features: ["Made from real tomatoes", "Local flavors", "Bolognaise variety", "Tomato Purée & Chilli"],
       color: "bg-green-600",
-      image: "/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
+      image: "/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
     },
     {
       title: "Mozzarella Cheese",
       description: "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
       features: ["Soft and stretchy", "Perfect for cooking", "Ideal for pizzas", "Great for salads"],
       color: "bg-yellow-500",
-      image: "/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
+      image: "/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
     }
   ];
 
@@ -47,16 +47,16 @@ const Products = () => {
             <Card className="overflow-hidden">
               <AspectRatio ratio={16 / 9}>
                 <img
-                  src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
-                  alt="LizWise Investment CC authentic Namibian products"
+                  src="/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
+                  alt="LizWise Investment CC complete product range showcasing Namibian heritage"
                   className="object-cover w-full h-full"
                 />
               </AspectRatio>
               <CardContent className="p-6 bg-white">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Authentic Namibian Heritage</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Taste Namibia with LizWise</h3>
                 <p className="text-gray-600">
                   From our family to yours - traditional recipes crafted with locally sourced ingredients, 
-                  bringing the authentic taste of Namibia to your table.
+                  bringing the authentic taste of Namibia to your table. Locally made. Naturally nourishing. Proudly Namibian.
                 </p>
               </CardContent>
             </Card>
@@ -116,8 +116,8 @@ const Products = () => {
                 </div>
                 <div className="p-8">
                   <img
-                    src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
-                    alt="Mahangu pasta varieties"
+                    src="/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
+                    alt="Mahangu pasta varieties including Fusilli and Radiatori"
                     className="w-full h-64 object-cover rounded-lg"
                   />
                 </div>
@@ -131,8 +131,8 @@ const Products = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <img
-                    src="/lovable-uploads/0ff37a7d-8400-43e2-86cb-0951efc00d93.png"
-                    alt="Pasta sauce varieties"
+                    src="/lovable-uploads/686cd42c-c8d4-4866-b9c3-2b25ed7d2f0c.png"
+                    alt="LizWise pasta sauce varieties - Bolognaise and Tomato with Chilli"
                     className="w-full h-64 object-cover rounded-lg"
                   />
                 </div>
