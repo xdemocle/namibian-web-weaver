@@ -1,6 +1,6 @@
 
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaLinkedin, FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaTiktok, FaFacebookF, FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -92,6 +92,16 @@ const Footer = () => {
           </div>
           <p className="text-gray-300 text-center">
             © {new Date().getFullYear()} LizWise Investment CC. All rights reserved.
+          </p>
+          <p className="text-gray-300 text-center mt-2">
+            Made with <FaHeart className="inline text-red-500 mx-1" /> by <a 
+              href="https://rocco.me" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+            >
+              rocco.me
+            </a>
           </p>
         </div>
       </div>
