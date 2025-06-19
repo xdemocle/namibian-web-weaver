@@ -9,9 +9,9 @@
   },
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
-  },
-  "site": {
-    "bucket": "./dist"
+    "binding": "ASSETS",
+    "include": ["**/*"],
+    "exclude": [],
+    "browser_TTL": 0
   }
 }
