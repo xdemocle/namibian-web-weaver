@@ -49,7 +49,7 @@ const About = () => {
               <h2 className='text-3xl font-bold text-gray-800 mb-6'>Our Story</h2>
               <p className='text-lg text-gray-700 mb-6'>
                 At {companyInfo.name}, we believe in {companyInfo.description} We specialize in mahangu (pearl millet)
-                pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.
+                pasta, rich pasta sauces, and creamy mozzarella crafted with care, tradition, and innovation.
               </p>
               <p className='text-lg text-gray-700'>
                 Our commitment to quality and authenticity drives everything we do. From sourcing the finest local
