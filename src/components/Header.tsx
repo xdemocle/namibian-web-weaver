@@ -25,7 +25,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className='hidden md:flex space-x-8'>
+          <nav className='hidden lg:flex space-x-8'>
             {navLinks.map(link => (
               <Link
                 key={link.path}
@@ -44,7 +44,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className='md:hidden p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100'
+            className='lg:hidden p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100'
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -52,7 +52,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className='md:hidden py-4 border-t'>
+          <div className='lg:hidden py-4 border-t'>
             <nav className='flex flex-col space-y-4'>
               {navLinks.map(link => (
                 <Link
