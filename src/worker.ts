@@ -42,11 +42,24 @@ async function purgeCache(env: Env): Promise<Response> {
   }
 }
 
+// Flag to track if this is the first execution after deployment
+let isFirstExecution = true;
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
     
-    // Special endpoint to purge cache (protect this with a secret in production)
+    // Automatically purge cache on first execution after deployment
+    if (isFirstExecution) {
+      isFirstExecution = false;
+      // Don't await this to avoid blocking the response
+      purgeCache(env).catch(error => {
+        console.error('Auto cache purge failed:', error);
+      });
+      console.log('Automatic cache purge triggered on first execution');
+    }
+    
+    // Special endpoint to manually purge cache
     if (url.pathname === '/admin/purge-cache') {
       return purgeCache(env);
     }

@@ -12,6 +12,6 @@
     "binding": "ASSETS",
     "include": ["**/*"],
     "exclude": [],
-    "browser_TTL": 0
+    "browser_TTL": 86400
   }
 }
