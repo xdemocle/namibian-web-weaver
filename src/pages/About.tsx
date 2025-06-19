@@ -1,4 +1,7 @@
 import Seo from '../components/Seo';
+import { FaLinkedin, FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
@@ -115,6 +118,106 @@ const About = () => {
               proudly Namibian food products that celebrate our roots and
               nourish our communities.
             </p>
+          </div>
+
+          {/* Social Media Section */}
+          <div className='mt-16 text-center'>
+            <h2 className='text-3xl font-bold text-gray-800 mb-4'>Connect With Us</h2>
+            <p className='text-xl text-gray-600 max-w-3xl mx-auto mb-8'>
+              Follow our journey and stay updated with our latest products and stories
+            </p>
+            
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto'>
+              <Card className='hover:shadow-lg transition-shadow h-full'>
+                <CardHeader>
+                  <CardTitle className='flex items-center justify-center text-blue-600'>
+                    <FaFacebookF className='w-6 h-6 mr-2' />
+                    Facebook
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className='text-gray-600 mb-4'>
+                    Join our community for updates and promotions
+                  </p>
+                  <Button asChild variant='outline' className='w-full'>
+                    <a
+                      href='https://www.facebook.com/elisabethtuindie.calabrese'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Follow Us
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className='hover:shadow-lg transition-shadow h-full'>
+                <CardHeader>
+                  <CardTitle className='flex items-center justify-center text-blue-400'>
+                    <FaLinkedin className='w-6 h-6 mr-2' />
+                    LinkedIn
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className='text-gray-600 mb-4'>
+                    Connect with us professionally
+                  </p>
+                  <Button asChild variant='outline' className='w-full'>
+                    <a
+                      href='https://na.linkedin.com/in/elisabeth-t-kambode-1015a721b'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Connect
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+              <Card className='hover:shadow-lg transition-shadow h-full'>
+                <CardHeader>
+                  <CardTitle className='flex items-center justify-center text-pink-600'>
+                    <FaInstagram className='w-6 h-6 mr-2' />
+                    Instagram
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className='text-gray-600 mb-4'>
+                    See our latest products and stories
+                  </p>
+                  <Button asChild variant='outline' className='w-full'>
+                    <a
+                      href='https://www.instagram.com/lizwise_investment'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Follow Us
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+              <Card className='hover:shadow-lg transition-shadow h-full'>
+                <CardHeader>
+                  <CardTitle className='flex items-center justify-center text-black'>
+                    <FaTiktok className='w-6 h-6 mr-2' />
+                    TikTok
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className='text-gray-600 mb-4'>
+                    Watch our latest videos and behind-the-scenes
+                  </p>
+                  <Button asChild variant='outline' className='w-full'>
+                    <a
+                      href='https://www.tiktok.com/@lizwiseinvestmentcc'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Follow Us
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
