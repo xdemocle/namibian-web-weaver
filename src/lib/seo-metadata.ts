@@ -6,65 +6,72 @@ export const siteMetadata = {
   siteUrl: 'https://lizwise.online',
   siteName: 'LizWise Investment CC',
   defaultTitle: 'LizWise - Taste Namibia with Locally Made Food Products',
-  defaultDescription: 'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.',
+  defaultDescription:
+    'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.',
   defaultImage: '/og-image.png',
-  twitterHandle: '@lizwise_namibia',
-  locale: 'en_NA',
+  locale: 'en-US',
   themeColor: '#E53E3E', // Red from your color scheme
 };
 
 export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "LizWise Investment CC",
-  "description": "Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.",
-  "url": "https://lizwise.online",
-  "logo": "https://lizwise.online/logo.png",
-  "sameAs": [
-    "https://facebook.com/lizwiseinvestment",
-    "https://instagram.com/lizwise_namibia"
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'LizWise Investment CC',
+  description:
+    'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.',
+  url: 'https://lizwise.online',
+  logo: 'https://lizwise.online/logo.png',
+  sameAs: [
+    'https://facebook.com/lizwiseinvestment',
+    'https://instagram.com/lizwise_namibia',
   ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+264 81 124 4150",
-    "contactType": "customer service"
-  }
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+264 81 124 4150',
+    contactType: 'customer service',
+  },
 };
 
 export const productSchemas = {
   mahangu: {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Mahangu Pasta",
-    "description": "Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.",
-    "image": "https://lizwise.online/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Mahangu Pasta',
+    description:
+      'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
+    image:
+      'https://lizwise.online/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+    },
   },
   sauces: {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Ready-Made Pasta Sauces",
-    "description": "Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.",
-    "image": "https://lizwise.online/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Ready-Made Pasta Sauces',
+    description:
+      'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
+    image:
+      'https://lizwise.online/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+    },
   },
   mozzarella: {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Mozzarella Cheese",
-    "description": "Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.",
-    "image": "https://lizwise.online/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock"
-    }
-  }
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Mozzarella Cheese',
+    description:
+      'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
+    image:
+      'https://lizwise.online/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+    },
+  },
 };
 
 /**
@@ -76,10 +83,11 @@ export const getPageMetadata = ({
   image = siteMetadata.defaultImage,
   url = siteMetadata.siteUrl,
 }) => {
-  const pageTitle = title === siteMetadata.defaultTitle 
-    ? title 
-    : `${title} | ${siteMetadata.siteName}`;
-    
+  const pageTitle =
+    title === siteMetadata.defaultTitle
+      ? title
+      : `${title} | ${siteMetadata.siteName}`;
+
   return {
     title: pageTitle,
     description,

@@ -1,105 +1,129 @@
-import Layout from '../components/Layout';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Seo from '../components/Seo';
 
-const Contact = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "LizWise Investment CC",
-      "telephone": "+264 81 124 4150",
-      "email": "ekambode@lizwise.online",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Erf 1, Lafrenz Industrial Area",
-        "addressLocality": "Windhoek",
-        "addressRegion": "Khomas",
-        "postalCode": "9000",
-        "addressCountry": "Namibia"
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'LizWise Investment CC',
+    telephone: '+264 81 124 4150',
+    email: 'ekambode@lizwise.online',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Erf 1, Lafrenz Industrial Area',
+      addressLocality: 'Windhoek',
+      addressRegion: 'Khomas',
+      postalCode: '9000',
+      addressCountry: 'Namibia',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '17:00',
       },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "17:00"
-        }
-      ]
-    }
-  };
+    ],
+  },
+};
 
+const Contact = () => {
   return (
-    <Layout>
-      <Seo 
-        title="Contact LizWise - Get in Touch | Order Our Namibian Food Products" 
-        description="Contact LizWise Investment CC for inquiries about our Namibian food products. Place orders, ask questions, or provide feedback - we're here to help you enjoy our locally made products." 
-        canonical="https://lizwise.online/contact" 
-        image="https://lizwise.online/contact-og-image.png"
+    <>
+      <Seo
+        title='Contact LizWise - Get in Touch | Order Our Namibian Food Products'
+        description="Contact LizWise Investment CC for inquiries about our Namibian food products. Place orders, ask questions, or provide feedback - we're here to help you enjoy our locally made products."
+        canonical='https://lizwise.online/contact'
+        image='https://lizwise.online/contact-og-image.png'
         schemaMarkup={schemaMarkup}
       />
-      <div className="py-16 bg-gradient-to-br from-red-50 to-yellow-50">
-        <div className="container mx-auto px-4">
+      <div className='py-16 bg-gradient-to-br from-red-50 to-yellow-50'>
+        <div className='container mx-auto px-4'>
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <div className='text-center mb-16'>
+            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>
               Contact Us
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in touch with us to learn more about our products or place an order
+            <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+              Get in touch with us to learn more about our products or place an
+              order
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-12">
+          <div className='grid grid-cols-1 gap-12'>
             {/* Contact Information */}
-            <div>             
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                    <Phone className="text-red-600" size={24} />
+            <div>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg'>
+                  <div className='w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center'>
+                    <Phone className='text-red-600' size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Phone</h3>
-                    <p className="text-gray-600 mb-2">Call us directly for immediate assistance</p>
-                    <a href="tel:+26481394675" className="text-red-600 font-semibold hover:text-red-700">
+                    <h3 className='text-xl font-semibold text-gray-800 mb-2'>
+                      Phone
+                    </h3>
+                    <p className='text-gray-600 mb-2'>
+                      Call us directly for immediate assistance
+                    </p>
+                    <a
+                      href='tel:+26481394675'
+                      className='text-red-600 font-semibold hover:text-red-700'
+                    >
                       +264 81 394 6757
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <Mail className="text-green-600" size={24} />
+                <div className='flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg'>
+                  <div className='w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center'>
+                    <Mail className='text-green-600' size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                    <p className="text-gray-600 mb-2">Send us an email for detailed inquiries</p>
-                    <a href="mailto:ekambode@lizwise.online" className="text-green-600 font-semibold hover:text-green-700">
+                    <h3 className='text-xl font-semibold text-gray-800 mb-2'>
+                      Email
+                    </h3>
+                    <p className='text-gray-600 mb-2'>
+                      Send us an email for detailed inquiries
+                    </p>
+                    <a
+                      href='mailto:ekambode@lizwise.online'
+                      className='text-green-600 font-semibold hover:text-green-700'
+                    >
                       ekambode@lizwise.online
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                    <MapPin className="text-yellow-600" size={24} />
+                <div className='flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg'>
+                  <div className='w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center'>
+                    <MapPin className='text-yellow-600' size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Location</h3>
-                    <p className="text-gray-600 mb-2">Visit us in Namibia's capital city</p>
-                    <p className="text-yellow-600 font-semibold">Windhoek, NAMIBIA</p>
+                    <h3 className='text-xl font-semibold text-gray-800 mb-2'>
+                      Location
+                    </h3>
+                    <p className='text-gray-600 mb-2'>
+                      Visit us in Namibia's capital city
+                    </p>
+                    <p className='text-yellow-600 font-semibold'>
+                      Windhoek, NAMIBIA
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Clock className="text-blue-600" size={24} />
+                <div className='flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg'>
+                  <div className='w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center'>
+                    <Clock className='text-blue-600' size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Business Hours</h3>
-                    <p className="text-gray-600 mb-2">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+                    <h3 className='text-xl font-semibold text-gray-800 mb-2'>
+                      Business Hours
+                    </h3>
+                    <p className='text-gray-600 mb-2'>
+                      Monday - Friday: 8:00 AM - 5:00 PM
+                    </p>
+                    <p className='text-gray-600'>Saturday: 9:00 AM - 2:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -190,7 +214,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

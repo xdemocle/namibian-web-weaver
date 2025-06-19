@@ -1,7 +1,5 @@
-import { StrictMode, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App.tsx';
+import { ViteReactSSG } from 'vite-react-ssg';
+import { routes } from './routes';
 import './index.css';
 
 // Function to hide the loading screen
@@ -18,20 +16,15 @@ const hideLoadingScreen = () => {
   }
 };
 
-// Wrap App component to handle loading screen
-const AppWithLoadingHandler = () => {
-  useEffect(() => {
-    // Hide loading screen when React has mounted
-    hideLoadingScreen();
-  }, []);
-
-  return <App />;
-};
-
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <HelmetProvider>
-      <AppWithLoadingHandler />
-    </HelmetProvider>
-  </StrictMode>
+// Configure vite-react-ssg with the simplest possible setup
+export const createRoot = ViteReactSSG(
+  { routes },
+  ({ isClient }) => {
+    if (isClient) {
+      // Hide loading screen when app is mounted
+      window.addEventListener('load', () => {
+        hideLoadingScreen();
+      });
+    }
+  }
 );
