@@ -8,6 +8,7 @@ command = "bun run build"
 
 [site]
 bucket = "./dist"
+binding = "ASSETS"
 
 # Define browser cache TTLs for different file types
 [site.bucket_config]
