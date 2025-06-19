@@ -135,6 +135,7 @@ export default {
     if (url.pathname === '/admin/purge-cache') {
       return purgeCache(env);
     }
+
     try {
       // Path is already extracted from the URL above
       const path = url.pathname;
@@ -146,7 +147,17 @@ export default {
         if (assetResponse.status === 200) {
           // Determine if this is an asset that should be cached longer
           const isStaticAsset = isStaticAssetPath(path);
-          return addCacheHeaders(assetResponse, isStaticAsset ? 'asset' : 'html');
+          const response = await addCacheHeaders(assetResponse, isStaticAsset ? 'asset' : 'html');
+          
+          // Add cf-cache-status header to simulate Cloudflare cache behavior
+          const headers = new Headers(response.headers);
+          headers.set('cf-cache-status', 'DYNAMIC');
+          
+          return new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: headers
+          });
         }
       } catch (e) {
         // If asset fetch fails, continue to the next strategy
@@ -161,7 +172,17 @@ export default {
           const htmlRequest = new Request(new URL(htmlPath, url.origin), request);
           const htmlResponse = await env.ASSETS.fetch(htmlRequest);
           if (htmlResponse.status === 200) {
-            return addCacheHeaders(htmlResponse, 'html');
+            const response = await addCacheHeaders(htmlResponse, 'html');
+            
+            // Add cf-cache-status header
+            const headers = new Headers(response.headers);
+            headers.set('cf-cache-status', 'DYNAMIC');
+            
+            return new Response(response.body, {
+              status: response.status,
+              statusText: response.statusText,
+              headers: headers
+            });
           }
         } catch (e) {
           console.error(`HTML fetch failed for ${htmlPath}:`, e);
@@ -170,7 +191,17 @@ export default {
 
       // If we get here, serve index.html as a fallback for SPA routing
       const fallbackResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
-      return addCacheHeaders(fallbackResponse, 'html');
+      const response = await addCacheHeaders(fallbackResponse, 'html');
+      
+      // Add cf-cache-status header
+      const headers = new Headers(response.headers);
+      headers.set('cf-cache-status', 'DYNAMIC');
+      
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: headers
+      });
     } catch (e) {
       console.error('Worker error:', e);
       return new Response('Server Error', { status: 500 });
