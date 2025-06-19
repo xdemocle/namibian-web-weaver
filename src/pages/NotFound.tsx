@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Seo from '../components/Seo';
+import { companyInfo } from '../config/links';
 
 const NotFound = () => {
   const location = useLocation();
@@ -17,8 +18,8 @@ const NotFound = () => {
       <Seo
         title='Page Not Found | LizWise'
         description='The page you are looking for does not exist. Return to our homepage to explore our Namibian food products.'
-        canonical='https://lizwise.online/not-found'
-        image='https://lizwise.online/og-image.png'
+        canonical={`${companyInfo.website}/not-found`}
+        image={`${companyInfo.website}/og-image.png`}
         schemaMarkup={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',

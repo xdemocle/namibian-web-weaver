@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
+import { companyInfo } from '../config/links';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -15,7 +16,7 @@ const schemaMarkup = {
       description:
         'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
       image:
-        'https://lizwise.online/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg',
+        `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -28,7 +29,7 @@ const schemaMarkup = {
       description:
         'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
       image:
-        'https://lizwise.online/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg',
+        `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -41,7 +42,7 @@ const schemaMarkup = {
       description:
         'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
       image:
-        'https://lizwise.online/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg',
+        `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -111,8 +112,8 @@ const Products = () => {
       <Seo
         title='LizWise Products - Mahangu Pasta, Sauces & Mozzarella | Namibian Food'
         description='Discover our range of proudly Namibian products: gluten-friendly Mahangu pasta made from pearl millet, flavorful pasta sauces, and creamy mozzarella cheese - all locally made with care.'
-        canonical='https://lizwise.online/products'
-        image='https://lizwise.online/products-og-image.png'
+        canonical={`${companyInfo.website}/products`}
+        image={`${companyInfo.website}/products-og-image.png`}
         schemaMarkup={schemaMarkup}
       />
       <div className='py-16 bg-gradient-to-br from-red-50 to-yellow-50'>

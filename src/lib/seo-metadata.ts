@@ -1,10 +1,11 @@
 /**
  * Global SEO metadata for LizWise website
  */
+import { companyInfo, socialLinks } from '../config/links';
 
 export const siteMetadata = {
-  siteUrl: 'https://lizwise.online',
-  siteName: 'LizWise Investment CC',
+  siteUrl: companyInfo.website,
+  siteName: companyInfo.name,
   defaultTitle: 'LizWise - Taste Namibia with Locally Made Food Products',
   defaultDescription:
     'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.',
@@ -16,15 +17,11 @@ export const siteMetadata = {
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'LizWise Investment CC',
-  description:
-    'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.',
-  url: 'https://lizwise.online',
-  logo: 'https://lizwise.online/logo.png',
-  sameAs: [
-    'https://facebook.com/lizwiseinvestment',
-    'https://instagram.com/lizwise_namibia',
-  ],
+  name: companyInfo.name,
+  description: companyInfo.description,
+  url: companyInfo.website,
+  logo: `${companyInfo.website}/logo.png`,
+  sameAs: Object.values(socialLinks).map(social => social.url),
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+264 81 124 4150',
@@ -40,7 +37,7 @@ export const productSchemas = {
     description:
       'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
     image:
-      'https://lizwise.online/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg',
+      `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
@@ -53,7 +50,7 @@ export const productSchemas = {
     description:
       'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
     image:
-      'https://lizwise.online/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg',
+      `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
@@ -66,7 +63,7 @@ export const productSchemas = {
     description:
       'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
     image:
-      'https://lizwise.online/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg',
+      `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',

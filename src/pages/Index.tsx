@@ -8,8 +8,8 @@ const schemaMarkup = {
   '@type': 'Organization',
   name: companyInfo.name,
   description: companyInfo.description,
-  url: 'https://lizwise.online',
-  logo: 'https://lizwise.online/logo.png',
+  url: companyInfo.website,
+  logo: `${companyInfo.website}/logo.png`,
   sameAs: Object.values(socialLinks).map((social) => social.url),
   contactPoint: {
     '@type': 'ContactPoint',
@@ -24,8 +24,8 @@ const Index = () => {
       <Seo
         title='LizWise - Taste Namibia with Locally Made Food Products'
         description='Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.'
-        canonical='https://lizwise.online'
-        image='https://lizwise.online/og-image.png'
+        canonical={companyInfo.website}
+        image={`${companyInfo.website}/og-image.png`}
         schemaMarkup={schemaMarkup}
       />
       {/* Hero Section */}

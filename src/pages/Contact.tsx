@@ -1,6 +1,7 @@
 import ContactInfo from '../components/ContactInfo';
 import Seo from '../components/Seo';
 import SocialLinks from '../components/SocialLinks';
+import { companyInfo } from '../config/links';
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
@@ -35,8 +36,8 @@ const Contact = () => {
       <Seo
         title='Contact LizWise - Get in Touch | Order Our Namibian Food Products'
         description="Contact LizWise Investment CC for inquiries about our Namibian food products. Place orders, ask questions, or provide feedback - we're here to help you enjoy our locally made products."
-        canonical='https://lizwise.online/contact'
-        image='https://lizwise.online/contact-og-image.png'
+        canonical={`${companyInfo.website}/contact`}
+        image={`${companyInfo.website}/contact-og-image.png`}
         schemaMarkup={schemaMarkup}
       />
       <div className='py-16 bg-gradient-to-br from-red-50 to-yellow-50'>

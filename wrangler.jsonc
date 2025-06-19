@@ -2,6 +2,11 @@
   "name": "lizwise-online",
   "main": "src/main.tsx",
   "compatibility_date": "2025-06-18",
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
