@@ -42,6 +42,23 @@ async function purgeCache(env: Env): Promise<Response> {
   }
 }
 
+// Helper function to add cache headers to a response
+async function addCacheHeaders(response: Response, cacheType: 'asset' | 'html'): Promise<Response> {
+  // Clone the response so we can modify headers
+  const newResponse = new Response(response.body, response);
+  
+  // Set different cache policies based on content type
+  if (cacheType === 'asset') {
+    // Static assets (JS, CSS, images) - cache for 1 day
+    newResponse.headers.set('Cache-Control', 'public, max-age=86400');
+  } else {
+    // HTML files - shorter cache time to ensure content freshness
+    newResponse.headers.set('Cache-Control', 'public, max-age=3600');
+  }
+  
+  return newResponse;
+}
+
 // Flag to track if this is the first execution after deployment
 let isFirstExecution = true;
 
@@ -72,7 +89,9 @@ export default {
       try {
         const assetResponse = await env.ASSETS.fetch(request.clone());
         if (assetResponse.status === 200) {
-          return assetResponse;
+          // Determine if this is an asset that should be cached longer
+          const isStaticAsset = path.match(/\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/i);
+          return addCacheHeaders(assetResponse, isStaticAsset ? 'asset' : 'html');
         }
       } catch (e) {
         // If asset fetch fails, continue to the next strategy
@@ -87,7 +106,7 @@ export default {
           const htmlRequest = new Request(new URL(htmlPath, url.origin), request);
           const htmlResponse = await env.ASSETS.fetch(htmlRequest);
           if (htmlResponse.status === 200) {
-            return htmlResponse;
+            return addCacheHeaders(htmlResponse, 'html');
           }
         } catch (e) {
           console.error(`HTML fetch failed for ${htmlPath}:`, e);
@@ -95,7 +114,8 @@ export default {
       }
 
       // If we get here, serve index.html as a fallback for SPA routing
-      return await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
+      const fallbackResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
+      return addCacheHeaders(fallbackResponse, 'html');
     } catch (e) {
       console.error('Worker error:', e);
       return new Response('Server Error', { status: 500 });
