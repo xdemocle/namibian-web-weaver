@@ -18,11 +18,11 @@ const ContactInfo = ({
       <div className={`space-y-3 ${className}`}>
         <div className='flex items-center space-x-3'>
           <Phone size={18} className='text-red-400' />
-          <span>{contactInfo.phone.value}</span>
+          <a href={contactInfo.phone.url} className='hover:underline'>{contactInfo.phone.value}</a>
         </div>
         <div className='flex items-center space-x-3'>
           <Mail size={18} className='text-red-400' />
-          <span>{contactInfo.email.value}</span>
+          <a href={contactInfo.email.url} className='hover:underline'>{contactInfo.email.value}</a>
         </div>
         <div className='flex items-center space-x-3'>
           <MapPin size={18} className='text-red-400' />

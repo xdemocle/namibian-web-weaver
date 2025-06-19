@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
-import { companyInfo } from '../config/links';
+import { companyInfo, contactInfo } from '../config/links';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -15,8 +15,7 @@ const schemaMarkup = {
       name: 'Mahangu Pasta',
       description:
         'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
-      image:
-        `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
+      image: `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -28,8 +27,7 @@ const schemaMarkup = {
       name: 'Ready-Made Pasta Sauces',
       description:
         'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
-      image:
-        `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
+      image: `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -41,8 +39,7 @@ const schemaMarkup = {
       name: 'Mozzarella Cheese',
       description:
         'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
-      image:
-        `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
+      image: `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -399,10 +396,10 @@ const Products = () => {
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <a
-                href='tel:+26481394675'
+                href={contactInfo.phone.url}
                 className='bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200'
               >
-                Call +264 81 394 6757
+                Call {contactInfo.phone.value}
               </a>
               <a
                 href='mailto:ekambode@lizwise.online'

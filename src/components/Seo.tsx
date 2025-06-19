@@ -33,8 +33,10 @@ const Seo = ({
       {/* Standard meta tags */}
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='theme-color' content={siteMetadata.themeColor} />
-      <meta name='language' content='English' />
+      <meta name='language' content='en' />
       <meta name='robots' content='index, follow' />
+      <meta httpEquiv='content-language' content='en' />
+      <meta name='lang' content='en' />
 
       {/* Open Graph for Facebook, LinkedIn */}
       <meta property='og:type' content='website' />

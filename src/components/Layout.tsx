@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import WhatsAppButton from './WhatsAppButton';
+import { contactInfo } from '@/config/links';
 
 const Layout = () => {
   return (
@@ -13,10 +14,7 @@ const Layout = () => {
           <Outlet />
         </main>
         <Footer />
-        <WhatsAppButton
-          phoneNumber='+264812345678'
-          message="Hello LizWise! I'm interested in your products and would like more information."
-        />
+        <WhatsAppButton whatsappUrl={contactInfo.whatsapp.url} />
       </div>
     </StrictMode>
   );

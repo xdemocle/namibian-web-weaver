@@ -23,7 +23,7 @@ const Index = () => {
     <>
       <Seo
         title='LizWise - Taste Namibia with Locally Made Food Products'
-        description='Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella—crafted with care, tradition, and innovation.'
+        description='Proudly Namibian food products. We craft mahangu pasta, artisanal sauces, and fresh mozzarella using local ingredients with traditional methods.'
         canonical={companyInfo.website}
         image={`${companyInfo.website}/og-image.png`}
         schemaMarkup={schemaMarkup}
@@ -34,8 +34,7 @@ const Index = () => {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
               <h1 className='text-5xl md:text-6xl font-bold mb-6 leading-tight'>
-                Taste Namibia with
-                <span className='block text-yellow-300'>LizWise</span>
+                Taste Namibia with LizWise - Authentic Local Food Products
               </h1>
               <p className='text-xl mb-8 leading-relaxed'>
                 Locally made. Naturally nourishing. Proudly Namibian.
@@ -74,7 +73,7 @@ const Index = () => {
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl font-bold text-gray-800 mb-6'>
-              Our Products
+              Featured Products
             </h2>
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
               Discover our range of authentic Namibian food products, made with
@@ -262,7 +261,7 @@ const Index = () => {
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8'>
             <a
-              href={`tel:${contactInfo.phone.value}`}
+              href={contactInfo.phone.url}
               className='flex items-center justify-center space-x-3 bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200'
             >
               <Phone size={20} />

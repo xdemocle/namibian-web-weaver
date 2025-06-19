@@ -1,7 +1,7 @@
 import ContactInfo from '../components/ContactInfo';
 import Seo from '../components/Seo';
 import SocialLinks from '../components/SocialLinks';
-import { companyInfo } from '../config/links';
+import { companyInfo, contactInfo } from '../config/links';
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
@@ -9,7 +9,7 @@ const schemaMarkup = {
   mainEntity: {
     '@type': 'Organization',
     name: 'LizWise Investment CC',
-    telephone: '+264 81 124 4150',
+    telephone: contactInfo.phone.value,
     email: 'ekambode@lizwise.online',
     address: {
       '@type': 'PostalAddress',
