@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { siteMetadata } from './src/lib/seo-metadata';
+import { VitePluginRadar } from 'vite-plugin-radar';
 
 // https://vitejs.dev/config/
 export default {
@@ -13,6 +14,21 @@ export default {
         data: {
           language: siteMetadata.language,
         },
+      },
+    }),
+    VitePluginRadar({
+      // Google Analytics tag injection
+      analytics: {
+        id: 'G-RT207G9WPN',
+        consentDefaults: {
+          analytics_storage: 'granted',
+          ad_storage: 'denied',
+          wait_for_update: 500,
+        },
+      },
+      // Google Tag Manager tag injection
+      gtm: {
+        id: 'G-RT207G9WPN',
       },
     }),
   ],
