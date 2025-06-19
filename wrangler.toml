@@ -1,7 +1,7 @@
 name = "lizwise-online"
 main = "src/worker.ts"
 compatibility_date = "2025-06-18"
-node_compat = true
+compatibility_flags = ["nodejs_compat"]
 
 [build]
 command = "bun run build"
@@ -9,76 +9,18 @@ command = "bun run build"
 [site]
 bucket = "./dist"
 
-[assets]
-excluded_assets = []
+# Define browser cache TTLs for different file types
+[site.bucket_config]
+[site.bucket_config.cache_rules]
+# Cache static assets for 1 day (86400 seconds)
+[site.bucket_config.cache_rules.assets]
+patterns = ["*.js", "*.css", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.svg", "*.woff", "*.woff2"]
+browser_TTL = 86400
 
-# Regular expressions for asset routing
-[[assets.handlers]]
-pattern = "/**/*.js"
-content_type = "application/javascript"
-
-[[assets.handlers]]
-pattern = "/**/*.css"
-content_type = "text/css"
-
-[[assets.handlers]]
-pattern = "/**/*.html"
-content_type = "text/html"
-
-# Custom headers for browser caching
-[[headers]]
-pattern = "/**/*.html"
-# Set cache for HTML files to 1 hour
-[headers.cache]
-browser_ttl = 3600
-
-[[headers]]
-pattern = "/**/*.js"
-# Set cache for JavaScript files to 1 day
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.css"
-# Set cache for CSS files to 1 day
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.jpg"
-# Set cache for images to 1 day
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.jpeg"
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.png"
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.gif"
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.svg"
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.woff"
-[headers.cache]
-browser_ttl = 86400
-
-[[headers]]
-pattern = "/**/*.woff2"
-[headers.cache]
-browser_ttl = 86400
+# Cache HTML files for 1 hour (3600 seconds)
+[site.bucket_config.cache_rules.html]
+patterns = ["*.html"]
+browser_TTL = 3600
 
 [observability]
 logs.enabled = true
