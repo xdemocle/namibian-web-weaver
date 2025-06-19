@@ -1,8 +1,9 @@
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import { siteMetadata } from './src/lib/seo-metadata';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { VitePluginRadar } from 'vite-plugin-radar';
+import { siteMetadata } from './src/lib/seo-metadata';
 
 // https://vitejs.dev/config/
 export default {
@@ -29,6 +30,29 @@ export default {
       // Google Tag Manager tag injection
       gtm: {
         id: 'G-RT207G9WPN',
+      },
+    }),
+    ViteImageOptimizer({
+      // Image optimization settings
+      png: {
+        // https://sharp.pixelplumbing.com/api-output#png
+        quality: 90,
+      },
+      jpeg: {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        quality: 70,
+      },
+      jpg: {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        quality: 70,
+      },
+      webp: {
+        // https://sharp.pixelplumbing.com/api-output#webp
+        lossless: true,
+      },
+      avif: {
+        // https://sharp.pixelplumbing.com/api-output#avif
+        lossless: true,
       },
     }),
   ],
