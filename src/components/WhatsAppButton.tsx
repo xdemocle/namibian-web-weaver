@@ -6,10 +6,7 @@ interface WhatsAppButtonProps {
   showTooltip?: boolean;
 }
 
-const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
-  whatsappUrl,
-  showTooltip = true,
-}) => {
+const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ whatsappUrl, showTooltip = true }) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   return (

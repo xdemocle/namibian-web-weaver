@@ -33,9 +33,9 @@ const SocialLinks = ({
             <a
               key={key}
               href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-gray-300 hover:text-white transition-colors duration-200'
               aria-label={social.ariaLabel}
             >
               <Icon size={24} />
@@ -52,25 +52,17 @@ const SocialLinks = ({
       {Object.entries(socialLinks).map(([key, social]) => {
         const Icon = socialIcons[key as keyof typeof socialIcons];
         return (
-          <Card key={key} className="hover:shadow-lg transition-shadow h-full">
+          <Card key={key} className='hover:shadow-lg transition-shadow h-full'>
             <CardHeader>
               <CardTitle className={`flex items-center ${centered ? 'justify-center' : ''} ${social.color}`}>
-                <Icon className="w-6 h-6 mr-2" />
+                <Icon className='w-6 h-6 mr-2' />
                 {social.name}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {showDescription && (
-                <p className="text-gray-600 mb-4">
-                  {social.description}
-                </p>
-              )}
-              <Button asChild variant="outline" className="w-full">
-                <a
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              {showDescription && <p className='text-gray-600 mb-4'>{social.description}</p>}
+              <Button asChild variant='outline' className='w-full'>
+                <a href={social.url} target='_blank' rel='noopener noreferrer'>
                   Follow Us
                 </a>
               </Button>

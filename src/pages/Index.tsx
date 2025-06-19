@@ -10,7 +10,7 @@ const schemaMarkup = {
   description: companyInfo.description,
   url: companyInfo.website,
   logo: `${companyInfo.website}/logo.png`,
-  sameAs: Object.values(socialLinks).map((social) => social.url),
+  sameAs: Object.values(socialLinks).map(social => social.url),
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: contactInfo.phone.value,
@@ -36,12 +36,8 @@ const Index = () => {
               <h1 className='text-5xl md:text-6xl font-bold mb-6 leading-tight'>
                 Taste Namibia with LizWise - Authentic Local Food Products
               </h1>
-              <p className='text-xl mb-8 leading-relaxed'>
-                Locally made. Naturally nourishing. Proudly Namibian.
-              </p>
-              <p className='text-lg mb-8 opacity-90'>
-                {companyInfo.description}
-              </p>
+              <p className='text-xl mb-8 leading-relaxed'>Locally made. Naturally nourishing. Proudly Namibian.</p>
+              <p className='text-lg mb-8 opacity-90'>{companyInfo.description}</p>
               <div className='flex flex-col sm:flex-row gap-4'>
                 <Link
                   to='/products'
@@ -72,12 +68,9 @@ const Index = () => {
       <section className='py-20 bg-gray-50'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
-            <h2 className='text-4xl font-bold text-gray-800 mb-6'>
-              Featured Products
-            </h2>
+            <h2 className='text-4xl font-bold text-gray-800 mb-6'>Featured Products</h2>
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-              Discover our range of authentic Namibian food products, made with
-              love and local ingredients
+              Discover our range of authentic Namibian food products, made with love and local ingredients
             </p>
           </div>
 
@@ -86,20 +79,15 @@ const Index = () => {
             <div className='bg-white rounded-2xl shadow-xl overflow-hidden'>
               <div className='grid grid-cols-1 lg:grid-cols-2'>
                 <div className='p-8 lg:p-12 flex flex-col justify-center'>
-                  <h3 className='text-3xl font-bold text-gray-800 mb-6'>
-                    Authentic Namibian Products
-                  </h3>
+                  <h3 className='text-3xl font-bold text-gray-800 mb-6'>Authentic Namibian Products</h3>
                   <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
-                    From our family to yours - traditional recipes crafted with
-                    locally sourced ingredients, bringing the authentic taste of
-                    Namibia to your table.
+                    From our family to yours - traditional recipes crafted with locally sourced ingredients, bringing
+                    the authentic taste of Namibia to your table.
                   </p>
                   <div className='space-y-4'>
                     <div className='flex items-center space-x-3'>
                       <Heart className='text-red-600' size={20} />
-                      <span className='text-gray-700'>
-                        100% Local Ingredients
-                      </span>
+                      <span className='text-gray-700'>100% Local Ingredients</span>
                     </div>
                     <div className='flex items-center space-x-3'>
                       <Award className='text-yellow-500' size={20} />
@@ -131,13 +119,10 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>
-                Mahangu Pasta
-              </h3>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Mahangu Pasta</h3>
               <p className='text-gray-600 mb-6'>
-                Wholesome, gluten-friendly, and high in fiber. Made from 100%
-                Namibian millet in various shapes including Fusilli and
-                Radiatori.
+                Wholesome, gluten-friendly, and high in fiber. Made from 100% Namibian millet in various shapes
+                including Fusilli and Radiatori.
               </p>
               <ul className='text-sm text-gray-500 space-y-1'>
                 <li>✓ Gluten-friendly</li>
@@ -154,13 +139,10 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>
-                Pasta Sauces
-              </h3>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Pasta Sauces</h3>
               <p className='text-gray-600 mb-6'>
-                Ready-made sauces bursting with local flavor, made from real
-                tomatoes. Available in Bolognaise, Tomato Purée and Chilli
-                varieties.
+                Ready-made sauces bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato
+                Purée and Chilli varieties.
               </p>
               <ul className='text-sm text-gray-500 space-y-1'>
                 <li>✓ Real tomatoes</li>
@@ -177,12 +159,10 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>
-                Mozzarella Cheese
-              </h3>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Mozzarella Cheese</h3>
               <p className='text-gray-600 mb-6'>
-                Soft, stretchy, and perfect for home cooking. Ideal for pizzas,
-                pasta bakes, sandwiches, and fresh salads.
+                Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, and fresh
+                salads.
               </p>
               <ul className='text-sm text-gray-500 space-y-1'>
                 <li>✓ Soft & stretchy</li>
@@ -208,18 +188,14 @@ const Index = () => {
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
-              <h2 className='text-4xl font-bold text-gray-800 mb-6'>
-                Our Mission
-              </h2>
+              <h2 className='text-4xl font-bold text-gray-800 mb-6'>Our Mission</h2>
               <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
-                At {companyInfo.name}, we believe in {companyInfo.description}{' '}
-                We specialize in traditional Namibian foods crafted with care,
-                tradition, and innovation.
+                At {companyInfo.name}, we believe in {companyInfo.description} We specialize in traditional Namibian
+                foods crafted with care, tradition, and innovation.
               </p>
               <p className='text-lg text-gray-600 mb-8 leading-relaxed'>
-                Our commitment to supporting local farmers and celebrating
-                Namibian culture drives everything we do. From farm to table, we
-                ensure quality and authenticity in every product.
+                Our commitment to supporting local farmers and celebrating Namibian culture drives everything we do.
+                From farm to table, we ensure quality and authenticity in every product.
               </p>
               <Link
                 to='/about'
@@ -231,9 +207,8 @@ const Index = () => {
             <div className='bg-gradient-to-br from-yellow-400 to-red-500 rounded-2xl p-8 text-white'>
               <h3 className='text-2xl font-bold mb-6'>Our Vision</h3>
               <p className='text-lg leading-relaxed mb-6'>
-                "To empower healthy living across Africa with locally sourced,
-                proudly Namibian food products that celebrate our roots and
-                nourish our communities."
+                "To empower healthy living across Africa with locally sourced, proudly Namibian food products that
+                celebrate our roots and nourish our communities."
               </p>
               <div className='grid grid-cols-2 gap-4 text-center'>
                 <div>
@@ -255,8 +230,8 @@ const Index = () => {
         <div className='container mx-auto px-4 text-center'>
           <h2 className='text-4xl font-bold mb-6'>Ready to Taste Namibia?</h2>
           <p className='text-xl mb-8 max-w-3xl mx-auto text-gray-300'>
-            Contact us today to learn more about our products or place an order.
-            We're here to bring authentic Namibian flavors to your table.
+            Contact us today to learn more about our products or place an order. We're here to bring authentic Namibian
+            flavors to your table.
           </p>
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8'>

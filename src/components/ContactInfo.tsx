@@ -8,21 +8,21 @@ interface ContactInfoProps {
   layout?: 'grid' | 'list';
 }
 
-const ContactInfo = ({
-  className = '',
-  showWhatsApp = true,
-  layout = 'grid',
-}: ContactInfoProps) => {
+const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: ContactInfoProps) => {
   if (layout === 'list') {
     return (
       <div className={`space-y-3 ${className}`}>
         <div className='flex items-center space-x-3'>
           <Phone size={18} className='text-red-400' />
-          <a href={contactInfo.phone.url} className='hover:underline'>{contactInfo.phone.value}</a>
+          <a href={contactInfo.phone.url} className='hover:underline'>
+            {contactInfo.phone.value}
+          </a>
         </div>
         <div className='flex items-center space-x-3'>
           <Mail size={18} className='text-red-400' />
-          <a href={contactInfo.email.url} className='hover:underline'>{contactInfo.email.value}</a>
+          <a href={contactInfo.email.url} className='hover:underline'>
+            {contactInfo.email.value}
+          </a>
         </div>
         <div className='flex items-center space-x-3'>
           <MapPin size={18} className='text-red-400' />
@@ -42,10 +42,7 @@ const ContactInfo = ({
           <h3 className='text-xl font-semibold text-gray-800 mb-2'>Phone</h3>
           <p className='text-gray-600 mb-2'>{contactInfo.phone.description}</p>
           <div className='space-y-2'>
-            <a
-              href={contactInfo.phone.url}
-              className='block text-red-600 font-semibold hover:text-red-700'
-            >
+            <a href={contactInfo.phone.url} className='block text-red-600 font-semibold hover:text-red-700'>
               {contactInfo.phone.value}
             </a>
             {showWhatsApp && (
@@ -70,10 +67,7 @@ const ContactInfo = ({
         <div>
           <h3 className='text-xl font-semibold text-gray-800 mb-2'>Email</h3>
           <p className='text-gray-600 mb-2'>{contactInfo.email.description}</p>
-          <a
-            href={contactInfo.email.url}
-            className='text-green-600 font-semibold hover:text-green-700'
-          >
+          <a href={contactInfo.email.url} className='text-green-600 font-semibold hover:text-green-700'>
             {contactInfo.email.value}
           </a>
         </div>
@@ -85,12 +79,8 @@ const ContactInfo = ({
         </div>
         <div>
           <h3 className='text-xl font-semibold text-gray-800 mb-2'>Location</h3>
-          <p className='text-gray-600 mb-2'>
-            {contactInfo.address.description}
-          </p>
-          <p className='text-yellow-600 font-semibold'>
-            {contactInfo.address.full}
-          </p>
+          <p className='text-gray-600 mb-2'>{contactInfo.address.description}</p>
+          <p className='text-yellow-600 font-semibold'>{contactInfo.address.full}</p>
         </div>
       </div>
 
@@ -99,12 +89,8 @@ const ContactInfo = ({
           <Clock className='text-blue-600' size={24} />
         </div>
         <div>
-          <h3 className='text-xl font-semibold text-gray-800 mb-2'>
-            Business Hours
-          </h3>
-          <p className='text-gray-600 mb-2'>
-            Monday - Friday: {companyInfo.businessHours.weekdays}
-          </p>
+          <h3 className='text-xl font-semibold text-gray-800 mb-2'>Business Hours</h3>
+          <p className='text-gray-600 mb-2'>Monday - Friday: {companyInfo.businessHours.weekdays}</p>
           <p className='text-gray-600'>{companyInfo.businessHours.weekend}</p>
         </div>
       </div>

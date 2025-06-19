@@ -15,10 +15,7 @@ export interface Env {
 // Function to purge cache
 async function purgeCache(env: Env): Promise<Response> {
   if (!env.CF_ACCOUNT_ID || !env.CF_API_TOKEN || !env.ZONE_ID) {
-    return new Response(
-      'Missing required environment variables for cache purge',
-      { status: 500 }
-    );
+    return new Response('Missing required environment variables for cache purge', { status: 500 });
   }
 
   try {
@@ -38,18 +35,12 @@ async function purgeCache(env: Env): Promise<Response> {
     if (result.success) {
       return new Response('Cache purged successfully', { status: 200 });
     } else {
-      return new Response(
-        `Failed to purge cache: ${JSON.stringify(result.errors)}`,
-        { status: 500 }
-      );
+      return new Response(`Failed to purge cache: ${JSON.stringify(result.errors)}`, { status: 500 });
     }
   } catch (error) {
-    return new Response(
-      `Error purging cache: ${
-        error instanceof Error ? error.message : String(error)
-      }`,
-      { status: 500 }
-    );
+    return new Response(`Error purging cache: ${error instanceof Error ? error.message : String(error)}`, {
+      status: 500,
+    });
   }
 }
 
@@ -64,7 +55,7 @@ export default {
     if (isFirstExecution) {
       isFirstExecution = false;
       // Don't await this to avoid blocking the response
-      purgeCache(env).catch((error) => {
+      purgeCache(env).catch(error => {
         console.error('Auto cache purge failed:', error);
       });
       console.log('Automatic cache purge triggered on first execution');
@@ -78,9 +69,7 @@ export default {
     // This worker only runs when Cloudflare can't find a static file
     // So we serve index.html for SPA routing
     try {
-      const fallbackResponse = await env.ASSETS.fetch(
-        new Request(new URL('/index.html', url.origin), request)
-      );
+      const fallbackResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
 
       // Since Transform Rules will handle cache headers, just return the response
       // The Transform Rules will add proper cache-control headers

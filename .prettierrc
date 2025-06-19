@@ -1,0 +1,22 @@
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "jsxSingleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.json", "*.json5"],
+      "options": {
+        "printWidth": 80,
+        "bracketSpacing": false,
+        "arrowParens": "always"
+      }
+    }
+  ]
+}

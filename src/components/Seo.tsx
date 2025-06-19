@@ -54,11 +54,7 @@ const Seo = ({
       <meta name='twitter:image' content={metadata.image} />
 
       {/* Structured Data (Schema Markup) */}
-      {schemaMarkup && (
-        <script type='application/ld+json'>
-          {JSON.stringify(schemaMarkup)}
-        </script>
-      )}
+      {schemaMarkup && <script type='application/ld+json'>{JSON.stringify(schemaMarkup)}</script>}
     </Head>
   );
 };

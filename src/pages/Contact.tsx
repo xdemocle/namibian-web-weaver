@@ -44,12 +44,9 @@ const Contact = () => {
         <div className='container mx-auto px-4'>
           {/* Hero Section */}
           <div className='text-center mb-16'>
-            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>
-              Contact Us
-            </h1>
+            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>Contact Us</h1>
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-              Get in touch with us to learn more about our products or place an
-              order
+              Get in touch with us to learn more about our products or place an order
             </p>
           </div>
 
@@ -60,9 +57,7 @@ const Contact = () => {
 
               {/* Social Media Section */}
               <div className='mb-12'>
-                <h2 className='text-2xl font-bold text-gray-800 mb-6'>
-                  Connect With Us
-                </h2>
+                <h2 className='text-2xl font-bold text-gray-800 mb-6'>Connect With Us</h2>
                 <SocialLinks className='max-w-5xl mx-auto' />
               </div>
             </div>

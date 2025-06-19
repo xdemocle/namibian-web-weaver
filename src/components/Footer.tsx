@@ -11,12 +11,8 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className='text-xl font-bold mb-4'>{companyInfo.name}</h3>
-            <p className='text-gray-300 mb-4'>
-              {companyInfo.slogan}
-            </p>
-            <p className='text-gray-300'>
-              {companyInfo.description}
-            </p>
+            <p className='text-gray-300 mb-4'>{companyInfo.slogan}</p>
+            <p className='text-gray-300'>{companyInfo.description}</p>
           </div>
 
           {/* Contact Info */}
@@ -38,13 +34,10 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className='mt-8 pt-4 border-t border-gray-600'>
-          <h3 className='text-center text-lg font-semibold mb-3'>
-            Connect With Us
-          </h3>
+          <h3 className='text-center text-lg font-semibold mb-3'>Connect With Us</h3>
           <SocialLinks layout='inline' showDescription={false} className='mb-4' />
           <p className='text-gray-300 text-center'>
-            © {new Date().getFullYear()} LizWise Investment CC. All rights
-            reserved.
+            © {new Date().getFullYear()} LizWise Investment CC. All rights reserved.
           </p>
           <p className='text-gray-300 text-center mt-2'>
             Made with <FaHeart className='inline text-red-500 mx-1' /> by{' '}

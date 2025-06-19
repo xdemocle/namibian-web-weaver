@@ -21,7 +21,7 @@ export const organizationSchema = {
   description: companyInfo.description,
   url: companyInfo.website,
   logo: `${companyInfo.website}/logo.png`,
-  sameAs: Object.values(socialLinks).map((social) => social.url),
+  sameAs: Object.values(socialLinks).map(social => social.url),
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: contactInfo.phone.value,
@@ -77,10 +77,7 @@ export const getPageMetadata = ({
   image = siteMetadata.defaultImage,
   url = siteMetadata.siteUrl,
 }) => {
-  const pageTitle =
-    title === siteMetadata.defaultTitle
-      ? title
-      : `${title} | ${siteMetadata.siteName}`;
+  const pageTitle = title === siteMetadata.defaultTitle ? title : `${title} | ${siteMetadata.siteName}`;
 
   return {
     title: pageTitle,

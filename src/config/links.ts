@@ -1,10 +1,7 @@
 export const phoneNumber = '+264 81 394 6757';
 
 // Create the WhatsApp URL
-export const whatsappUrl = `https://wa.me/${phoneNumber.replace(
-  /\D/g,
-  ''
-)}?text=${encodeURIComponent(
+export const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(
   "Hello LizWise! I'm interested in your products and would like more information."
 )}`;
 
@@ -71,8 +68,7 @@ export const contactInfo = {
 export const companyInfo = {
   name: 'LizWise Investment CC',
   slogan: 'Locally made. Naturally nourishing. Proudly Namibian.',
-  description:
-    'Turning local ingredients into nutritious, delicious products that feed families and fuel futures.',
+  description: 'Turning local ingredients into nutritious, delicious products that feed families and fuel futures.',
   foundingYear: '2018',
   website: 'https://lizwise.online',
   businessHours: {
