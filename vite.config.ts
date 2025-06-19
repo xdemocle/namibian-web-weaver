@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import { siteMetadata } from './src/lib/seo-metadata';
 
 // https://vitejs.dev/config/
 export default {
@@ -8,6 +9,11 @@ export default {
     react(),
     createHtmlPlugin({
       minify: true,
+      inject: {
+        data: {
+          language: siteMetadata.language,
+        },
+      },
     }),
   ],
   ssgOptions: {

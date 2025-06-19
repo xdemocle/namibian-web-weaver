@@ -11,6 +11,7 @@ export const siteMetadata = {
     'Proudly Namibian food products. We craft mahangu pasta, artisanal sauces, and fresh mozzarella using local ingredients with traditional methods.',
   defaultImage: '/og-image.png',
   locale: 'en-US',
+  language: 'en',
   themeColor: '#E53E3E', // Red from your color scheme
 };
 

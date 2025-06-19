@@ -7,7 +7,7 @@ const schemaMarkup = {
   '@type': 'AboutPage',
   mainEntity: {
     '@type': 'Organization',
-    name: 'LizWise Investment CC',
+    name: companyInfo.name,
     description:
       'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.',
     foundingDate: '2018',

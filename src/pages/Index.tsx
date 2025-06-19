@@ -1,5 +1,5 @@
+import { Award, Heart, Mail, Phone, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Star, Award, Heart } from 'lucide-react';
 import Seo from '../components/Seo';
 import { companyInfo, contactInfo, socialLinks } from '../config/links';
 

@@ -8,12 +8,12 @@ const schemaMarkup = {
   '@type': 'ContactPage',
   mainEntity: {
     '@type': 'Organization',
-    name: 'LizWise Investment CC',
+    name: companyInfo.name,
     telephone: contactInfo.phone.value,
     email: contactInfo.email.value,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Erf 1, Lafrenz Industrial Area',
+      streetAddress: contactInfo.address.full,
       addressLocality: 'Windhoek',
       addressRegion: 'Khomas',
       postalCode: '9000',
