@@ -1,8 +1,8 @@
 import { RouteObject } from 'react-router-dom';
 import Layout from './components/Layout';
 import About from './pages/About';
-import Index from './pages/Index';
 import Contact from './pages/Contact';
+import Index from './pages/Index';
 import NotFound from './pages/NotFound';
 import Products from './pages/Products';
 
