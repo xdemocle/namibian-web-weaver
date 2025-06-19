@@ -120,6 +120,7 @@ let isFirstExecution = true;
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+    const path = url.pathname;
     
     // Automatically purge cache on first execution after deployment
     if (isFirstExecution) {
@@ -136,34 +137,14 @@ export default {
       return purgeCache(env);
     }
 
+    // If this is a static asset, let Cloudflare handle it directly
+    // The worker should only run for HTML routes and SPA fallback
+    if (isStaticAssetPath(path)) {
+      // This shouldn't happen with run_worker_first = false, but just in case
+      return env.ASSETS.fetch(request);
+    }
+
     try {
-      // Path is already extracted from the URL above
-      const path = url.pathname;
-
-      // First, try to serve the exact asset as requested
-      // This handles static files like CSS, JS, images, etc.
-      try {
-        const assetResponse = await env.ASSETS.fetch(request.clone());
-        if (assetResponse.status === 200) {
-          // Determine if this is an asset that should be cached longer
-          const isStaticAsset = isStaticAssetPath(path);
-          const response = await addCacheHeaders(assetResponse, isStaticAsset ? 'asset' : 'html');
-          
-          // Add cf-cache-status header to simulate Cloudflare cache behavior
-          const headers = new Headers(response.headers);
-          headers.set('cf-cache-status', 'DYNAMIC');
-          
-          return new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: headers
-          });
-        }
-      } catch (e) {
-        // If asset fetch fails, continue to the next strategy
-        console.error('Asset fetch failed:', e);
-      }
-
       // For known routes, try to serve the specific HTML file
       const knownRoutes = ['/', '/about', '/contact', '/products'];
       if (knownRoutes.includes(path)) {
@@ -189,7 +170,7 @@ export default {
         }
       }
 
-      // If we get here, serve index.html as a fallback for SPA routing
+      // SPA fallback - serve index.html for any unmatched routes
       const fallbackResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
       const response = await addCacheHeaders(fallbackResponse, 'html');
       
