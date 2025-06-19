@@ -1,6 +1,6 @@
 {
   "name": "lizwise-online",
-  "main": "src/main.tsx",
+  "main": "src/worker.ts",
   "compatibility_date": "2025-06-18",
   "observability": {
     "logs": {
