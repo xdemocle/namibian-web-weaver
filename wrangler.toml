@@ -1,0 +1,84 @@
+name = "lizwise-online"
+main = "src/worker.ts"
+compatibility_date = "2025-06-18"
+node_compat = true
+
+[build]
+command = "bun run build"
+
+[site]
+bucket = "./dist"
+
+[assets]
+excluded_assets = []
+
+# Regular expressions for asset routing
+[[assets.handlers]]
+pattern = "/**/*.js"
+content_type = "application/javascript"
+
+[[assets.handlers]]
+pattern = "/**/*.css"
+content_type = "text/css"
+
+[[assets.handlers]]
+pattern = "/**/*.html"
+content_type = "text/html"
+
+# Custom headers for browser caching
+[[headers]]
+pattern = "/**/*.html"
+# Set cache for HTML files to 1 hour
+[headers.cache]
+browser_ttl = 3600
+
+[[headers]]
+pattern = "/**/*.js"
+# Set cache for JavaScript files to 1 day
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.css"
+# Set cache for CSS files to 1 day
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.jpg"
+# Set cache for images to 1 day
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.jpeg"
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.png"
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.gif"
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.svg"
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.woff"
+[headers.cache]
+browser_ttl = 86400
+
+[[headers]]
+pattern = "/**/*.woff2"
+[headers.cache]
+browser_ttl = 86400
+
+[observability]
+logs.enabled = true
