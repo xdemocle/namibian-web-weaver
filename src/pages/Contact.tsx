@@ -1,4 +1,12 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { FaLinkedin, FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa';
+import { Button } from '../components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../components/ui/card';
 import Seo from '../components/Seo';
 
 const schemaMarkup = {
@@ -54,7 +62,7 @@ const Contact = () => {
           <div className='grid grid-cols-1 gap-12'>
             {/* Contact Information */}
             <div>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-8'>
                 <div className='flex items-start space-x-4 p-6 bg-white rounded-lg shadow-lg'>
                   <div className='w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center'>
                     <Phone className='text-red-600' size={24} />
@@ -66,12 +74,23 @@ const Contact = () => {
                     <p className='text-gray-600 mb-2'>
                       Call us directly for immediate assistance
                     </p>
-                    <a
-                      href='tel:+26481394675'
-                      className='text-red-600 font-semibold hover:text-red-700'
-                    >
-                      +264 81 394 6757
-                    </a>
+                    <div className='space-y-2'>
+                      <a
+                        href='tel:+26481394675'
+                        className='block text-red-600 font-semibold hover:text-red-700'
+                      >
+                        +264 81 394 6757
+                      </a>
+                      <a
+                        href='https://wa.me/264812345678?text=Hello%20LizWise!%20I%27m%20interested%20in%20your%20products%20and%20would%20like%20more%20information.'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex items-center text-green-600 hover:text-green-700 text-sm font-medium'
+                      >
+                        <MessageCircle className='w-4 h-4 mr-1' />
+                        Chat on WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -125,6 +144,103 @@ const Contact = () => {
                     </p>
                     <p className='text-gray-600'>Saturday: 9:00 AM - 2:00 PM</p>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Media Section */}
+              <div className='mb-12'>
+                <h2 className='text-2xl font-bold text-gray-800 mb-6'>
+                  Connect With Us
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
+                  <Card className='hover:shadow-lg transition-shadow'>
+                    <CardHeader>
+                      <CardTitle className='flex items-center text-blue-600'>
+                        <FaFacebookF className='w-6 h-6 mr-2' />
+                        Facebook
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className='text-gray-600 mb-4'>
+                        Follow us for updates and promotions
+                      </p>
+                      <Button asChild variant='outline' className='w-full'>
+                        <a
+                          href='https://www.facebook.com/elisabethtuindie.calabrese'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          Follow Us
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                  <Card className='hover:shadow-lg transition-shadow'>
+                    <CardHeader>
+                      <CardTitle className='flex items-center text-blue-400'>
+                        <FaLinkedin className='w-6 h-6 mr-2' />
+                        LinkedIn
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className='text-gray-600 mb-4'>
+                        Connect with us professionally
+                      </p>
+                      <Button asChild variant='outline' className='w-full'>
+                        <a
+                          href='https://na.linkedin.com/in/elisabeth-t-kambode-1015a721b'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          Connect
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                  <Card className='hover:shadow-lg transition-shadow'>
+                    <CardHeader>
+                      <CardTitle className='flex items-center text-pink-600'>
+                        <FaInstagram className='w-6 h-6 mr-2' />
+                        Instagram
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className='text-gray-600 mb-4'>
+                        See our latest products and stories
+                      </p>
+                      <Button asChild variant='outline' className='w-full'>
+                        <a
+                          href='https://www.instagram.com/lizwise_investment'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          Follow Us
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                  <Card className='hover:shadow-lg transition-shadow'>
+                    <CardHeader>
+                      <CardTitle className='flex items-center text-black'>
+                        <FaTiktok className='w-6 h-6 mr-2' />
+                        TikTok
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className='text-gray-600 mb-4'>
+                        Watch our latest videos
+                      </p>
+                      <Button asChild variant='outline' className='w-full'>
+                        <a
+                          href='https://www.tiktok.com/@lizwiseinvestmentcc'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          Follow Us
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
             </div>
