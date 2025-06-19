@@ -59,11 +59,6 @@ const Journey = () => {
       caption: 'Our modern production facility where tradition meets innovation',
     },
     {
-      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-50.jpg',
-      alt: 'Quality control and product testing',
-      caption: 'Ensuring every product meets our high standards of quality and authenticity',
-    },
-    {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-57.jpg',
       alt: 'Final products ready for distribution',
       caption: 'The finished products - ready to bring Namibian taste to families across the region',
