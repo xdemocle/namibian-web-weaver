@@ -1,11 +1,7 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
-import {
-  FaLinkedin,
-  FaInstagram,
-  FaTiktok,
-  FaFacebookF,
-  FaHeart,
-} from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+import SocialLinks from './SocialLinks';
+import ContactInfo from './ContactInfo';
+import { companyInfo, productCategories } from '../config/links';
 
 const Footer = () => {
   return (
@@ -14,43 +10,28 @@ const Footer = () => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* Company Info */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>LizWise Investment CC</h3>
+            <h3 className='text-xl font-bold mb-4'>{companyInfo.name}</h3>
             <p className='text-gray-300 mb-4'>
-              Locally made. Naturally nourishing. Proudly Namibian.
+              {companyInfo.slogan}
             </p>
             <p className='text-gray-300'>
-              Turning local ingredients into nutritious, delicious products that
-              feed families and fuel futures.
+              {companyInfo.description}
             </p>
           </div>
 
           {/* Contact Info */}
           <div>
             <h3 className='text-xl font-bold mb-4'>Contact Information</h3>
-            <div className='space-y-3'>
-              <div className='flex items-center space-x-3'>
-                <Phone size={18} className='text-red-400' />
-                <span>+264 81 394 6757</span>
-              </div>
-              <div className='flex items-center space-x-3'>
-                <Mail size={18} className='text-red-400' />
-                <span>ekambode@lizwise.online</span>
-              </div>
-              <div className='flex items-center space-x-3'>
-                <MapPin size={18} className='text-red-400' />
-                <span>Windhoek, NAMIBIA</span>
-              </div>
-            </div>
+            <ContactInfo layout='list' showWhatsApp={false} className='text-gray-300' />
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className='text-xl font-bold mb-4'>Our Products</h3>
             <ul className='space-y-2 text-gray-300'>
-              <li>Mahangu Pasta</li>
-              <li>Ready-Made Pasta Sauces</li>
-              <li>Mozzarella Cheese</li>
-              <li>Traditional African Foods</li>
+              {productCategories.map((category, index) => (
+                <li key={index}>{category}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -60,44 +41,7 @@ const Footer = () => {
           <h3 className='text-center text-lg font-semibold mb-3'>
             Connect With Us
           </h3>
-          <div className='flex justify-center space-x-8 mb-4'>
-            <a
-              href='https://www.facebook.com/elisabethtuindie.calabrese'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-300 hover:text-white transition-colors duration-200'
-              aria-label='Facebook'
-            >
-              <FaFacebookF size={24} />
-            </a>
-            <a
-              href='https://na.linkedin.com/in/elisabeth-t-kambode-1015a721b'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-300 hover:text-white transition-colors duration-200'
-              aria-label='LinkedIn'
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href='https://www.instagram.com/lizwise_investment'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-300 hover:text-white transition-colors duration-200'
-              aria-label='Instagram'
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a
-              href='https://www.tiktok.com/@lizwiseinvestmentcc'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-300 hover:text-white transition-colors duration-200'
-              aria-label='TikTok'
-            >
-              <FaTiktok size={24} />
-            </a>
-          </div>
+          <SocialLinks layout='inline' showDescription={false} className='mb-4' />
           <p className='text-gray-300 text-center'>
             © {new Date().getFullYear()} LizWise Investment CC. All rights
             reserved.

@@ -1,22 +1,19 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, Star, Award, Heart } from 'lucide-react';
 import Seo from '../components/Seo';
+import { companyInfo, contactInfo, socialLinks } from '../config/links';
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'LizWise Investment CC',
-  description:
-    'Locally made. Naturally nourishing. Proudly Namibian. We specialize in mahangu (pearl millet) pasta, rich pasta sauces, and creamy mozzarella.',
+  name: companyInfo.name,
+  description: companyInfo.description,
   url: 'https://lizwise.online',
   logo: 'https://lizwise.online/logo.png',
-  sameAs: [
-    'https://facebook.com/lizwiseinvestment',
-    'https://instagram.com/lizwise_namibia',
-  ],
+  sameAs: Object.values(socialLinks).map((social) => social.url),
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+264 81 124 4150',
+    telephone: contactInfo.phone.value,
     contactType: 'customer service',
   },
 };
@@ -44,9 +41,7 @@ const Index = () => {
                 Locally made. Naturally nourishing. Proudly Namibian.
               </p>
               <p className='text-lg mb-8 opacity-90'>
-                We specialize in mahangu (pearl millet) pasta, rich pasta
-                sauces, and creamy mozzarella—crafted with care, tradition, and
-                innovation.
+                {companyInfo.description}
               </p>
               <div className='flex flex-col sm:flex-row gap-4'>
                 <Link
@@ -56,7 +51,7 @@ const Index = () => {
                   Explore Our Products
                 </Link>
                 <a
-                  href='tel:+26481394675'
+                  href={contactInfo.phone.url}
                   className='border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors duration-200 text-center'
                 >
                   Call Now
@@ -218,10 +213,9 @@ const Index = () => {
                 Our Mission
               </h2>
               <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
-                At LizWise Investment CC, we believe in turning local
-                ingredients into nutritious, delicious products that feed
-                families and fuel futures. We specialize in traditional Namibian
-                foods crafted with care, tradition, and innovation.
+                At {companyInfo.name}, we believe in {companyInfo.description}{' '}
+                We specialize in traditional Namibian foods crafted with care,
+                tradition, and innovation.
               </p>
               <p className='text-lg text-gray-600 mb-8 leading-relaxed'>
                 Our commitment to supporting local farmers and celebrating
@@ -268,14 +262,14 @@ const Index = () => {
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8'>
             <a
-              href='tel:+26481394675'
+              href={`tel:${contactInfo.phone.value}`}
               className='flex items-center justify-center space-x-3 bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200'
             >
               <Phone size={20} />
-              <span>+264 81 394 6757</span>
+              <span>{contactInfo.phone.value}</span>
             </a>
             <a
-              href='mailto:ekambode@lizwise.online'
+              href={contactInfo.email.url}
               className='flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200'
             >
               <Mail size={20} />
