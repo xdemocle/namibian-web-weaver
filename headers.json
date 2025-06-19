@@ -1,0 +1,44 @@
+{
+  "/*": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.html": {
+    "Cache-Control": "public, max-age=3600"
+  },
+  "/index.html": {
+    "Cache-Control": "public, max-age=3600"
+  },
+  "/about.html": {
+    "Cache-Control": "public, max-age=3600"
+  },
+  "/products.html": {
+    "Cache-Control": "public, max-age=3600"
+  },
+  "/contact.html": {
+    "Cache-Control": "public, max-age=3600"
+  },
+  "/*.js": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.css": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.svg": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.jpg": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.png": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.gif": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.woff": {
+    "Cache-Control": "public, max-age=86400"
+  },
+  "/*.woff2": {
+    "Cache-Control": "public, max-age=86400"
+  }
+}
