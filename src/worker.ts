@@ -42,78 +42,6 @@ async function purgeCache(env: Env): Promise<Response> {
   }
 }
 
-// Helper function to add cache headers to a response
-async function addCacheHeaders(response: Response, cacheType: 'asset' | 'html'): Promise<Response> {
-  // Clone the response body to avoid consuming it
-  const responseBody = response.body;
-  
-  // Create new headers, starting fresh to avoid conflicts
-  const newHeaders = new Headers();
-  
-  // Copy essential headers but skip cache-related ones
-  for (const [key, value] of response.headers.entries()) {
-    const lowerKey = key.toLowerCase();
-    if (!lowerKey.includes('cache') && !lowerKey.includes('etag') && !lowerKey.includes('expires')) {
-      newHeaders.set(key, value);
-    }
-  }
-  
-  // Set aggressive cache control headers based on content type
-  if (cacheType === 'asset') {
-    // Static assets (JS, CSS, images) - cache for 1 day with immutable flag
-    newHeaders.set('Cache-Control', 'public, max-age=86400, immutable');
-    // Add Cloudflare-specific cache header
-    newHeaders.set('CDN-Cache-Control', 'public, max-age=86400');
-    // Add ETag for better cache validation
-    newHeaders.set('ETag', `"${Date.now()}"`);
-  } else {
-    // HTML files - cache for 1 hour but allow revalidation
-    newHeaders.set('Cache-Control', 'public, max-age=3600, must-revalidate');
-    // Shorter CDN cache for HTML to ensure freshness
-    newHeaders.set('CDN-Cache-Control', 'public, max-age=1800');
-    // Add ETag for HTML files too
-    newHeaders.set('ETag', `"html-${Date.now()}"`);
-  }
-  
-  // Add additional performance headers
-  newHeaders.set('Vary', 'Accept-Encoding');
-  
-  // Create a new response with the modified headers
-  return new Response(responseBody, {
-    status: response.status,
-    statusText: response.statusText,
-    headers: newHeaders
-  });
-}
-
-// Function to determine if a path is for a static asset
-function isStaticAssetPath(path: string): boolean {
-  const staticExtensions = [
-    '.js',
-    '.css',
-    '.png',
-    '.jpg',
-    '.jpeg',
-    '.gif',
-    '.svg',
-    '.woff',
-    '.woff2',
-    '.ttf',
-    '.eot',
-    '.ico',
-    '.webp',
-    '.mp4',
-    '.mp3',
-    '.wav',
-    '.ogg',
-    '.pdf',
-    '.docx',
-    '.xlsx',
-    '.pptx',
-  ];
-  return staticExtensions.some(extension => path.endsWith(extension));
-}
-
 // Flag to track if this is the first execution after deployment
 let isFirstExecution = true;
 
@@ -137,69 +65,14 @@ export default {
       return purgeCache(env);
     }
 
+    // This worker only runs when Cloudflare can't find a static file
+    // So we serve index.html for SPA routing
     try {
-      // First, try to serve the exact asset as requested
-      // This handles static files like CSS, JS, images, etc.
-      try {
-        const assetResponse = await env.ASSETS.fetch(request.clone());
-        if (assetResponse.status === 200) {
-          // Determine if this is an asset that should be cached longer
-          const isStaticAsset = isStaticAssetPath(path);
-          const response = await addCacheHeaders(assetResponse, isStaticAsset ? 'asset' : 'html');
-          
-          // Add cf-cache-status header to show it's served by worker
-          const headers = new Headers(response.headers);
-          headers.set('cf-cache-status', 'DYNAMIC');
-          
-          return new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: headers
-          });
-        }
-      } catch (e) {
-        // If asset fetch fails, continue to the next strategy
-        console.error('Asset fetch failed:', e);
-      }
-
-      // For known routes, try to serve the specific HTML file
-      const knownRoutes = ['/', '/about', '/contact', '/products'];
-      if (knownRoutes.includes(path)) {
-        const htmlPath = path === '/' ? '/index.html' : `${path}.html`;
-        try {
-          const htmlRequest = new Request(new URL(htmlPath, url.origin), request);
-          const htmlResponse = await env.ASSETS.fetch(htmlRequest);
-          if (htmlResponse.status === 200) {
-            const response = await addCacheHeaders(htmlResponse, 'html');
-            
-            // Add cf-cache-status header
-            const headers = new Headers(response.headers);
-            headers.set('cf-cache-status', 'DYNAMIC');
-            
-            return new Response(response.body, {
-              status: response.status,
-              statusText: response.statusText,
-              headers: headers
-            });
-          }
-        } catch (e) {
-          console.error(`HTML fetch failed for ${htmlPath}:`, e);
-        }
-      }
-
-      // SPA fallback - serve index.html for any unmatched routes
       const fallbackResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
-      const response = await addCacheHeaders(fallbackResponse, 'html');
       
-      // Add cf-cache-status header
-      const headers = new Headers(response.headers);
-      headers.set('cf-cache-status', 'DYNAMIC');
-      
-      return new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: headers
-      });
+      // Since Transform Rules will handle cache headers, just return the response
+      // The Transform Rules will add proper cache-control headers
+      return fallbackResponse;
     } catch (e) {
       console.error('Worker error:', e);
       return new Response('Server Error', { status: 500 });
