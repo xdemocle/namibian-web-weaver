@@ -15,7 +15,10 @@ export interface Env {
 // Function to purge cache
 async function purgeCache(env: Env): Promise<Response> {
   if (!env.CF_ACCOUNT_ID || !env.CF_API_TOKEN || !env.ZONE_ID) {
-    return new Response('Missing required environment variables for cache purge', { status: 500 });
+    return new Response(
+      'Missing required environment variables for cache purge',
+      { status: 500 }
+    );
   }
 
   try {
@@ -23,22 +26,30 @@ async function purgeCache(env: Env): Promise<Response> {
     const response = await fetch(purgeUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${env.CF_API_TOKEN}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${env.CF_API_TOKEN}`,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        purge_everything: true
-      })
+        purge_everything: true,
+      }),
     });
 
     const result = await response.json();
     if (result.success) {
       return new Response('Cache purged successfully', { status: 200 });
     } else {
-      return new Response(`Failed to purge cache: ${JSON.stringify(result.errors)}`, { status: 500 });
+      return new Response(
+        `Failed to purge cache: ${JSON.stringify(result.errors)}`,
+        { status: 500 }
+      );
     }
   } catch (error) {
-    return new Response(`Error purging cache: ${error instanceof Error ? error.message : String(error)}`, { status: 500 });
+    return new Response(
+      `Error purging cache: ${
+        error instanceof Error ? error.message : String(error)
+      }`,
+      { status: 500 }
+    );
   }
 }
 
@@ -48,18 +59,17 @@ let isFirstExecution = true;
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    const path = url.pathname;
-    
+
     // Automatically purge cache on first execution after deployment
     if (isFirstExecution) {
       isFirstExecution = false;
       // Don't await this to avoid blocking the response
-      purgeCache(env).catch(error => {
+      purgeCache(env).catch((error) => {
         console.error('Auto cache purge failed:', error);
       });
       console.log('Automatic cache purge triggered on first execution');
     }
-    
+
     // Special endpoint to manually purge cache
     if (url.pathname === '/admin/purge-cache') {
       return purgeCache(env);
@@ -68,8 +78,10 @@ export default {
     // This worker only runs when Cloudflare can't find a static file
     // So we serve index.html for SPA routing
     try {
-      const fallbackResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', url.origin), request));
-      
+      const fallbackResponse = await env.ASSETS.fetch(
+        new Request(new URL('/index.html', url.origin), request)
+      );
+
       // Since Transform Rules will handle cache headers, just return the response
       // The Transform Rules will add proper cache-control headers
       return fallbackResponse;
@@ -77,5 +89,5 @@ export default {
       console.error('Worker error:', e);
       return new Response('Server Error', { status: 500 });
     }
-  }
+  },
 };
