@@ -1,17 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { navLinks } from '@/routes';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-
-  const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Us' },
-    { path: '/products', label: 'Products' },
-    { path: '/contact', label: 'Contact' },
-  ];
 
   const isActivePath = (path: string) => location.pathname === path;
 
