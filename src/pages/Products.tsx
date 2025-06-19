@@ -113,13 +113,13 @@ const Products = () => {
             <Card className='overflow-hidden'>
               <AspectRatio ratio={16 / 9}>
                 <img
-                  src='/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg'
-                  alt='LizWise Fusilli Mahangu Pasta - Pearl Millet 500g'
+                  src='/uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.png'
+                  alt='Taste Namibia with LizWise - Proudly Namibian Products'
                   className='object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300'
                   onClick={() =>
                     handleImageClick(
-                      '/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg',
-                      'LizWise Fusilli Mahangu Pasta - Pearl Millet 500g'
+                      '/uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.png',
+                      'Taste Namibia with LizWise - Proudly Namibian Products'
                     )
                   }
                 />
