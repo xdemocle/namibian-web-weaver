@@ -44,19 +44,31 @@ async function purgeCache(env: Env): Promise<Response> {
 
 // Helper function to add cache headers to a response
 async function addCacheHeaders(response: Response, cacheType: 'asset' | 'html'): Promise<Response> {
-  // Clone the response so we can modify headers
-  const newResponse = new Response(response.body, response);
+  // Get the original headers
+  const originalHeaders = Object.fromEntries(response.headers.entries());
   
-  // Set different cache policies based on content type
+  // Create a new headers object with all original headers
+  const newHeaders = new Headers(originalHeaders);
+  
+  // Set cache control headers based on content type
   if (cacheType === 'asset') {
     // Static assets (JS, CSS, images) - cache for 1 day
-    newResponse.headers.set('Cache-Control', 'public, max-age=86400');
+    newHeaders.set('Cache-Control', 'public, max-age=86400');
+    // Add a CDN-Cache-Control header for Cloudflare
+    newHeaders.set('CDN-Cache-Control', 'public, max-age=86400');
   } else {
     // HTML files - shorter cache time to ensure content freshness
-    newResponse.headers.set('Cache-Control', 'public, max-age=3600');
+    newHeaders.set('Cache-Control', 'public, max-age=3600');
+    // Add a CDN-Cache-Control header for Cloudflare
+    newHeaders.set('CDN-Cache-Control', 'public, max-age=3600');
   }
   
-  return newResponse;
+  // Create a new response with the modified headers
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: newHeaders
+  });
 }
 
 // Flag to track if this is the first execution after deployment
