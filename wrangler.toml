@@ -8,20 +8,24 @@ command = "bun run build"
 
 [site]
 bucket = "./dist"
+
+[site.assets]
+# The binding name for assets in your worker code
 binding = "ASSETS"
 
-# Define browser cache TTLs for different file types
-[site.bucket_config]
-[site.bucket_config.cache_rules]
 # Cache static assets for 1 day (86400 seconds)
-[site.bucket_config.cache_rules.assets]
-patterns = ["*.js", "*.css", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.svg", "*.woff", "*.woff2"]
-browser_TTL = 86400
+[[rules]]
+globs = ["*.js", "*.css", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.svg", "*.woff", "*.woff2"]
+fallthrough = true
+# Cache-Control header sent to browser (max-age in seconds)
+browser_ttl = 86400 
 
 # Cache HTML files for 1 hour (3600 seconds)
-[site.bucket_config.cache_rules.html]
-patterns = ["*.html"]
-browser_TTL = 3600
+[[rules]]
+globs = ["*.html"]
+fallthrough = true
+# Cache-Control header sent to browser (max-age in seconds)
+browser_ttl = 3600
 
 [observability]
 logs.enabled = true
