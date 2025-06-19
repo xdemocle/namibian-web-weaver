@@ -6,24 +6,11 @@ compatibility_flags = ["nodejs_compat"]
 [build]
 command = "bun run build"
 
-# Sites configuration for static assets
-[site]
-bucket = "./dist"
+# Static assets configuration
+[assets]
+directory = "./dist"
 binding = "ASSETS"
-
-# Cache static assets for 1 day (86400 seconds)
-[[site.rules]]
-globs = ["*.js", "*.css", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.svg", "*.woff", "*.woff2"]
-fallthrough = true
-# Cache-Control header sent to browser (max-age in seconds)
-browser_ttl = 86400 
-
-# Cache HTML files for 1 hour (3600 seconds)
-[[site.rules]]
-globs = ["*.html"]
-fallthrough = true
-# Cache-Control header sent to browser (max-age in seconds)
-browser_ttl = 3600
+run_worker_first = true
 
 [observability]
 logs.enabled = true

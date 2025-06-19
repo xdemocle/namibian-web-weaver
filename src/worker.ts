@@ -44,31 +44,74 @@ async function purgeCache(env: Env): Promise<Response> {
 
 // Helper function to add cache headers to a response
 async function addCacheHeaders(response: Response, cacheType: 'asset' | 'html'): Promise<Response> {
-  // Get the original headers
-  const originalHeaders = Object.fromEntries(response.headers.entries());
+  // Clone the response body to avoid consuming it
+  const responseBody = response.body;
   
-  // Create a new headers object with all original headers
-  const newHeaders = new Headers(originalHeaders);
+  // Create new headers, starting fresh to avoid conflicts
+  const newHeaders = new Headers();
   
-  // Set cache control headers based on content type
-  if (cacheType === 'asset') {
-    // Static assets (JS, CSS, images) - cache for 1 day
-    newHeaders.set('Cache-Control', 'public, max-age=86400');
-    // Add a CDN-Cache-Control header for Cloudflare
-    newHeaders.set('CDN-Cache-Control', 'public, max-age=86400');
-  } else {
-    // HTML files - shorter cache time to ensure content freshness
-    newHeaders.set('Cache-Control', 'public, max-age=3600');
-    // Add a CDN-Cache-Control header for Cloudflare
-    newHeaders.set('CDN-Cache-Control', 'public, max-age=3600');
+  // Copy essential headers but skip cache-related ones
+  for (const [key, value] of response.headers.entries()) {
+    const lowerKey = key.toLowerCase();
+    if (!lowerKey.includes('cache') && !lowerKey.includes('etag') && !lowerKey.includes('expires')) {
+      newHeaders.set(key, value);
+    }
   }
   
+  // Set aggressive cache control headers based on content type
+  if (cacheType === 'asset') {
+    // Static assets (JS, CSS, images) - cache for 1 day with immutable flag
+    newHeaders.set('Cache-Control', 'public, max-age=86400, immutable');
+    // Add Cloudflare-specific cache header
+    newHeaders.set('CDN-Cache-Control', 'public, max-age=86400');
+    // Add ETag for better cache validation
+    newHeaders.set('ETag', `"${Date.now()}"`);
+  } else {
+    // HTML files - cache for 1 hour but allow revalidation
+    newHeaders.set('Cache-Control', 'public, max-age=3600, must-revalidate');
+    // Shorter CDN cache for HTML to ensure freshness
+    newHeaders.set('CDN-Cache-Control', 'public, max-age=1800');
+    // Add ETag for HTML files too
+    newHeaders.set('ETag', `"html-${Date.now()}"`);
+  }
+  
+  // Add additional performance headers
+  newHeaders.set('Vary', 'Accept-Encoding');
+  
   // Create a new response with the modified headers
-  return new Response(response.body, {
+  return new Response(responseBody, {
     status: response.status,
     statusText: response.statusText,
     headers: newHeaders
   });
+}
+
+// Function to determine if a path is for a static asset
+function isStaticAssetPath(path: string): boolean {
+  const staticExtensions = [
+    '.js',
+    '.css',
+    '.png',
+    '.jpg',
+    '.jpeg',
+    '.gif',
+    '.svg',
+    '.woff',
+    '.woff2',
+    '.ttf',
+    '.eot',
+    '.ico',
+    '.webp',
+    '.mp4',
+    '.mp3',
+    '.wav',
+    '.ogg',
+    '.pdf',
+    '.docx',
+    '.xlsx',
+    '.pptx',
+  ];
+  return staticExtensions.some(extension => path.endsWith(extension));
 }
 
 // Flag to track if this is the first execution after deployment
@@ -102,7 +145,7 @@ export default {
         const assetResponse = await env.ASSETS.fetch(request.clone());
         if (assetResponse.status === 200) {
           // Determine if this is an asset that should be cached longer
-          const isStaticAsset = path.match(/\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/i);
+          const isStaticAsset = isStaticAssetPath(path);
           return addCacheHeaders(assetResponse, isStaticAsset ? 'asset' : 'html');
         }
       } catch (e) {
