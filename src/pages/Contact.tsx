@@ -10,7 +10,7 @@ const schemaMarkup = {
     '@type': 'Organization',
     name: 'LizWise Investment CC',
     telephone: contactInfo.phone.value,
-    email: 'ekambode@lizwise.online',
+    email: contactInfo.email.value,
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Erf 1, Lafrenz Industrial Area',

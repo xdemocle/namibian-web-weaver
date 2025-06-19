@@ -327,7 +327,7 @@ const Products = () => {
                 Call {contactInfo.phone.value}
               </a>
               <a
-                href='mailto:ekambode@lizwise.online'
+                href={contactInfo.email.url}
                 className='border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors duration-200'
               >
                 Email Us
