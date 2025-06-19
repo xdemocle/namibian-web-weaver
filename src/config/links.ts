@@ -48,7 +48,7 @@ export const contactInfo = {
     value: phoneNumber,
     url:
       'https://wa.me/' +
-      phoneNumber.replace(/\s/g, '') +
+      phoneNumber.replace(/\s/g, '').replace('+', '') +
       '?text=Hello%20LizWise!%20I%27m%20interested%20in%20your%20products%20and%20would%20like%20more%20information.',
     description: 'Chat with us on WhatsApp',
   },
