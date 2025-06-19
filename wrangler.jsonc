@@ -9,9 +9,6 @@
   },
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS",
-    "include": ["**/*"],
-    "exclude": [],
-    "browser_TTL": 86400
+    "binding": "ASSETS"
   }
 }
