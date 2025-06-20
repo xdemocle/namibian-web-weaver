@@ -45,6 +45,18 @@ const schemaMarkup = {
         availability: 'https://schema.org/InStock',
       },
     },
+    {
+      '@type': 'Product',
+      position: 4,
+      name: 'Mr Crackers - Mahangu Delight',
+      description:
+        'Discover our premium Mr Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
+      image: `${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`,
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+      },
+    },
   ],
 };
 
@@ -307,6 +319,69 @@ const Products = () => {
                   />
                   <h4 className='font-semibold text-lg text-gray-800'>Smoked Mozzarella</h4>
                   <p className='text-gray-600'>Rich, smoky flavor perfect for gourmet dishes and salads</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mr Crackers Section */}
+          <div className='mb-16'>
+            <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Mr Crackers</h2>
+            <div className='bg-white rounded-2xl shadow-lg p-8'>
+              <div className='md:flex'>
+                <div className='md:w-1/2'>
+                  <img
+                    src='/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg'
+                    alt='Mr Crackers Mahangu Delight packaging'
+                    className='w-full h-full object-cover rounded-lg'
+                    onClick={() => 
+                      handleImageClick(
+                        '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg', 
+                        'Mr Crackers Mahangu Delight packaging'
+                      )
+                    }
+                  />
+                </div>
+                <div className='md:w-1/2 p-8 md:p-12'>
+                  <h3 className='text-2xl font-bold text-gray-800 mb-6'>Mahangu Delight</h3>
+                  <p className='text-gray-600 mb-6 leading-relaxed'>
+                    Mr Crackers brings you the authentic taste of Namibia with our premium Mahangu Delight crackers.
+                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile and
+                    nutritional benefits that set them apart from ordinary crackers.
+                  </p>
+                  <p className='text-gray-600 mb-8 leading-relaxed'>
+                    Perfect for snacking, entertaining, or pairing with your favorite dips and toppings, Mr Crackers
+                    Mahangu Delight brings the rich culinary heritage of Namibia to your table.
+                  </p>
+
+                  <h4 className='text-xl font-semibold text-gray-800 mb-4'>Key Features:</h4>
+                  <ul className='list-disc pl-5 mb-8 space-y-2'>
+                    <li className='text-gray-600'>Made with authentic Namibian mahangu (pearl millet)</li>
+                    <li className='text-gray-600'>High in fiber and essential nutrients</li>
+                    <li className='text-gray-600'>No artificial preservatives or additives</li>
+                    <li className='text-gray-600'>Crispy texture perfect for dips and toppings</li>
+                    <li className='text-gray-600'>Locally produced with traditional recipes</li>
+                    <li className='text-gray-600'>Sustainable packaging and production methods</li>
+                  </ul>
+
+                  <div className='flex flex-col sm:flex-row gap-4'>
+                    <a
+                      href='#'
+                      className='bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold inline-block text-center'
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleImageClick('/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg', 'Mr Crackers Nutritional Information');
+                      }}
+                    >
+                      View Nutritional Info
+                    </a>
+                    <a
+                      href='/contact'
+                      className='border-2 border-amber-600 text-amber-600 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 inline-block text-center'
+                    >
+                      Contact for Orders
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
