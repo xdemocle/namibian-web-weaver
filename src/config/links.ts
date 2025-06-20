@@ -60,7 +60,7 @@ export const contactInfo = {
   address: {
     value: 'Windhoek, NAMIBIA',
     description: 'Visit our location',
-    full: 'Erf 1, Lafrenz Industrial Area, Windhoek, Khomas, 9000, Namibia',
+    full: 'Windhoek, Khomas, 9000, Namibia',
   },
 };
 
