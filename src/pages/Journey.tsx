@@ -45,23 +45,23 @@ const Journey = () => {
   const journeyImages = [
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-43.jpg',
-      alt: 'LizWise team members working together',
-      caption: 'Our dedicated team working together to bring authentic Namibian flavors to life',
+      alt: 'LizWise stand at innovation market sponsored by USA/UN',
+      caption: 'LizWise showcase at innovation market event sponsored by USA/UN - presenting our products to a global audience',
     },
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-44.jpg',
-      alt: 'Traditional Namibian ingredients preparation',
-      caption: 'Carefully selecting and preparing traditional Namibian ingredients with respect for our heritage',
+      alt: 'LizWise stand at small local market',
+      caption: 'Our stand at a small local market - connecting with the community and sharing Namibian culinary traditions',
     },
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-49.jpg',
-      alt: 'LizWise production facility and team',
-      caption: 'Our modern production facility where tradition meets innovation',
+      alt: 'LizWise stand at local market display',
+      caption: 'LizWise products displayed at a local market - bringing authentic Namibian flavors to everyday shoppers',
     },
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-57.jpg',
-      alt: 'Final products ready for distribution',
-      caption: 'The finished products - ready to bring Namibian taste to families across the region',
+      alt: 'LizWise team pitch at FNB Namibia emerging startups event',
+      caption: 'Our entrepreneurial pitch at FNB Namibia emerging startups event - a milestone in our business growth journey',
     },
   ];
 
@@ -230,6 +230,9 @@ const Journey = () => {
                       onClick={() => handleImageClick(image.src, image.alt)}
                     />
                   </AspectRatio>
+                  <CardContent className='p-4'>
+                    <p className='text-sm text-gray-700'>{image.caption}</p>
+                  </CardContent>
                 </Card>
               ))}
             </div>
