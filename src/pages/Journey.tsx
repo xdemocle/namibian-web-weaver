@@ -46,22 +46,26 @@ const Journey = () => {
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-43.jpg',
       alt: 'LizWise stand at innovation market sponsored by USA/UN',
-      caption: 'LizWise showcase at innovation market event sponsored by USA/UN - presenting our products to a global audience',
+      caption:
+        'LizWise showcase at innovation market event sponsored by USA/UN - presenting our products to a global audience',
     },
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-44.jpg',
       alt: 'LizWise stand at small local market',
-      caption: 'Our stand at a small local market - connecting with the community and sharing Namibian culinary traditions',
+      caption:
+        'Our stand at a small local market - connecting with the community and sharing Namibian culinary traditions',
     },
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-49.jpg',
       alt: 'LizWise stand at local market display',
-      caption: 'LizWise products displayed at a local market - bringing authentic Namibian flavors to everyday shoppers',
+      caption:
+        'LizWise products displayed at a local market - bringing authentic Namibian flavors to everyday shoppers',
     },
     {
       src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-57.jpg',
       alt: 'LizWise team pitch at FNB Namibia emerging startups event',
-      caption: 'Our entrepreneurial pitch at FNB Namibia emerging startups event - a milestone in our business growth journey',
+      caption:
+        'Our entrepreneurial pitch at FNB Namibia emerging startups event - a milestone in our business growth journey',
     },
   ];
 
@@ -69,88 +73,78 @@ const Journey = () => {
   const makingImages = [
     {
       src: '/galleries/the_makling_of/image0.jpg',
-      alt: 'Raw mahangu (pearl millet) grains',
-      caption: 'Premium mahangu (pearl millet) grains - the foundation of our nutritious pasta',
+      alt: 'Natural sourdough starter',
+      caption: 'Our natural sourdough starter - the secret behind our authentic flavors and textures',
     },
     {
       src: '/galleries/the_makling_of/image2.jpg',
-      alt: 'Milling process of mahangu grains',
-      caption: 'Traditional milling process to create fine mahangu flour while preserving nutrients',
+      alt: 'Tomatoes raw ready for cooking',
+      caption: 'Fresh tomatoes ready for cooking - we select only the best local produce',
     },
     {
       src: '/galleries/the_makling_of/image3.jpg',
-      alt: 'Pasta dough preparation',
-      caption: 'Carefully mixing mahangu flour to create the perfect pasta dough consistency',
+      alt: 'Tomato sauce made from local bio tomatoes',
+      caption: 'Our signature tomato sauce made exclusively from locally-grown organic tomatoes',
     },
     {
       src: '/galleries/the_makling_of/image4.jpg',
-      alt: 'Pasta shaping and forming',
-      caption: 'Shaping our pasta into various forms - fusilli, radiatori, and shells',
+      alt: 'Scamorze affumicate mozzarella',
+      caption: 'Scamorze affumicate mozzarella - a traditional smoked cheese in our artisanal collection',
     },
     {
       src: '/galleries/the_makling_of/image5.jpg',
-      alt: 'Fresh tomatoes for sauce making',
-      caption: 'Fresh, locally-sourced tomatoes ready for our artisanal sauce production',
+      alt: 'Freshly made ricotta cheese',
+      caption: 'Fresh ricotta cheese - delicate, creamy, and made with traditional methods',
     },
     {
       src: '/galleries/the_makling_of/image6.jpg',
-      alt: 'Sauce cooking and preparation',
-      caption: 'Slow-cooking our sauces to develop rich, authentic flavors',
+      alt: 'Scamorze cheese preparation',
+      caption: 'Scamorze cheese being prepared - a skill passed down through generations',
     },
     {
       src: '/galleries/the_makling_of/image7.jpg',
-      alt: 'Mozzarella cheese making process',
-      caption: 'Handcrafting fresh mozzarella cheese with traditional techniques',
+      alt: 'Pasta with scamorze and mozzarella',
+      caption: 'Our special pasta dish combining scamorze and mozzarella - a perfect blend of flavors',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-45.jpg',
-      alt: 'Quality inspection of finished products',
-      caption: 'Every product undergoes rigorous quality inspection before packaging',
+      alt: 'Cheese products packaged mozzarella cheese',
+      caption: 'Our freshly made mozzarella cheese carefully packaged to preserve flavor and texture',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-46.jpg',
-      alt: 'Packaging and labeling process',
-      caption: 'Careful packaging to preserve freshness and quality',
+      alt: 'Different tomato sauces packed in glass containers',
+      caption: 'Variety of artisanal tomato sauces preserved in traditional glass containers',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-47.jpg',
-      alt: 'Team collaboration in production',
-      caption: 'Our skilled team working together to maintain consistent quality',
+      alt: 'Pasta production example',
+      caption: 'A glimpse into our pasta production process - crafted with care and tradition',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-50 (2).jpg',
-      alt: 'Final product quality check',
-      caption: 'Final quality assurance before products reach our customers',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-51.jpg',
-      alt: 'Storage and inventory management',
-      caption: 'Proper storage ensuring products maintain their quality and freshness',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-52.jpg',
-      alt: 'Distribution preparation',
-      caption: 'Preparing orders for distribution to bring our products to your table',
+      alt: 'Pasta sample',
+      caption: 'Fresh pasta samples showcasing our quality standards and artisanal techniques',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-53.jpg',
-      alt: 'Team meeting and planning',
-      caption: 'Regular team meetings to ensure continuous improvement and innovation',
+      alt: 'Scamorza just made',
+      caption: 'Freshly made scamorza cheese - still warm from production and ready for aging',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-54.jpg',
-      alt: 'Equipment maintenance and care',
-      caption: 'Maintaining our equipment to ensure consistent product quality',
+      alt: 'Ricotta cheese for pasta filling',
+      caption: 'Our creamy ricotta cheese prepared specially for rich pasta fillings',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-55.jpg',
-      alt: 'Ingredient sourcing and selection',
-      caption: 'Carefully sourcing the finest local ingredients for our products',
+      alt: 'Pasta sample straight from production',
+      caption: 'Fresh pasta samples straight from production undergoing quality assurance checks',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-56.jpg',
-      alt: 'Production line in action',
-      caption: 'Our efficient production line combining traditional methods with modern efficiency',
+      alt: 'Fresh pasta samples from production',
+      caption: 'More pasta samples straight from production undergoing quality assurance checks',
     },
   ];
 
