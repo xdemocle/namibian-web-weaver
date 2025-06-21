@@ -88,8 +88,8 @@ const Journey = () => {
     },
     {
       src: '/galleries/the_makling_of/image4.jpg',
-      alt: 'Scamorze affumicate mozzarella',
-      caption: 'Scamorze affumicate mozzarella - a traditional smoked cheese in our artisanal collection',
+      alt: 'Burrata cheese',
+      caption: 'Burrata cheese - a traditional smoked cheese in our artisanal collection',
     },
     {
       src: '/galleries/the_makling_of/image5.jpg',
@@ -98,8 +98,8 @@ const Journey = () => {
     },
     {
       src: '/galleries/the_makling_of/image6.jpg',
-      alt: 'Scamorze cheese preparation',
-      caption: 'Scamorze cheese being prepared - a skill passed down through generations',
+      alt: 'Burrata cheese preparation',
+      caption: 'Burrata cheese being prepared - a skill passed down through generations',
     },
     {
       src: '/galleries/the_makling_of/image7.jpg',
@@ -129,7 +129,7 @@ const Journey = () => {
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-53.jpg',
       alt: 'Scamorza just made',
-      caption: 'Freshly made scamorza cheese - still warm from production and ready for aging',
+      caption: 'Freshly made burrata cheese - still warm from production and ready for aging',
     },
     {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-54.jpg',
