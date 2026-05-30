@@ -11,6 +11,10 @@ command = "bun run build"
 directory = "./dist"
 binding = "ASSETS"
 run_worker_first = false
+# Canonical URLs are slash-free (e.g. /about). The SSG build emits flat files
+# (dist/about.html), so drop-trailing-slash serves /about as a 200 and redirects
+# /about/, /about.html and /about/index.html to it — keeping one canonical URL.
+html_handling = "drop-trailing-slash"
 
 [observability]
 logs.enabled = true
