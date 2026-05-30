@@ -174,8 +174,8 @@ const Journey = () => {
   return (
     <>
       <Seo
-        title='LizWise Journey - The Making of Authentic Namibian Food | Our Story'
-        description='Discover the story behind LizWise - from traditional Namibian recipes to modern food production. See how we craft mahangu pasta, artisanal sauces, and fresh mozzarella with care and tradition.'
+        title='Our Journey - The Making of LizWise Namibian Food'
+        description='Discover the LizWise story - from traditional Namibian recipes to modern production of mahangu pasta, artisanal sauces, and fresh mozzarella.'
         canonical={`${companyInfo.website}/journey`}
         image={`${companyInfo.website}/galleries/lizwise_journey/photo_2025-06-20_00-03-49.jpg`}
         schemaMarkup={schemaMarkup}
