@@ -10,51 +10,63 @@ const schemaMarkup = {
   '@type': 'ItemList',
   itemListElement: [
     {
-      '@type': 'Product',
+      '@type': 'ListItem',
       position: 1,
-      name: 'Mahangu Pasta',
-      description:
-        'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
-      image: `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
+      item: {
+        '@type': 'Product',
+        name: 'Mahangu Pasta',
+        description:
+          'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
+        image: `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+        },
       },
     },
     {
-      '@type': 'Product',
+      '@type': 'ListItem',
       position: 2,
-      name: 'Ready-Made Pasta Sauces',
-      description:
-        'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
-      image: `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
+      item: {
+        '@type': 'Product',
+        name: 'Ready-Made Pasta Sauces',
+        description:
+          'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
+        image: `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+        },
       },
     },
     {
-      '@type': 'Product',
+      '@type': 'ListItem',
       position: 3,
-      name: 'Mozzarella Cheese',
-      description:
-        'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
-      image: `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
+      item: {
+        '@type': 'Product',
+        name: 'Mozzarella Cheese',
+        description:
+          'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
+        image: `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+        },
       },
     },
     {
-      '@type': 'Product',
+      '@type': 'ListItem',
       position: 4,
-      name: 'Mr Crackers - Mahangu Delight',
-      description:
-        'Discover our premium Mr Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
-      image: `${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`,
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
+      item: {
+        '@type': 'Product',
+        name: 'Mr Crackers - Mahangu Delight',
+        description:
+          'Discover our premium Mr Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
+        image: `${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+        },
       },
     },
   ],
@@ -104,8 +116,8 @@ const Products = () => {
   return (
     <>
       <Seo
-        title='LizWise Products - Mahangu Pasta, Sauces & Mozzarella | Namibian Food'
-        description='Discover our range of proudly Namibian products: gluten-friendly Mahangu pasta made from pearl millet, flavorful pasta sauces, and creamy mozzarella cheese - all locally made with care.'
+        title='LizWise Products - Mahangu Pasta, Sauces & Mozzarella'
+        description='Proudly Namibian products: gluten-friendly mahangu pasta from pearl millet, flavorful pasta sauces, and creamy mozzarella - all locally made.'
         canonical={`${companyInfo.website}/products`}
         image={`${companyInfo.website}/products-og-image.png`}
         schemaMarkup={schemaMarkup}
@@ -334,9 +346,9 @@ const Products = () => {
                     src='/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg'
                     alt='Mr Crackers Mahangu Delight packaging'
                     className='w-full h-full object-cover rounded-lg'
-                    onClick={() => 
+                    onClick={() =>
                       handleImageClick(
-                        '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg', 
+                        '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg',
                         'Mr Crackers Mahangu Delight packaging'
                       )
                     }
@@ -346,8 +358,8 @@ const Products = () => {
                   <h3 className='text-2xl font-bold text-gray-800 mb-6'>Mahangu Delight</h3>
                   <p className='text-gray-600 mb-6 leading-relaxed'>
                     Mr Crackers brings you the authentic taste of Namibia with our premium Mahangu Delight crackers.
-                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile and
-                    nutritional benefits that set them apart from ordinary crackers.
+                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile
+                    and nutritional benefits that set them apart from ordinary crackers.
                   </p>
                   <p className='text-gray-600 mb-8 leading-relaxed'>
                     Perfect for snacking, entertaining, or pairing with your favorite dips and toppings, Mr Crackers
@@ -368,9 +380,12 @@ const Products = () => {
                     <a
                       href='#'
                       className='bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold inline-block text-center'
-                      onClick={(e) => {
+                      onClick={e => {
                         e.preventDefault();
-                        handleImageClick('/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg', 'Mr Crackers Nutritional Information');
+                        handleImageClick(
+                          '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg',
+                          'Mr Crackers Nutritional Information'
+                        );
                       }}
                     >
                       View Nutritional Info

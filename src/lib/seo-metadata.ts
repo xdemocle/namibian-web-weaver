@@ -78,10 +78,10 @@ export const getPageMetadata = ({
   image = siteMetadata.defaultImage,
   url = siteMetadata.siteUrl,
 }) => {
-  const pageTitle = title === siteMetadata.defaultTitle ? title : `${title} | ${siteMetadata.siteName}`;
-
+  // Titles are kept self-contained (each already includes the brand) and capped well under
+  // ~60 chars; we no longer append the site name, which previously pushed titles over the limit.
   return {
-    title: pageTitle,
+    title,
     description,
     canonical: url,
     image: image.startsWith('http') ? image : `${siteMetadata.siteUrl}${image}`,

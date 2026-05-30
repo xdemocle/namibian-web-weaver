@@ -19,7 +19,7 @@ const Header = () => {
               <img src='/android-chrome-64x64.png' alt='LizWise Logo' className='w-full h-full object-contain' />
             </div>
             <div>
-              <h1 className='text-xl font-bold text-gray-800'>LizWise</h1>
+              <span className='block text-xl font-bold text-gray-800'>LizWise</span>
               <p className='text-sm text-gray-600'>Investment CC</p>
             </div>
           </Link>

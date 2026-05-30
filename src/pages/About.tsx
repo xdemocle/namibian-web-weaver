@@ -27,8 +27,8 @@ const About = () => {
   return (
     <>
       <Seo
-        title='About LizWise - Our Story & Mission | Proudly Namibian Food Products'
-        description='Learn about LizWise Investment CC, a proudly Namibian company dedicated to creating high-quality, locally-sourced food products that celebrate our heritage and support local communities.'
+        title='About LizWise - Proudly Namibian Food Products'
+        description='Learn about LizWise Investment CC, a proudly Namibian company crafting high-quality, locally-sourced food products that celebrate our heritage.'
         canonical={`${companyInfo.website}/about`}
         image={`${companyInfo.website}/about-og-image.png`}
         schemaMarkup={schemaMarkup}

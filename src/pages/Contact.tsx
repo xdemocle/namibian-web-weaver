@@ -34,8 +34,8 @@ const Contact = () => {
   return (
     <>
       <Seo
-        title='Contact LizWise - Get in Touch | Order Our Namibian Food Products'
-        description="Contact LizWise Investment CC for inquiries about our Namibian food products. Place orders, ask questions, or provide feedback - we're here to help you enjoy our locally made products."
+        title='Contact LizWise - Order Our Namibian Food Products'
+        description="Contact LizWise Investment CC about our Namibian food products. Place orders, ask questions, or share feedback - we're here to help."
         canonical={`${companyInfo.website}/contact`}
         image={`${companyInfo.website}/contact-og-image.png`}
         schemaMarkup={schemaMarkup}
