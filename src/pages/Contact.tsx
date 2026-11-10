@@ -37,7 +37,7 @@ const Contact = () => {
         title='Contact LizWise - Order Our Namibian Food Products'
         description="Contact LizWise Investment CC about our Namibian food products. Place orders, ask questions, or share feedback - we're here to help."
         canonical={`${companyInfo.website}/contact`}
-        image={`${companyInfo.website}/contact-og-image.png`}
+        image={`${companyInfo.website}/contact-og-image.jpg`}
         schemaMarkup={schemaMarkup}
       />
       <div className='py-16 bg-gradient-to-br from-red-50 to-yellow-50'>

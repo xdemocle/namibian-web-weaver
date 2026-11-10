@@ -16,8 +16,8 @@ const schemaMarkup = {
         '@type': 'Product',
         name: 'Mahangu Pasta',
         description:
-          'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
-        image: `${companyInfo.website}/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg`,
+          'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, Maccheroni and Shell shapes. 100% Namibian pearl millet, 500g.',
+        image: `${companyInfo.website}/uploads/products/cat-pasta.jpg`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
@@ -31,8 +31,8 @@ const schemaMarkup = {
         '@type': 'Product',
         name: 'Ready-Made Pasta Sauces',
         description:
-          'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
-        image: `${companyInfo.website}/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg`,
+          'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Puree and Tomato Puree Chilli, 250ml.',
+        image: `${companyInfo.website}/uploads/products/card-sauces.jpg`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
@@ -59,10 +59,39 @@ const schemaMarkup = {
       position: 4,
       item: {
         '@type': 'Product',
-        name: 'Mr Crackers - Mahangu Delight',
+        name: 'Mr Millet Crackers',
         description:
-          'Discover our premium Mr Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
-        image: `${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`,
+          'Original flavoured millet crackers. Crisp, made from locally sourced millet and a tasty everyday snack, 300g.',
+        image: `${companyInfo.website}/uploads/products/crackers.jpg`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      item: {
+        '@type': 'Product',
+        name: 'Mahangu Instant Porridge',
+        description: 'Nutritious, wholesome and ready in seconds. Made with 100% mahangu (pearl millet), 500g.',
+        image: `${companyInfo.website}/uploads/products/porridge.jpg`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 6,
+      item: {
+        '@type': 'Product',
+        name: 'Mahangu Rusks',
+        description:
+          'Crisp mahangu rusks made with 100% mahangu (pearl millet). Naturally gluten-free and perfect for coffee, tea and snacking, 500g.',
+        image: `${companyInfo.website}/uploads/products/rusks.jpg`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
@@ -90,10 +119,10 @@ const Products = () => {
     {
       title: 'Mahangu Pasta',
       description:
-        'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
+        'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, Maccheroni and Shell shapes. 100% Namibian pearl millet.',
       features: ['Gluten-friendly', 'High in fiber', '100% Namibian millet', 'Various shapes available'],
       color: 'bg-red-600',
-      image: '/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg',
+      image: '/uploads/products/cat-pasta.jpg',
     },
     {
       title: 'Ready-Made Pasta Sauces',
@@ -101,7 +130,7 @@ const Products = () => {
         'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
       features: ['Made from real tomatoes', 'Local flavors', 'Bolognaise variety', 'Tomato Purée & Chilli'],
       color: 'bg-green-600',
-      image: '/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg',
+      image: '/uploads/products/card-sauces.jpg',
     },
     {
       title: 'Mozzarella Cheese',
@@ -111,15 +140,28 @@ const Products = () => {
       color: 'bg-yellow-500',
       image: '/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg',
     },
+    {
+      title: 'Traditional African Foods',
+      description:
+        'Mahangu Instant Porridge and Mahangu Rusks - naturally gluten-free breakfast and snack staples crafted from 100% Namibian pearl millet.',
+      features: [
+        'Made with 100% mahangu',
+        'Naturally gluten-free',
+        'Ready in seconds',
+        'Great for coffee, tea & snacking',
+      ],
+      color: 'bg-amber-600',
+      image: '/uploads/products/cat-breakfast.jpg',
+    },
   ];
 
   return (
     <>
       <Seo
-        title='LizWise Products - Mahangu Pasta, Sauces & Mozzarella'
-        description='Proudly Namibian products: gluten-friendly mahangu pasta from pearl millet, flavorful pasta sauces, and creamy mozzarella - all locally made.'
+        title='LizWise Products - Mahangu Pasta, Sauces, Porridge & Rusks'
+        description='Proudly Namibian products: gluten-friendly mahangu pasta from pearl millet, flavorful pasta sauces, mahangu instant porridge and rusks, and creamy mozzarella - all locally made.'
         canonical={`${companyInfo.website}/products`}
-        image={`${companyInfo.website}/products-og-image.png`}
+        image={`${companyInfo.website}/products-og-image.jpg`}
         schemaMarkup={schemaMarkup}
       />
       <div className='py-16 bg-gradient-to-br from-red-50 to-yellow-50'>
@@ -137,13 +179,13 @@ const Products = () => {
             <Card className='overflow-hidden'>
               <AspectRatio ratio={16 / 9}>
                 <img
-                  src='/uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.png'
-                  alt='Taste Namibia with LizWise - Proudly Namibian Products'
+                  src='/uploads/products/range-banner.jpg'
+                  alt='The LizWise product range - mahangu pasta, porridge, rusks and crackers'
                   className='object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300'
                   onClick={() =>
                     handleImageClick(
-                      '/uploads/14b94d5d-aeea-46b2-9ff9-2114543b9962.png',
-                      'Taste Namibia with LizWise - Proudly Namibian Products'
+                      '/uploads/products/range-banner.jpg',
+                      'The LizWise product range - mahangu pasta, porridge, rusks and crackers'
                     )
                   }
                 />
@@ -159,7 +201,7 @@ const Products = () => {
           </div>
 
           {/* Products Grid */}
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16'>
             {products.map((product, index) => (
               <Card key={index} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
                 <div className={`${product.color} h-2`}></div>
@@ -193,15 +235,15 @@ const Products = () => {
           <div className='mb-16'>
             <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Pasta Varieties</h2>
             <div className='bg-white rounded-2xl shadow-xl overflow-hidden'>
-              <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 p-8'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-8'>
                 <div>
                   <img
-                    src='/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg'
+                    src='/uploads/products/pasta-fusilli.jpg'
                     alt='Fusilli Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
                     onClick={() =>
                       handleImageClick(
-                        '/uploads/9c051a7f-709a-429c-b78b-765f2d109ced.jpg',
+                        '/uploads/products/pasta-fusilli.jpg',
                         'Fusilli Mahangu Pasta - Pearl Millet 500g'
                       )
                     }
@@ -211,12 +253,12 @@ const Products = () => {
                 </div>
                 <div>
                   <img
-                    src='/uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.jpg'
+                    src='/uploads/products/pasta-radiatori.jpg'
                     alt='Radiatori Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
                     onClick={() =>
                       handleImageClick(
-                        '/uploads/5814e052-35ea-4807-b371-eb8bbdc0057e.jpg',
+                        '/uploads/products/pasta-radiatori.jpg',
                         'Radiatori Mahangu Pasta - Pearl Millet 500g'
                       )
                     }
@@ -226,14 +268,26 @@ const Products = () => {
                 </div>
                 <div>
                   <img
-                    src='/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg'
-                    alt='Shell Mahangu Pasta - Pearl Millet 500g'
+                    src='/uploads/products/pasta-maccheroni.jpg'
+                    alt='Maccheroni Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
                     onClick={() =>
                       handleImageClick(
-                        '/uploads/baf2893a-444d-4321-8434-f5e0f36f1c21.jpg',
-                        'Shell Mahangu Pasta - Pearl Millet 500g'
+                        '/uploads/products/pasta-maccheroni.jpg',
+                        'Maccheroni Mahangu Pasta - Pearl Millet 500g'
                       )
+                    }
+                  />
+                  <h4 className='font-semibold text-lg text-red-600'>Maccheroni</h4>
+                  <p className='text-gray-600'>Classic tube-shaped pasta for every sauce</p>
+                </div>
+                <div>
+                  <img
+                    src='/uploads/products/pasta-shell.jpg'
+                    alt='Shell Mahangu Pasta - Pearl Millet 500g'
+                    className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
+                    onClick={() =>
+                      handleImageClick('/uploads/products/pasta-shell.jpg', 'Shell Mahangu Pasta - Pearl Millet 500g')
                     }
                   />
                   <h4 className='font-semibold text-lg text-red-600'>Shells</h4>
@@ -250,48 +304,101 @@ const Products = () => {
               <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                 <div className='bg-white p-6 rounded-lg shadow-sm'>
                   <img
-                    src='/uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.jpg'
-                    alt='Bolognaise Sauce - The Sauce Harvest 250ml'
+                    src='/uploads/products/sauce-bolognese.jpg'
+                    alt='Bolognaise Sauce 250ml'
                     className='w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
-                    onClick={() =>
-                      handleImageClick(
-                        '/uploads/dc259359-ec0d-4d8b-b506-1aa354fc95dc.jpg',
-                        'Bolognaise Sauce - The Sauce Harvest 250ml'
-                      )
-                    }
+                    onClick={() => handleImageClick('/uploads/products/sauce-bolognese.jpg', 'Bolognaise Sauce 250ml')}
                   />
                   <h4 className='font-semibold text-lg text-gray-800'>Bolognaise</h4>
                   <p className='text-gray-600'>Rich, hearty meat sauce with authentic flavors</p>
                 </div>
                 <div className='bg-white p-6 rounded-lg shadow-sm'>
                   <img
-                    src='/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg'
-                    alt='Tomato Purée - The Sauce Harvest 250ml'
+                    src='/uploads/products/sauce-tomato.jpg'
+                    alt='Tomato Purée Sauce 250ml'
                     className='w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
-                    onClick={() =>
-                      handleImageClick(
-                        '/uploads/ecd4af59-d45b-48c9-aa90-c525f895753f.jpg',
-                        'Tomato Purée - The Sauce Harvest 250ml'
-                      )
-                    }
+                    onClick={() => handleImageClick('/uploads/products/sauce-tomato.jpg', 'Tomato Purée Sauce 250ml')}
                   />
                   <h4 className='font-semibold text-lg text-gray-800'>Tomato Purée</h4>
                   <p className='text-gray-600'>Pure tomato goodness for versatile cooking</p>
                 </div>
                 <div className='bg-white p-6 rounded-lg shadow-sm'>
                   <img
-                    src='/uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.jpg'
-                    alt='Tomato Purée Chilli - The Sauce Harvest 250ml'
+                    src='/uploads/products/sauce-chilli.jpg'
+                    alt='Tomato Purée Chilli Sauce 250ml'
                     className='w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
                     onClick={() =>
-                      handleImageClick(
-                        '/uploads/6ff8ff95-d9bd-429e-a597-2d73da906c5d.jpg',
-                        'Tomato Purée Chilli - The Sauce Harvest 250ml'
-                      )
+                      handleImageClick('/uploads/products/sauce-chilli.jpg', 'Tomato Purée Chilli Sauce 250ml')
                     }
                   />
                   <h4 className='font-semibold text-lg text-gray-800'>Chilli</h4>
                   <p className='text-gray-600'>Spicy tomato sauce with a kick of local flavor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Traditional African Foods Section */}
+          <div className='mb-16'>
+            <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Traditional African Foods</h2>
+            <div className='bg-amber-50 rounded-2xl p-8'>
+              <div className='space-y-8'>
+                <div className='bg-white rounded-lg shadow-sm overflow-hidden'>
+                  <div className='md:flex'>
+                    <div className='md:w-2/5'>
+                      <img
+                        src='/uploads/products/porridge.jpg'
+                        alt='LizWise Mahangu Instant Porridge - Pearl Millet 500g'
+                        className='w-full h-full object-contain bg-gray-50 cursor-pointer hover:scale-105 transition-transform duration-300'
+                        onClick={() =>
+                          handleImageClick(
+                            '/uploads/products/porridge.jpg',
+                            'LizWise Mahangu Instant Porridge - Pearl Millet 500g'
+                          )
+                        }
+                      />
+                    </div>
+                    <div className='md:w-3/5 p-6 md:p-8'>
+                      <h4 className='font-semibold text-lg text-amber-700 mb-3'>Mahangu Instant Porridge</h4>
+                      <p className='text-gray-600 mb-4'>
+                        Good nutrition for a brighter day. Made with 100% mahangu, ready in seconds and naturally gluten
+                        free. Enjoy it plain, or add your favourite fruits, nuts or honey.
+                      </p>
+                      <ul className='space-y-2'>
+                        <li className='text-gray-700 text-sm'>• Made with 100% mahangu (pearl millet)</li>
+                        <li className='text-gray-700 text-sm'>• Ready in seconds - no cooking needed</li>
+                        <li className='text-gray-700 text-sm'>• Naturally gluten free and no milk allergens</li>
+                        <li className='text-gray-700 text-sm'>• 500g pouch</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className='bg-white rounded-lg shadow-sm overflow-hidden'>
+                  <div className='md:flex'>
+                    <div className='md:w-2/5'>
+                      <img
+                        src='/uploads/products/rusks.jpg'
+                        alt='LizWise Mahangu Rusks - Pearl Millet 500g'
+                        className='w-full h-full object-contain bg-gray-50 cursor-pointer hover:scale-105 transition-transform duration-300'
+                        onClick={() =>
+                          handleImageClick('/uploads/products/rusks.jpg', 'LizWise Mahangu Rusks - Pearl Millet 500g')
+                        }
+                      />
+                    </div>
+                    <div className='md:w-3/5 p-6 md:p-8'>
+                      <h4 className='font-semibold text-lg text-amber-700 mb-3'>Mahangu Rusks</h4>
+                      <p className='text-gray-600 mb-4'>
+                        Good for coffee, tea and snacking. Crisp traditional rusks made with 100% mahangu, naturally
+                        gluten-free and made for the whole family.
+                      </p>
+                      <ul className='space-y-2'>
+                        <li className='text-gray-700 text-sm'>• Made with 100% mahangu (pearl millet)</li>
+                        <li className='text-gray-700 text-sm'>• Naturally gluten free</li>
+                        <li className='text-gray-700 text-sm'>• Great for breakfast &amp; snacking</li>
+                        <li className='text-gray-700 text-sm'>• 500g pack</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -336,39 +443,39 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Mr Crackers Section */}
+          {/* Mr Millet Crackers Section */}
           <div className='mb-16'>
-            <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Mr Crackers</h2>
+            <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Mr Millet Crackers</h2>
             <div className='bg-white rounded-2xl shadow-lg p-8'>
               <div className='md:flex'>
                 <div className='md:w-1/2'>
                   <img
-                    src='/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg'
-                    alt='Mr Crackers Mahangu Delight packaging'
-                    className='w-full h-full object-cover rounded-lg'
+                    src='/uploads/products/crackers.jpg'
+                    alt='Mr Millet Crackers - Original Flavoured Snack'
+                    className='w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300'
                     onClick={() =>
                       handleImageClick(
-                        '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg',
-                        'Mr Crackers Mahangu Delight packaging'
+                        '/uploads/products/crackers.jpg',
+                        'Mr Millet Crackers - Original Flavoured Snack'
                       )
                     }
                   />
                 </div>
                 <div className='md:w-1/2 p-8 md:p-12'>
-                  <h3 className='text-2xl font-bold text-gray-800 mb-6'>Mahangu Delight</h3>
+                  <h3 className='text-2xl font-bold text-gray-800 mb-6'>Original Flavour</h3>
                   <p className='text-gray-600 mb-6 leading-relaxed'>
-                    Mr Crackers brings you the authentic taste of Namibia with our premium Mahangu Delight crackers.
-                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile
-                    and nutritional benefits that set them apart from ordinary crackers.
+                    Mr Millet Crackers brings you the authentic taste of Namibia. Made from locally sourced millet,
+                    these crackers offer a unique flavour profile and nutritional benefits that set them apart from
+                    ordinary crackers.
                   </p>
                   <p className='text-gray-600 mb-8 leading-relaxed'>
-                    Perfect for snacking, entertaining, or pairing with your favorite dips and toppings, Mr Crackers
-                    Mahangu Delight brings the rich culinary heritage of Namibia to your table.
+                    Perfect for snacking, entertaining, or pairing with your favourite dips and toppings, Mr Millet
+                    Crackers brings the rich culinary heritage of Namibia to your table.
                   </p>
 
                   <h4 className='text-xl font-semibold text-gray-800 mb-4'>Key Features:</h4>
                   <ul className='list-disc pl-5 mb-8 space-y-2'>
-                    <li className='text-gray-600'>Made with authentic Namibian mahangu (pearl millet)</li>
+                    <li className='text-gray-600'>Made with authentic Namibian millet</li>
                     <li className='text-gray-600'>High in fiber and essential nutrients</li>
                     <li className='text-gray-600'>No artificial preservatives or additives</li>
                     <li className='text-gray-600'>Crispy texture perfect for dips and toppings</li>
@@ -384,7 +491,7 @@ const Products = () => {
                         e.preventDefault();
                         handleImageClick(
                           '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg',
-                          'Mr Crackers Nutritional Information'
+                          'Mr Millet Crackers packaging and nutritional information'
                         );
                       }}
                     >

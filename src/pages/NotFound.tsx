@@ -16,7 +16,7 @@ const NotFound = () => {
         title='Page Not Found | LizWise'
         description='The page you are looking for does not exist. Return to our homepage to explore our Namibian food products.'
         canonical={`${companyInfo.website}/not-found`}
-        image={`${companyInfo.website}/og-image.png`}
+        image={`${companyInfo.website}/og-image.jpg`}
         schemaMarkup={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
