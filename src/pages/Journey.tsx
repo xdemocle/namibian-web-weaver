@@ -67,6 +67,27 @@ const Journey = () => {
       caption:
         'Our entrepreneurial pitch at FNB Namibia emerging startups event - a milestone in our business growth journey',
     },
+
+    {
+      src: '/galleries/new/event_launch-0028.jpg',
+      alt: 'LizWise product launch with the team behind the table',
+      caption: 'Our product launch - the team presenting the LizWise range to our first customers',
+    },
+    {
+      src: '/galleries/new/event_tradeshow-0029.jpg',
+      alt: 'LizWise trade show stand',
+      caption: 'Representing LizWise at a trade show - meeting retailers and partners from across the region',
+    },
+    {
+      src: '/galleries/new/event_ambassadors-0033.jpg',
+      alt: 'LizWise brand ambassadors at an outdoor event',
+      caption: 'Our brand ambassadors taking the LizWise range out to the community at an outdoor event',
+    },
+    {
+      src: '/galleries/new/event_branding-0036.jpg',
+      alt: 'LizWise team with the branded banner at an event',
+      caption: 'The LizWise team with our branded banner - building the brand one event at a time',
+    },
   ];
 
   // Making process images with captions
@@ -145,6 +166,16 @@ const Journey = () => {
       src: '/galleries/the_makling_of/photo_2025-06-20_00-03-56.jpg',
       alt: 'Fresh pasta samples from production',
       caption: 'More pasta samples straight from production undergoing quality assurance checks',
+    },
+    {
+      src: '/galleries/new/making_kitchen-0030.jpg',
+      alt: 'Chef preparing LizWise products in the kitchen',
+      caption: 'Our kitchen team preparing products with care for every batch',
+    },
+    {
+      src: '/galleries/new/making_mahangu-grain-0027.jpg',
+      alt: 'Raw mahangu pearl millet grain',
+      caption: 'Raw mahangu (pearl millet) - the local grain behind every LizWise product',
     },
   ];
 

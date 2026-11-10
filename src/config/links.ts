@@ -91,4 +91,5 @@ export const productCategories = [
   'Ready-Made Pasta Sauces',
   'Mozzarella Cheese',
   'Traditional African Foods',
+  'Mr Millet Crackers',
 ];

@@ -129,8 +129,8 @@ const MrCrackers = () => {
                   <h2 className='text-3xl font-bold text-gray-800 mb-6'>Mahangu Delight</h2>
                   <p className='text-gray-600 mb-6 leading-relaxed'>
                     Mr Crackers brings you the authentic taste of Namibia with our premium Mahangu Delight crackers.
-                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile and
-                    nutritional benefits that set them apart from ordinary crackers.
+                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile
+                    and nutritional benefits that set them apart from ordinary crackers.
                   </p>
                   <p className='text-gray-600 mb-8 leading-relaxed'>
                     Perfect for snacking, entertaining, or pairing with your favorite dips and toppings, Mr Crackers
@@ -149,12 +149,17 @@ const MrCrackers = () => {
                   <div className='flex flex-col sm:flex-row gap-4'>
                     <Button
                       className='bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold'
-                      onClick={() => handleImageClick('/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg', 'Mr Crackers Nutritional Information')}
+                      onClick={() =>
+                        handleImageClick(
+                          '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg',
+                          'Mr Crackers Nutritional Information'
+                        )
+                      }
                     >
                       View Nutritional Info
                     </Button>
                     <Button
-                      variant="outline"
+                      variant='outline'
                       className='border-2 border-amber-600 text-amber-600 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50'
                       asChild
                     >
