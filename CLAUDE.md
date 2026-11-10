@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Marketing website for **LizWise Investment CC** (lizwise.online), a Namibian food brand (mahangu/pearl-millet pasta, sauces, mozzarella). Originally scaffolded by [Lovable](https://lovable.dev); changes pushed here sync back to Lovable. It is a **statically pre-rendered React site** deployed to Cloudflare Workers.
+Marketing website for **LizWise Investment CC** (https://lizwise.bzz.one), a Namibian food brand (mahangu/pearl-millet pasta, sauces, mozzarella). Originally scaffolded by [Lovable](https://lovable.dev); changes pushed here sync back to Lovable. It is a **statically pre-rendered React site** deployed to Cloudflare Workers.
 
 ## Commands
 
