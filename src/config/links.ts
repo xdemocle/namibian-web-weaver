@@ -53,8 +53,8 @@ export const contactInfo = {
     description: 'Chat with us on WhatsApp',
   },
   email: {
-    value: 'ekambode@lizwise.online',
-    url: 'mailto:ekambode@lizwise.online',
+    value: 'lizwisecc@gmail.com',
+    url: 'mailto:lizwisecc@gmail.com',
     description: 'Send us an email for detailed inquiries',
   },
   address: {
@@ -70,7 +70,7 @@ export const companyInfo = {
   slogan: 'Locally made. Naturally nourishing. Proudly Namibian.',
   description: 'Turning local ingredients into nutritious, delicious products that feed families and fuel futures.',
   foundingYear: '2018',
-  website: 'https://lizwise.online',
+  website: 'https://lizwise.bzz.one',
   businessHours: {
     weekdays: '08:00 - 17:00',
     weekend: 'Closed',
