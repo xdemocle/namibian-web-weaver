@@ -13,8 +13,8 @@ export const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About Us' },
   { path: '/journey', label: 'Our Journey' },
-  // Mr Crackers page disabled but route kept intact
-  // { path: '/mr-crackers', label: 'Mr Crackers' },
+  // Mr Millet Crackers page disabled but route kept intact
+  // { path: '/mr-crackers', label: 'Mr Millet Crackers' },
   { path: '/products', label: 'Products' },
   { path: '/contact', label: 'Contact' },
 ];

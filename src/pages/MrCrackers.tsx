@@ -9,9 +9,9 @@ import { Button } from '@/components/ui/button';
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'Mr Crackers - Mahangu Delight',
+  name: 'Mr Millet Crackers',
   description:
-    'Discover our premium Mr Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
+    'Discover our premium Mr Millet Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
   image: `${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`,
   brand: {
     '@type': 'Brand',
@@ -37,31 +37,31 @@ const MrCrackers = () => {
     setLightboxImage(null);
   };
 
-  // Mr Crackers product images
+  // Mr Millet Crackers product images
   const crackerImages = [
     {
       src: '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg',
-      alt: 'Mr Crackers Mahangu Delight packaging front view',
+      alt: 'Mr Millet Crackers packaging front view',
     },
     {
       src: '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-1.jpg',
-      alt: 'Mr Crackers Mahangu Delight packaging side view',
+      alt: 'Mr Millet Crackers packaging side view',
     },
     {
       src: '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg',
-      alt: 'Mr Crackers Mahangu Delight packaging rear view with nutritional information',
+      alt: 'Mr Millet Crackers packaging rear view with nutritional information',
     },
     {
       src: '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-3.jpg',
-      alt: 'Mr Crackers Mahangu Delight product display',
+      alt: 'Mr Millet Crackers product display',
     },
     {
       src: '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-4.jpg',
-      alt: 'Mr Crackers Mahangu Delight product showcase',
+      alt: 'Mr Millet Crackers product showcase',
     },
     {
       src: '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-5.jpg',
-      alt: 'Mr Crackers Mahangu Delight product arrangement',
+      alt: 'Mr Millet Crackers product arrangement',
     },
   ];
 
@@ -78,8 +78,8 @@ const MrCrackers = () => {
   return (
     <>
       <Seo
-        title='Mr Crackers - Mahangu Delight | LizWise Premium Crackers'
-        description='Discover our premium Mr Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.'
+        title='Mr Millet Crackers | LizWise Premium Crackers'
+        description='Discover our premium Mr Millet Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.'
         canonical={`${companyInfo.website}/mr-crackers`}
         image={`${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`}
         schemaMarkup={schemaMarkup}
@@ -89,10 +89,10 @@ const MrCrackers = () => {
         <div className='container mx-auto px-4'>
           {/* Hero Section */}
           <div className='text-center mb-16'>
-            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>Mr Crackers</h1>
+            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>Mr Millet Crackers</h1>
             <p className='text-xl text-gray-600 max-w-3xl mx-auto mb-8'>
-              Taste the authentic flavor of Namibia with our premium Mahangu Delight crackers. Crispy, nutritious, and
-              perfect for any occasion.
+              Taste the authentic flavor of Namibia with our premium Mr Millet Crackers. Crispy, nutritious, and perfect
+              for any occasion.
             </p>
           </div>
 
@@ -121,20 +121,20 @@ const MrCrackers = () => {
                 <div className='md:w-1/2'>
                   <img
                     src='/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg'
-                    alt='Mr Crackers Mahangu Delight packaging'
+                    alt='Mr Millet Crackers packaging'
                     className='w-full h-full object-cover'
                   />
                 </div>
                 <div className='md:w-1/2 p-8 md:p-12'>
-                  <h2 className='text-3xl font-bold text-gray-800 mb-6'>Mahangu Delight</h2>
+                  <h2 className='text-3xl font-bold text-gray-800 mb-6'>Original Flavour</h2>
                   <p className='text-gray-600 mb-6 leading-relaxed'>
-                    Mr Crackers brings you the authentic taste of Namibia with our premium Mahangu Delight crackers.
-                    Crafted from locally sourced mahangu (pearl millet), these crackers offer a unique flavor profile
-                    and nutritional benefits that set them apart from ordinary crackers.
+                    Mr Millet Crackers brings you the authentic taste of Namibia in every bite. Crafted from locally
+                    sourced mahangu (pearl millet), these crackers offer a unique flavor profile and nutritional
+                    benefits that set them apart from ordinary crackers.
                   </p>
                   <p className='text-gray-600 mb-8 leading-relaxed'>
-                    Perfect for snacking, entertaining, or pairing with your favorite dips and toppings, Mr Crackers
-                    Mahangu Delight brings the rich culinary heritage of Namibia to your table.
+                    Perfect for snacking, entertaining, or pairing with your favorite dips and toppings, Mr Millet
+                    Crackers brings the rich culinary heritage of Namibia to your table.
                   </p>
 
                   <h3 className='text-xl font-semibold text-gray-800 mb-4'>Key Features:</h3>
@@ -152,7 +152,7 @@ const MrCrackers = () => {
                       onClick={() =>
                         handleImageClick(
                           '/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-2.jpg',
-                          'Mr Crackers Nutritional Information'
+                          'Mr Millet Crackers Nutritional Information'
                         )
                       }
                     >
@@ -173,9 +173,9 @@ const MrCrackers = () => {
 
           {/* Call to Action */}
           <div className='bg-amber-600 rounded-2xl p-8 md:p-12 text-center text-white'>
-            <h2 className='text-3xl md:text-4xl font-bold mb-6'>Try Mr Crackers Today</h2>
+            <h2 className='text-3xl md:text-4xl font-bold mb-6'>Try Mr Millet Crackers Today</h2>
             <p className='text-xl mb-8 max-w-3xl mx-auto'>
-              Experience the unique taste and nutritional benefits of our premium Mahangu Delight crackers. Perfect for
+              Experience the unique taste and nutritional benefits of our premium Mr Millet Crackers. Perfect for
               health-conscious snackers and those who appreciate authentic Namibian flavors.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
