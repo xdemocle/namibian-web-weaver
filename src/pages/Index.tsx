@@ -110,7 +110,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12'>
             <div className='bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300'>
               <div className='mb-6'>
                 <img
@@ -165,9 +165,29 @@ const Index = () => {
                 salads.
               </p>
               <ul className='text-sm text-gray-500 space-y-1'>
-                <li>✓ Soft & stretchy</li>
+                <li>✓ Soft &amp; stretchy</li>
                 <li>✓ Perfect for cooking</li>
                 <li>✓ Versatile use</li>
+              </ul>
+            </div>
+
+            <div className='bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300'>
+              <div className='mb-6'>
+                <img
+                  src='/uploads/products/cat-breakfast.jpg'
+                  alt='LizWise Mahangu Instant Porridge and Mahangu Rusks - Traditional African Foods'
+                  className='w-full h-48 object-cover rounded-lg mx-auto'
+                />
+              </div>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Traditional African Foods</h3>
+              <p className='text-gray-600 mb-6'>
+                Mahangu Instant Porridge and Mahangu Rusks - naturally gluten-free breakfast and snack staples made with
+                100% Namibian pearl millet.
+              </p>
+              <ul className='text-sm text-gray-500 space-y-1'>
+                <li>✓ Made with 100% mahangu</li>
+                <li>✓ Naturally gluten free</li>
+                <li>✓ Ready in seconds</li>
               </ul>
             </div>
           </div>

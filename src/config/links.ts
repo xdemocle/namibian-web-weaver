@@ -93,3 +93,15 @@ export const productCategories = [
   'Traditional African Foods',
   'Mr Millet Crackers',
 ];
+
+/**
+ * Maps each product category to its anchor on the /products page, so the
+ * footer list can link straight to the matching section.
+ */
+export const productCategoryAnchors: Record<string, string> = {
+  'Mahangu Pasta': 'mahangu-pasta',
+  'Ready-Made Pasta Sauces': 'pasta-sauces',
+  'Mozzarella Cheese': 'mozzarella-cheese',
+  'Traditional African Foods': 'traditional-african-foods',
+  'Mr Millet Crackers': 'mr-millet-crackers',
+};
