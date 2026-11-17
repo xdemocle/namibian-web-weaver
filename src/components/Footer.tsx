@@ -1,7 +1,7 @@
 import { FaHeart } from 'react-icons/fa';
 import SocialLinks from './SocialLinks';
 import ContactInfo from './ContactInfo';
-import { companyInfo, productCategories } from '../config/links';
+import { companyInfo, productCategories, productCategoryAnchors } from '../config/links';
 
 const Footer = () => {
   return (
@@ -26,7 +26,14 @@ const Footer = () => {
             <h3 className='text-xl font-bold mb-4'>Our Products</h3>
             <ul className='space-y-2 text-gray-300'>
               {productCategories.map((category, index) => (
-                <li key={index}>{category}</li>
+                <li key={index}>
+                  <a
+                    href={`/products#${productCategoryAnchors[category] || ''}`}
+                    className='hover:text-white hover:underline transition-colors duration-200'
+                  >
+                    {category}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>

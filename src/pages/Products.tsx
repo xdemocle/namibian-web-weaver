@@ -232,7 +232,7 @@ const Products = () => {
           </div>
 
           {/* Product Details Section */}
-          <div className='mb-16'>
+          <div id='mahangu-pasta' className='mb-16 scroll-mt-24'>
             <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Pasta Varieties</h2>
             <div className='bg-white rounded-2xl shadow-xl overflow-hidden'>
               <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-8'>
@@ -298,7 +298,7 @@ const Products = () => {
           </div>
 
           {/* Sauce Varieties Section */}
-          <div className='mb-16'>
+          <div id='pasta-sauces' className='mb-16 scroll-mt-24'>
             <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Sauce Collection</h2>
             <div className='bg-green-50 rounded-2xl p-8'>
               <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
@@ -339,7 +339,7 @@ const Products = () => {
           </div>
 
           {/* Traditional African Foods Section */}
-          <div className='mb-16'>
+          <div id='traditional-african-foods' className='mb-16 scroll-mt-24'>
             <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Traditional African Foods</h2>
             <div className='bg-amber-50 rounded-2xl p-8'>
               <div className='space-y-8'>
@@ -405,7 +405,7 @@ const Products = () => {
           </div>
 
           {/* Cheese Varieties Section */}
-          <div className='mb-16'>
+          <div id='mozzarella-cheese' className='mb-16 scroll-mt-24'>
             <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Dairy Crafters Cheese</h2>
             <div className='bg-yellow-50 rounded-2xl p-8'>
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
@@ -444,7 +444,7 @@ const Products = () => {
           </div>
 
           {/* Mr Millet Crackers Section */}
-          <div className='mb-16'>
+          <div id='mr-millet-crackers' className='mb-16 scroll-mt-24'>
             <h2 className='text-3xl font-bold text-center mb-8 text-gray-800'>Mr Millet Crackers</h2>
             <div className='bg-white rounded-2xl shadow-lg p-8'>
               <div className='md:flex'>
