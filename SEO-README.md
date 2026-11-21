@@ -88,7 +88,7 @@ const YourPage = () => {
       <Seo 
         title="Your Page Title"
         description="Your page description with keywords"
-        canonical="https://lizwise.bzz.one/your-page"
+        canonical="https://lizwise.zuid.africa/your-page"
         image="/your-page-image.jpg"
         schemaMarkup={schemaMarkup}
       />
