@@ -80,7 +80,13 @@ const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: C
         <div>
           <h3 className='text-xl font-semibold text-gray-800 mb-2'>Location</h3>
           <p className='text-gray-600 mb-2'>{contactInfo.address.description}</p>
-          <p className='text-yellow-600 font-semibold'>{contactInfo.address.full}</p>
+          <address className='text-yellow-600 font-semibold not-italic'>
+            {contactInfo.address.lines.map(line => (
+              <span key={line} className='block'>
+                {line}
+              </span>
+            ))}
+          </address>
         </div>
       </div>
 
