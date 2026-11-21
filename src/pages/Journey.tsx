@@ -3,6 +3,7 @@ import { Heart, Users, Leaf, Award } from 'lucide-react';
 import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
 import { companyInfo } from '../config/links';
+import { localePath, useLocale, useT } from '../i18n';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -28,6 +29,142 @@ const schemaMarkup = {
 };
 
 const Journey = () => {
+  const t = useT();
+  const locale = useLocale();
+
+  // Journey story images with captions
+  const journeyImages = [
+    {
+      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-43.jpg',
+      alt: t('journey.img.innovationMarket.alt'),
+      caption: t('journey.img.innovationMarket.caption'),
+    },
+    {
+      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-44.jpg',
+      alt: t('journey.img.localMarket.alt'),
+      caption: t('journey.img.localMarket.caption'),
+    },
+    {
+      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-49.jpg',
+      alt: t('journey.img.marketDisplay.alt'),
+      caption: t('journey.img.marketDisplay.caption'),
+    },
+    {
+      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-57.jpg',
+      alt: t('journey.img.fnbPitch.alt'),
+      caption: t('journey.img.fnbPitch.caption'),
+    },
+    {
+      src: '/galleries/new/event_launch-0028.jpg',
+      alt: t('journey.img.launch.alt'),
+      caption: t('journey.img.launch.caption'),
+    },
+    {
+      src: '/galleries/new/event_tradeshow-0029.jpg',
+      alt: t('journey.img.tradeShow.alt'),
+      caption: t('journey.img.tradeShow.caption'),
+    },
+    {
+      src: '/galleries/new/event_ambassadors-0033.jpg',
+      alt: t('journey.img.ambassadors.alt'),
+      caption: t('journey.img.ambassadors.caption'),
+    },
+    {
+      src: '/galleries/new/event_branding-0036.jpg',
+      alt: t('journey.img.branding.alt'),
+      caption: t('journey.img.branding.caption'),
+    },
+  ];
+
+  // Making process images with captions
+  const makingImages = [
+    {
+      src: '/galleries/the_makling_of/image0.jpg',
+      alt: t('journey.img.sourdough.alt'),
+      caption: t('journey.img.sourdough.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/image2.jpg',
+      alt: t('journey.img.rawTomatoes.alt'),
+      caption: t('journey.img.rawTomatoes.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/image3.jpg',
+      alt: t('journey.img.tomatoSauce.alt'),
+      caption: t('journey.img.tomatoSauce.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/image4.jpg',
+      alt: t('journey.img.burrata.alt'),
+      caption: t('journey.img.burrata.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/image5.jpg',
+      alt: t('journey.img.ricotta.alt'),
+      caption: t('journey.img.ricotta.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/image6.jpg',
+      alt: t('journey.img.burrataPrep.alt'),
+      caption: t('journey.img.burrataPrep.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/image7.jpg',
+      alt: t('journey.img.pastaDish.alt'),
+      caption: t('journey.img.pastaDish.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-45.jpg',
+      alt: t('journey.img.packagedCheese.alt'),
+      caption: t('journey.img.packagedCheese.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-46.jpg',
+      alt: t('journey.img.jarredSauces.alt'),
+      caption: t('journey.img.jarredSauces.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-47.jpg',
+      alt: t('journey.img.pastaProduction.alt'),
+      caption: t('journey.img.pastaProduction.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-50 (2).jpg',
+      alt: t('journey.img.pastaSample.alt'),
+      caption: t('journey.img.pastaSample.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-53.jpg',
+      alt: t('journey.img.scamorza.alt'),
+      caption: t('journey.img.scamorza.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-54.jpg',
+      alt: t('journey.img.ricottaFilling.alt'),
+      caption: t('journey.img.ricottaFilling.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-55.jpg',
+      alt: t('journey.img.qaSamples.alt'),
+      caption: t('journey.img.qaSamples.caption'),
+    },
+    {
+      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-56.jpg',
+      alt: t('journey.img.moreSamples.alt'),
+      caption: t('journey.img.moreSamples.caption'),
+    },
+    {
+      src: '/galleries/new/making_kitchen-0030.jpg',
+      alt: t('journey.img.kitchen.alt'),
+      caption: t('journey.img.kitchen.caption'),
+    },
+    {
+      src: '/galleries/new/making_mahangu-grain-0027.jpg',
+      alt: t('journey.img.mahanguGrain.alt'),
+      caption: t('journey.img.mahanguGrain.caption'),
+    },
+  ];
+
   const [lightboxImage, setLightboxImage] = useState<{
     src: string;
     alt: string;
@@ -42,172 +179,38 @@ const Journey = () => {
   };
 
   // Journey story images with captions
-  const journeyImages = [
-    {
-      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-43.jpg',
-      alt: 'LizWise stand at innovation market sponsored by USA/UN',
-      caption:
-        'LizWise showcase at innovation market event sponsored by USA/UN - presenting our products to a global audience',
-    },
-    {
-      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-44.jpg',
-      alt: 'LizWise stand at small local market',
-      caption:
-        'Our stand at a small local market - connecting with the community and sharing Namibian culinary traditions',
-    },
-    {
-      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-49.jpg',
-      alt: 'LizWise stand at local market display',
-      caption:
-        'LizWise products displayed at a local market - bringing authentic Namibian flavors to everyday shoppers',
-    },
-    {
-      src: '/galleries/lizwise_journey/photo_2025-06-20_00-03-57.jpg',
-      alt: 'LizWise team pitch at FNB Namibia emerging startups event',
-      caption:
-        'Our entrepreneurial pitch at FNB Namibia emerging startups event - a milestone in our business growth journey',
-    },
-
-    {
-      src: '/galleries/new/event_launch-0028.jpg',
-      alt: 'LizWise product launch with the team behind the table',
-      caption: 'Our product launch - the team presenting the LizWise range to our first customers',
-    },
-    {
-      src: '/galleries/new/event_tradeshow-0029.jpg',
-      alt: 'LizWise trade show stand',
-      caption: 'Representing LizWise at a trade show - meeting retailers and partners from across the region',
-    },
-    {
-      src: '/galleries/new/event_ambassadors-0033.jpg',
-      alt: 'LizWise brand ambassadors at an outdoor event',
-      caption: 'Our brand ambassadors taking the LizWise range out to the community at an outdoor event',
-    },
-    {
-      src: '/galleries/new/event_branding-0036.jpg',
-      alt: 'LizWise team with the branded banner at an event',
-      caption: 'The LizWise team with our branded banner - building the brand one event at a time',
-    },
-  ];
 
   // Making process images with captions
-  const makingImages = [
-    {
-      src: '/galleries/the_makling_of/image0.jpg',
-      alt: 'Natural sourdough starter',
-      caption: 'Our natural sourdough starter - the secret behind our authentic flavors and textures',
-    },
-    {
-      src: '/galleries/the_makling_of/image2.jpg',
-      alt: 'Tomatoes raw ready for cooking',
-      caption: 'Fresh tomatoes ready for cooking - we select only the best local produce',
-    },
-    {
-      src: '/galleries/the_makling_of/image3.jpg',
-      alt: 'Tomato sauce made from local bio tomatoes',
-      caption: 'Our signature tomato sauce made exclusively from locally-grown organic tomatoes',
-    },
-    {
-      src: '/galleries/the_makling_of/image4.jpg',
-      alt: 'Burrata cheese',
-      caption: 'Burrata cheese - a traditional smoked cheese in our artisanal collection',
-    },
-    {
-      src: '/galleries/the_makling_of/image5.jpg',
-      alt: 'Freshly made ricotta cheese',
-      caption: 'Fresh ricotta cheese - delicate, creamy, and made with traditional methods',
-    },
-    {
-      src: '/galleries/the_makling_of/image6.jpg',
-      alt: 'Burrata cheese preparation',
-      caption: 'Burrata cheese being prepared - a skill passed down through generations',
-    },
-    {
-      src: '/galleries/the_makling_of/image7.jpg',
-      alt: 'Pasta with scamorze and mozzarella',
-      caption: 'Our special pasta dish combining scamorze and mozzarella - a perfect blend of flavors',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-45.jpg',
-      alt: 'Cheese products packaged mozzarella cheese',
-      caption: 'Our freshly made mozzarella cheese carefully packaged to preserve flavor and texture',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-46.jpg',
-      alt: 'Different tomato sauces packed in glass containers',
-      caption: 'Variety of artisanal tomato sauces preserved in traditional glass containers',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-47.jpg',
-      alt: 'Pasta production example',
-      caption: 'A glimpse into our pasta production process - crafted with care and tradition',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-50 (2).jpg',
-      alt: 'Pasta sample',
-      caption: 'Fresh pasta samples showcasing our quality standards and artisanal techniques',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-53.jpg',
-      alt: 'Scamorza just made',
-      caption: 'Freshly made burrata cheese - still warm from production and ready for aging',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-54.jpg',
-      alt: 'Ricotta cheese for pasta filling',
-      caption: 'Our creamy ricotta cheese prepared specially for rich pasta fillings',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-55.jpg',
-      alt: 'Pasta sample straight from production',
-      caption: 'Fresh pasta samples straight from production undergoing quality assurance checks',
-    },
-    {
-      src: '/galleries/the_makling_of/photo_2025-06-20_00-03-56.jpg',
-      alt: 'Fresh pasta samples from production',
-      caption: 'More pasta samples straight from production undergoing quality assurance checks',
-    },
-    {
-      src: '/galleries/new/making_kitchen-0030.jpg',
-      alt: 'Chef preparing LizWise products in the kitchen',
-      caption: 'Our kitchen team preparing products with care for every batch',
-    },
-    {
-      src: '/galleries/new/making_mahangu-grain-0027.jpg',
-      alt: 'Raw mahangu pearl millet grain',
-      caption: 'Raw mahangu (pearl millet) - the local grain behind every LizWise product',
-    },
-  ];
 
   const values = [
     {
       icon: Heart,
-      title: 'Passion for Quality',
-      description: 'Every product is crafted with love and attention to detail',
+      title: t('journey.valueQuality'),
+      description: t('journey.valueQualityText'),
     },
     {
       icon: Users,
-      title: 'Community Focus',
-      description: 'Supporting local farmers and bringing families together through food',
+      title: t('journey.valueCommunity'),
+      description: t('journey.valueCommunityText'),
     },
     {
       icon: Leaf,
-      title: 'Natural Ingredients',
-      description: 'Using only the finest natural, locally-sourced ingredients',
+      title: t('journey.valueNatural'),
+      description: t('journey.valueNaturalText'),
     },
     {
       icon: Award,
-      title: 'Traditional Excellence',
-      description: 'Honoring Namibian culinary traditions with modern innovation',
+      title: t('journey.valueExcellence'),
+      description: t('journey.valueExcellenceText'),
     },
   ];
 
   return (
     <>
       <Seo
-        title='Our Journey - The Making of LizWise Namibian Food'
-        description='Discover the LizWise story - from traditional Namibian recipes to modern production of mahangu pasta, artisanal sauces, and fresh mozzarella.'
-        canonical={`${companyInfo.website}/journey`}
+        title={t('journey.seoTitle')}
+        description={t('journey.seoDescription')}
+        path='/journey'
         image={`${companyInfo.website}/galleries/lizwise_journey/photo_2025-06-20_00-03-49.jpg`}
         schemaMarkup={schemaMarkup}
       />
@@ -216,16 +219,13 @@ const Journey = () => {
         <div className='container mx-auto px-4'>
           {/* Hero Section */}
           <div className='text-center mb-16'>
-            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>The LizWise Journey</h1>
-            <p className='text-xl text-gray-600 max-w-3xl mx-auto mb-8'>
-              From traditional Namibian recipes passed down through generations to modern food production - discover the
-              story behind every LizWise product.
-            </p>
+            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>{t('journey.title')}</h1>
+            <p className='text-xl text-gray-600 max-w-3xl mx-auto mb-8'>{t('journey.subtitle')}</p>
           </div>
 
           {/* Our Values */}
           <div className='mb-16'>
-            <h2 className='text-3xl font-bold text-center mb-12 text-gray-800'>Our Values</h2>
+            <h2 className='text-3xl font-bold text-center mb-12 text-gray-800'>{t('journey.valuesTitle')}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
               {values.map((value, index) => (
                 <Card key={index} className='text-center p-6 hover:shadow-lg transition-shadow duration-300'>
@@ -243,7 +243,7 @@ const Journey = () => {
 
           {/* Our Journey Story */}
           <div className='mb-16'>
-            <h2 className='text-3xl font-bold text-center mb-12 text-gray-800'>Our Journey</h2>
+            <h2 className='text-3xl font-bold text-center mb-12 text-gray-800'>{t('journey.storyTitle')}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
               {journeyImages.map((image, index) => (
                 <Card key={index} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
@@ -265,11 +265,8 @@ const Journey = () => {
 
           {/* The Making Process */}
           <div className='mb-16'>
-            <h2 className='text-3xl font-bold text-center mb-12 text-gray-800'>The Making Of</h2>
-            <p className='text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto'>
-              Take a behind-the-scenes look at how we transform traditional Namibian ingredients into the products you
-              love. From farm to table, every step is guided by our commitment to quality and authenticity.
-            </p>
+            <h2 className='text-3xl font-bold text-center mb-12 text-gray-800'>{t('journey.makingTitle')}</h2>
+            <p className='text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto'>{t('journey.makingText')}</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
               {makingImages.map((image, index) => (
                 <Card key={index} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
@@ -291,23 +288,20 @@ const Journey = () => {
 
           {/* Call to Action */}
           <div className='bg-red-600 rounded-2xl p-8 md:p-12 text-center text-white'>
-            <h2 className='text-3xl md:text-4xl font-bold mb-6'>Experience Our Journey</h2>
-            <p className='text-xl mb-8 max-w-3xl mx-auto'>
-              Every LizWise product carries the story of our journey - from traditional Namibian heritage to your
-              family's table. Taste the difference that passion and tradition make.
-            </p>
+            <h2 className='text-3xl md:text-4xl font-bold mb-6'>{t('journey.ctaTitle')}</h2>
+            <p className='text-xl mb-8 max-w-3xl mx-auto'>{t('journey.ctaText')}</p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <a
-                href='/products'
+                href={localePath('/products', locale)}
                 className='bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200'
               >
-                Explore Our Products
+                {t('cta.exploreProducts')}
               </a>
               <a
-                href='/contact'
+                href={localePath('/contact', locale)}
                 className='border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors duration-200'
               >
-                Get in Touch
+                {t('journey.ctaContact')}
               </a>
             </div>
           </div>

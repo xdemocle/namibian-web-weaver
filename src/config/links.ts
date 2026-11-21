@@ -1,9 +1,8 @@
 export const phoneNumber = '+264 81 394 6757';
 
-// Create the WhatsApp URL
-export const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(
-  "Hello LizWise! I'm interested in your products and would like more information."
-)}`;
+// Create the WhatsApp URL. The prefilled message is localized at call time.
+export const buildWhatsAppUrl = (message: string): string =>
+  `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
 
 // Social Media Links
 export const socialLinks = {
@@ -52,6 +51,7 @@ export const contactInfo = {
       '?text=Hello%20LizWise!%20I%27m%20interested%20in%20your%20products%20and%20would%20like%20more%20information.',
     description: 'Chat with us on WhatsApp',
   },
+  phoneNumber,
   email: {
     value: 'lizwisecc@gmail.com',
     url: 'mailto:lizwisecc@gmail.com',
@@ -80,7 +80,7 @@ export const companyInfo = {
   slogan: 'Locally made. Naturally nourishing. Proudly Namibian.',
   description: 'Turning local ingredients into nutritious, delicious products that feed families and fuel futures.',
   foundingYear: '2018',
-  website: 'https://lizwise.bzz.one',
+  website: 'https://lizwise.zuid.africa',
   businessHours: {
     weekdays: '08:00 - 17:00',
     weekend: 'Closed',

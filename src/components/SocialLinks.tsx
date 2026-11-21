@@ -2,6 +2,7 @@ import { FaLinkedin, FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { socialLinks } from '../config/links';
+import { useT } from '../i18n';
 
 interface SocialLinksProps {
   className?: string;
@@ -16,6 +17,8 @@ const SocialLinks = ({
   showDescription = true,
   centered = true,
 }: SocialLinksProps) => {
+  const t = useT();
+
   // Map of social media icons
   const socialIcons = {
     facebook: FaFacebookF,
@@ -60,10 +63,10 @@ const SocialLinks = ({
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {showDescription && <p className='text-gray-600 mb-4'>{social.description}</p>}
+              {showDescription && <p className='text-gray-600 mb-4'>{t(`social.${key}`)}</p>}
               <Button asChild variant='outline' className='w-full'>
                 <a href={social.url} target='_blank' rel='noopener noreferrer'>
-                  Follow Us
+                  {t('social.followUs')}
                 </a>
               </Button>
             </CardContent>

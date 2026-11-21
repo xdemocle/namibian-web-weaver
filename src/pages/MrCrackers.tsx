@@ -80,7 +80,7 @@ const MrCrackers = () => {
       <Seo
         title='Mr Millet Crackers | LizWise Premium Crackers'
         description='Discover our premium Mr Millet Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.'
-        canonical={`${companyInfo.website}/mr-crackers`}
+        path='/mr-crackers'
         image={`${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`}
         schemaMarkup={schemaMarkup}
       />

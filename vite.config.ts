@@ -58,6 +58,14 @@ export default {
   ],
   ssgOptions: {
     script: 'sync',
+    // Set <html lang> per route: English at the root, Afrikaans under /af.
+    // The router hands us paths without a leading slash ('af/about'), but be
+    // tolerant of either form.
+    onBeforePageRender: (route: string, indexHTML: string) => {
+      const path = route.startsWith('/') ? route : `/${route}`;
+      const lang = path === '/af' || path.startsWith('/af/') ? 'af' : 'en';
+      return indexHTML.replace(/<html([^>]*)\slang="[^"]*"/, `<html$1 lang="${lang}"`);
+    },
   },
   build: {
     outDir: 'dist',
