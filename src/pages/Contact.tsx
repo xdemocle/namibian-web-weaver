@@ -2,6 +2,7 @@ import ContactInfo from '../components/ContactInfo';
 import Seo from '../components/Seo';
 import SocialLinks from '../components/SocialLinks';
 import { companyInfo, contactInfo } from '../config/links';
+import { useT } from '../i18n';
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
@@ -13,11 +14,10 @@ const schemaMarkup = {
     email: contactInfo.email.value,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: contactInfo.address.full,
-      addressLocality: 'Windhoek',
-      addressRegion: 'Khomas',
-      postalCode: '9000',
-      addressCountry: 'Namibia',
+      streetAddress: contactInfo.address.street,
+      addressLocality: contactInfo.address.locality,
+      addressRegion: contactInfo.address.region,
+      addressCountry: contactInfo.address.country,
     },
     openingHoursSpecification: [
       {
@@ -31,12 +31,14 @@ const schemaMarkup = {
 };
 
 const Contact = () => {
+  const t = useT();
+
   return (
     <>
       <Seo
-        title='Contact LizWise - Order Our Namibian Food Products'
-        description="Contact LizWise Investment CC about our Namibian food products. Place orders, ask questions, or share feedback - we're here to help."
-        canonical={`${companyInfo.website}/contact`}
+        title={t('contact.seoTitle')}
+        description={t('contact.seoDescription')}
+        path='/contact'
         image={`${companyInfo.website}/contact-og-image.jpg`}
         schemaMarkup={schemaMarkup}
       />
@@ -44,10 +46,8 @@ const Contact = () => {
         <div className='container mx-auto px-4'>
           {/* Hero Section */}
           <div className='text-center mb-16'>
-            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>Contact Us</h1>
-            <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-              Get in touch with us to learn more about our products or place an order
-            </p>
+            <h1 className='text-4xl md:text-5xl font-bold text-gray-800 mb-6'>{t('contact.title')}</h1>
+            <p className='text-xl text-gray-600 max-w-3xl mx-auto'>{t('contact.subtitle')}</p>
           </div>
 
           <div className='grid grid-cols-1 gap-12'>
@@ -57,7 +57,7 @@ const Contact = () => {
 
               {/* Social Media Section */}
               <div className='mb-12'>
-                <h2 className='text-2xl font-bold text-gray-800 mb-6'>Connect With Us</h2>
+                <h2 className='text-2xl font-bold text-gray-800 mb-6'>{t('contact.connectWithUs')}</h2>
                 <SocialLinks className='max-w-5xl mx-auto' />
               </div>
             </div>

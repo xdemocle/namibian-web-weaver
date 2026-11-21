@@ -2,8 +2,11 @@ import { FaHeart } from 'react-icons/fa';
 import SocialLinks from './SocialLinks';
 import ContactInfo from './ContactInfo';
 import { companyInfo, productCategories, productCategoryAnchors } from '../config/links';
+import { useT } from '../i18n';
 
 const Footer = () => {
+  const t = useT();
+
   return (
     <footer className='bg-gray-800 text-white'>
       <div className='container mx-auto px-4 py-8'>
@@ -11,19 +14,19 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className='text-xl font-bold mb-4'>{companyInfo.name}</h3>
-            <p className='text-gray-300 mb-4'>{companyInfo.slogan}</p>
-            <p className='text-gray-300'>{companyInfo.description}</p>
+            <p className='text-gray-300 mb-4'>{t('brand.slogan')}</p>
+            <p className='text-gray-300'>{t('brand.description')}</p>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>Contact Information</h3>
+            <h3 className='text-xl font-bold mb-4'>{t('footer.contactInformation')}</h3>
             <ContactInfo layout='list' showWhatsApp={false} className='text-gray-300' />
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>Our Products</h3>
+            <h3 className='text-xl font-bold mb-4'>{t('footer.ourProducts')}</h3>
             <ul className='space-y-2 text-gray-300'>
               {productCategories.map((category, index) => (
                 <li key={index}>
@@ -47,7 +50,7 @@ const Footer = () => {
             © {new Date().getFullYear()} LizWise Investment CC. All rights reserved.
           </p>
           <p className='text-gray-300 text-center mt-2'>
-            Made with <FaHeart className='inline text-red-500 mx-1' /> by{' '}
+            {t('footer.madeWith')} <FaHeart className='inline text-red-500 mx-1' /> {t('footer.by')}{' '}
             <a
               href='https://rocco.me'
               target='_blank'

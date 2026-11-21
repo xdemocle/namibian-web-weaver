@@ -1,32 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lizwise.bzz.one/</loc>
-    <lastmod>2025-06-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://lizwise.zuid.africa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lizwise.bzz.one/about</loc>
-    <lastmod>2025-06-18</lastmod>
+    <loc>https://lizwise.zuid.africa/af</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lizwise.zuid.africa/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/about"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/about"/>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lizwise.bzz.one/journey</loc>
-    <lastmod>2025-06-20</lastmod>
+    <loc>https://lizwise.zuid.africa/af/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/about"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/about"/>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lizwise.bzz.one/products</loc>
-    <lastmod>2025-06-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://lizwise.zuid.africa/journey</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/journey"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/journey"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/journey"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lizwise.zuid.africa/af/journey</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/journey"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/journey"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/journey"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lizwise.zuid.africa/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/products"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/products"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lizwise.bzz.one/contact</loc>
-    <lastmod>2025-06-18</lastmod>
+    <loc>https://lizwise.zuid.africa/af/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/products"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/products"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lizwise.zuid.africa/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/contact"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/contact"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lizwise.zuid.africa/af/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lizwise.zuid.africa/contact"/>
+    <xhtml:link rel="alternate" hreflang="af" href="https://lizwise.zuid.africa/af/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lizwise.zuid.africa/contact"/>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

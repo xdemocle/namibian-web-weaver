@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, MessageCircle, Clock } from 'lucide-react';
 import { companyInfo, contactInfo } from '../config/links';
+import { useT } from '../i18n';
 import { Card, CardContent } from './ui/card';
 
 interface ContactInfoProps {
@@ -9,6 +10,8 @@ interface ContactInfoProps {
 }
 
 const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: ContactInfoProps) => {
+  const t = useT();
+
   if (layout === 'list') {
     return (
       <div className={`space-y-3 ${className}`}>
@@ -39,8 +42,8 @@ const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: C
           <Phone className='text-red-600' size={24} />
         </div>
         <div>
-          <h3 className='text-xl font-semibold text-gray-800 mb-2'>Phone</h3>
-          <p className='text-gray-600 mb-2'>{contactInfo.phone.description}</p>
+          <h3 className='text-xl font-semibold text-gray-800 mb-2'>{t('contactInfo.phoneTitle')}</h3>
+          <p className='text-gray-600 mb-2'>{t('contactInfo.phoneDescription')}</p>
           <div className='space-y-2'>
             <a href={contactInfo.phone.url} className='block text-red-600 font-semibold hover:text-red-700'>
               {contactInfo.phone.value}
@@ -65,8 +68,8 @@ const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: C
           <Mail className='text-green-600' size={24} />
         </div>
         <div>
-          <h3 className='text-xl font-semibold text-gray-800 mb-2'>Email</h3>
-          <p className='text-gray-600 mb-2'>{contactInfo.email.description}</p>
+          <h3 className='text-xl font-semibold text-gray-800 mb-2'>{t('contactInfo.emailTitle')}</h3>
+          <p className='text-gray-600 mb-2'>{t('contactInfo.emailDescription')}</p>
           <a href={contactInfo.email.url} className='text-green-600 font-semibold hover:text-green-700'>
             {contactInfo.email.value}
           </a>
@@ -78,9 +81,15 @@ const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: C
           <MapPin className='text-yellow-600' size={24} />
         </div>
         <div>
-          <h3 className='text-xl font-semibold text-gray-800 mb-2'>Location</h3>
-          <p className='text-gray-600 mb-2'>{contactInfo.address.description}</p>
-          <p className='text-yellow-600 font-semibold'>{contactInfo.address.full}</p>
+          <h3 className='text-xl font-semibold text-gray-800 mb-2'>{t('contactInfo.locationTitle')}</h3>
+          <p className='text-gray-600 mb-2'>{t('contactInfo.locationDescription')}</p>
+          <address className='text-yellow-600 font-semibold not-italic'>
+            {contactInfo.address.lines.map(line => (
+              <span key={line} className='block'>
+                {line}
+              </span>
+            ))}
+          </address>
         </div>
       </div>
 
@@ -89,9 +98,11 @@ const ContactInfo = ({ className = '', showWhatsApp = true, layout = 'grid' }: C
           <Clock className='text-blue-600' size={24} />
         </div>
         <div>
-          <h3 className='text-xl font-semibold text-gray-800 mb-2'>Business Hours</h3>
-          <p className='text-gray-600 mb-2'>Monday - Friday: {companyInfo.businessHours.weekdays}</p>
-          <p className='text-gray-600'>{companyInfo.businessHours.weekend}</p>
+          <h3 className='text-xl font-semibold text-gray-800 mb-2'>{t('contactInfo.hoursTitle')}</h3>
+          <p className='text-gray-600 mb-2'>
+            {t('contactInfo.hoursWeekday', { hours: companyInfo.businessHours.weekdays })}
+          </p>
+          <p className='text-gray-600'>{t('contactInfo.hoursWeekend')}</p>
         </div>
       </div>
     </div>
