@@ -31,7 +31,7 @@ async function runTests() {
   const tests = ['/', '/about', '/contact', '/products', '/assets/style.css', '/unknown-path'];
 
   for (const path of tests) {
-    const request = new Request(`https://lizwise.bzz.one${path}`);
+    const request = new Request(`https://lizwise.zuid.africa${path}`);
     console.log(`\nTesting path: ${path}`);
 
     try {

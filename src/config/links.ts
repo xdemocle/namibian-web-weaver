@@ -70,7 +70,7 @@ export const companyInfo = {
   slogan: 'Locally made. Naturally nourishing. Proudly Namibian.',
   description: 'Turning local ingredients into nutritious, delicious products that feed families and fuel futures.',
   foundingYear: '2018',
-  website: 'https://lizwise.bzz.one',
+  website: 'https://lizwise.zuid.africa',
   businessHours: {
     weekdays: '08:00 - 17:00',
     weekend: 'Closed',
