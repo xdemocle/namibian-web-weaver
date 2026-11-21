@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Marketing website for **LizWise Investment CC** (https://lizwise.bzz.one), a Namibian food brand (mahangu/pearl-millet pasta, sauces, mozzarella). Originally scaffolded by [Lovable](https://lovable.dev); changes pushed here sync back to Lovable. It is a **statically pre-rendered React site** deployed to Cloudflare Workers.
+Marketing website for **LizWise Investment CC** (https://lizwise.zuid.africa), a Namibian food brand (mahangu/pearl-millet pasta, sauces, mozzarella). Originally scaffolded by [Lovable](https://lovable.dev); changes pushed here sync back to Lovable. It is a **statically pre-rendered React site** deployed to Cloudflare Workers.
 
 ## Commands
 
@@ -37,7 +37,10 @@ Deployed to **Cloudflare Workers** via `wrangler.toml`. `wrangler` build command
 - **SEO: head tags use `vite-react-ssg`'s `<Head>`**, not react-helmet directly. Add SEO to a page by rendering `<Seo title=... description=... canonical=... image=... schemaMarkup=... />` (`src/components/Seo.tsx`). All defaults, Open Graph/Twitter tags, and JSON-LD `schemaMarkup` templates live in `src/lib/seo-metadata.ts`. See `SEO-README.md` and `SEO-STRATEGY.md`.
 - **Single source of business data: `src/config/links.ts`** — phone, WhatsApp URL, social links, contact info, company info, product categories. `seo-metadata.ts` imports from it. Change contact/brand details here, not inline in pages.
 - **UI: shadcn/ui** (Radix + Tailwind, "default" style, slate base). Components in `src/components/ui/` are generated — prefer regenerating via the shadcn CLI over hand-editing. App components live directly in `src/components/`. Path alias `@/` → `src/` (configured in `vite.config.ts`, `tsconfig`, and `components.json`).
-- **Images:** `vite-plugin-image-optimizer` compresses images at build (jpg q70, png q90, webp/avif lossless). Static assets and galleries live in `public/`. Analytics (GA/GTM id `G-RT207G9WPN`) injected via `vite-plugin-radar` in `vite.config.ts`.
+- **Images:** `vite-plugin-image-optimizer` compresses images at build (jpg q70, png q90, webp/avif lossless). Static assets and galleries live in `public/`.
+- **Photos render through `<Thumbnail>` (`src/components/Thumbnail.tsx`), never a bare `<img>`.** Each photo has two pre-sized files in `public/thumbs/`: one shared by mobile and tablet (< 1024px, Tailwind `lg`), one for desktop, each with its real `width`/`height`. Pass the ORIGINAL path as `src` (`/uploads/...`, `/galleries/...`) and pass that same path to the lightbox — the original is only loaded on click-to-expand. Use `priority` for above-the-fold photos only.
+  - Adding or replacing a photo: add it to `scripts/thumbnail-sizes.json` (widths come from the box the photo renders in — see the `rule` block), then `bun run thumbs`, and commit `public/thumbs/` + `src/generated/thumbnails.ts`. `<Thumbnail>` throws on a photo with no manifest entry, so `bun run build` fails rather than shipping a full-size original.
+  - `public/thumbs/` is excluded from the image optimizer on purpose: its lossless webp setting would re-encode the thumbnails 5-9x bigger. Analytics (GA/GTM id `G-RT207G9WPN`) injected via `vite-plugin-radar` in `vite.config.ts`.
 
 ## Conventions
 

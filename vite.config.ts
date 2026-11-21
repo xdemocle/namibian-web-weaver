@@ -33,6 +33,9 @@ export default {
       },
     }),
     ViteImageOptimizer({
+      // public/thumbs is already encoded by scripts/generate-thumbnails.mjs. Re-encoding it
+      // (webp is set to lossless below) makes every file 5-9x bigger and is then discarded.
+      exclude: /thumbs\//,
       // Image optimization settings
       png: {
         // https://sharp.pixelplumbing.com/api-output#png
