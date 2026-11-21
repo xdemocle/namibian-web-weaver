@@ -4,6 +4,7 @@ import Seo from '../components/Seo';
 import { companyInfo, contactInfo, socialLinks } from '../config/links';
 import { localePath, useLocale, useT } from '../i18n';
 
+import Thumbnail from '@/components/Thumbnail';
 const Index = () => {
   const t = useT();
   const locale = useLocale();
@@ -56,9 +57,10 @@ const Index = () => {
               </div>
             </div>
             <div className='relative flex items-center justify-center'>
-              <img
+              <Thumbnail
                 src='/uploads/products/hero-pasta.jpg'
                 alt='LizWise Mahangu Pasta - Radiatori variety made from pearl millet'
+                priority
                 className='w-auto h-auto rounded-2xl shadow-2xl max-h-[500px]'
               />
             </div>
@@ -97,7 +99,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div className='relative'>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/range-square.jpg'
                     alt='LizWise Product Collection - Authentic Namibian Food Products'
                     className='w-full h-full object-cover'
@@ -110,7 +112,7 @@ const Index = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12'>
             <div className='bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300'>
               <div className='mb-6'>
-                <img
+                <Thumbnail
                   src='/uploads/products/cat-pasta.jpg'
                   alt='LizWise Mahangu Pasta - Fusilli, Radiatori, Maccheroni and Shell varieties'
                   className='w-full h-48 object-cover rounded-lg mx-auto'
@@ -127,7 +129,7 @@ const Index = () => {
 
             <div className='bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300'>
               <div className='mb-6'>
-                <img
+                <Thumbnail
                   src='/uploads/products/sauce-bolognese.jpg'
                   alt='Bolognaise Sauce 250ml'
                   className='w-full h-48 object-cover rounded-lg mx-auto'
@@ -144,7 +146,7 @@ const Index = () => {
 
             <div className='bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300'>
               <div className='mb-6'>
-                <img
+                <Thumbnail
                   src='/uploads/334bac1f-2873-4490-bad4-d86057baaf2e.jpg'
                   alt='Smoked Mozzarella Cheese - Dairy Crafters 250g'
                   className='w-full h-48 object-cover rounded-lg mx-auto'
@@ -161,7 +163,7 @@ const Index = () => {
 
             <div className='bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300'>
               <div className='mb-6'>
-                <img
+                <Thumbnail
                   src='/uploads/products/cat-breakfast.jpg'
                   alt='LizWise Mahangu Instant Porridge and Mahangu Rusks - Traditional African Foods'
                   className='w-full h-48 object-cover rounded-lg mx-auto'
