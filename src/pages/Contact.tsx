@@ -13,11 +13,10 @@ const schemaMarkup = {
     email: contactInfo.email.value,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: contactInfo.address.full,
-      addressLocality: 'Windhoek',
-      addressRegion: 'Khomas',
-      postalCode: '9000',
-      addressCountry: 'Namibia',
+      streetAddress: contactInfo.address.street,
+      addressLocality: contactInfo.address.locality,
+      addressRegion: contactInfo.address.region,
+      addressCountry: contactInfo.address.country,
     },
     openingHoursSpecification: [
       {

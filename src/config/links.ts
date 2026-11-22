@@ -58,9 +58,19 @@ export const contactInfo = {
     description: 'Send us an email for detailed inquiries',
   },
   address: {
-    value: 'Windhoek, NAMIBIA',
+    value: 'Katutura, Windhoek, Namibia',
     description: 'Visit our location',
-    full: 'Windhoek, Khomas, 9000, Namibia',
+    lines: [
+      'Bokomoso Entrepreneurial Centre',
+      'Unit A3, New Extension',
+      'Hans-Dietrich Genscher Street',
+      'Katutura, Windhoek, Namibia',
+    ],
+    full: 'Bokomoso Entrepreneurial Centre, Unit A3, New Extension, Hans-Dietrich Genscher Street, Katutura, Windhoek, Namibia',
+    street: 'Bokomoso Entrepreneurial Centre, Unit A3, New Extension, Hans-Dietrich Genscher Street, Katutura',
+    locality: 'Windhoek',
+    region: 'Khomas',
+    country: 'NA',
   },
 };
 
