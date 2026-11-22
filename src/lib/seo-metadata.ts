@@ -2,13 +2,13 @@
  * Global SEO metadata for LizWise website
  */
 import { companyInfo, contactInfo, socialLinks } from '../config/links';
+import { en } from '../i18n/dictionaries/en';
 
 export const siteMetadata = {
   siteUrl: companyInfo.website,
   siteName: companyInfo.name,
-  defaultTitle: 'LizWise - Taste Namibia with Locally Made Food Products',
-  defaultDescription:
-    'Proudly Namibian food products. We craft mahangu pasta, artisanal sauces, and fresh mozzarella using local ingredients with traditional methods.',
+  defaultTitle: en['home.seoTitle'],
+  defaultDescription: en['home.seoDescription'],
   defaultImage: '/og-image.jpg',
   locale: 'en-US',
   language: 'en',

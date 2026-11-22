@@ -9,17 +9,23 @@ import Journey from './pages/Journey';
 import NotFound from './pages/NotFound';
 import Products from './pages/Products';
 
+/**
+ * Nav entries. `path` is the English (unprefixed) path; the Header adds the
+ * locale prefix and looks the label up in the dictionary via `labelKey`.
+ */
 export const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About Us' },
-  { path: '/journey', label: 'Our Journey' },
+  { labelKey: 'nav.home', path: '/' },
+  { labelKey: 'nav.about', path: '/about' },
+  { labelKey: 'nav.journey', path: '/journey' },
   // Mr Millet Crackers page disabled but route kept intact
-  // { path: '/mr-crackers', label: 'Mr Millet Crackers' },
-  { path: '/products', label: 'Products' },
-  { path: '/contact', label: 'Contact' },
+  // { labelKey: 'nav.products', path: '/products' },
+  { labelKey: 'nav.products', path: '/products' },
+  { labelKey: 'nav.contact', path: '/contact' },
 ];
 
-// Define routes for vite-react-ssg
+// Define routes for vite-react-ssg.
+// English lives at the root, Afrikaans under the /af prefix. The pages are the
+// same components: they read the locale from the current path.
 export const routes: RouteObject[] = [
   {
     path: '/',
@@ -47,6 +53,26 @@ export const routes: RouteObject[] = [
       },
       {
         path: 'products',
+        element: <Products />,
+      },
+      {
+        path: 'af',
+        element: <Index />,
+      },
+      {
+        path: 'af/about',
+        element: <About />,
+      },
+      {
+        path: 'af/journey',
+        element: <Journey />,
+      },
+      {
+        path: 'af/contact',
+        element: <Contact />,
+      },
+      {
+        path: 'af/products',
         element: <Products />,
       },
       {

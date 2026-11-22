@@ -10,7 +10,10 @@ command = "bun run build"
 [assets]
 directory = "./dist"
 binding = "ASSETS"
-run_worker_first = false
+# The Worker runs before the static assets so it can send Afrikaans visitors
+# to the /af version of the page they asked for. It serves the static file
+# itself when there is a match.
+run_worker_first = true
 # Canonical URLs are slash-free (e.g. /about). The SSG build emits flat files
 # (dist/about.html), so drop-trailing-slash serves /about as a 200 and redirects
 # /about/, /about.html and /about/index.html to it — keeping one canonical URL.

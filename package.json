@@ -6,13 +6,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite-react-ssg dev",
-    "build": "vite-react-ssg build",
+    "build": "bun run generate:seo && vite-react-ssg build",
     "build:dev": "vite build --mode development",
     "build:spa": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
-    "check-format": "prettier --check \"src/**/*.{ts,tsx,js,jsx}\""
+    "generate:seo": "bun scripts/generate-seo-files.mjs",
+    "check-format": "prettier --check \"src/**/*.{ts,tsx,js,jsx}\"",
+    "prebuild": "bun run generate:seo"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

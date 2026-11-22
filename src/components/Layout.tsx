@@ -4,8 +4,12 @@ import Footer from './Footer';
 import Header from './Header';
 import WhatsAppButton from './WhatsAppButton';
 import { contactInfo } from '@/config/links';
+import { buildWhatsAppUrl } from '@/config/links';
+import { useT } from '@/i18n';
 
 const Layout = () => {
+  const t = useT();
+
   return (
     <StrictMode>
       <div className='min-h-screen flex flex-col'>
@@ -14,7 +18,7 @@ const Layout = () => {
           <Outlet />
         </main>
         <Footer />
-        <WhatsAppButton whatsappUrl={contactInfo.whatsapp.url} />
+        <WhatsAppButton whatsappUrl={buildWhatsAppUrl(t('brand.whatsappMessage'))} />
       </div>
     </StrictMode>
   );

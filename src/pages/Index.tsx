@@ -2,29 +2,33 @@ import { Award, Heart, Mail, Phone, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { companyInfo, contactInfo, socialLinks } from '../config/links';
-
-const schemaMarkup = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: companyInfo.name,
-  description: companyInfo.description,
-  url: companyInfo.website,
-  logo: `${companyInfo.website}/logo.png`,
-  sameAs: Object.values(socialLinks).map(social => social.url),
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: contactInfo.phone.value,
-    contactType: 'customer service',
-  },
-};
+import { localePath, useLocale, useT } from '../i18n';
 
 const Index = () => {
+  const t = useT();
+  const locale = useLocale();
+
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: companyInfo.name,
+    description: t('brand.description'),
+    url: companyInfo.website,
+    logo: `${companyInfo.website}/logo.png`,
+    sameAs: Object.values(socialLinks).map(social => social.url),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: contactInfo.phone.value,
+      contactType: 'customer service',
+    },
+  };
+
   return (
     <>
       <Seo
-        title='LizWise - Taste Namibia with Locally Made Food Products'
-        description='Proudly Namibian food products. We craft mahangu pasta, artisanal sauces, and fresh mozzarella using local ingredients with traditional methods.'
-        canonical={companyInfo.website}
+        title={t('home.seoTitle')}
+        description={t('home.seoDescription')}
+        path='/'
         image={`${companyInfo.website}/og-image.jpg`}
         schemaMarkup={schemaMarkup}
       />
@@ -33,23 +37,21 @@ const Index = () => {
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
-              <h1 className='text-5xl md:text-6xl font-bold mb-6 leading-tight'>
-                Taste Namibia with LizWise - Authentic Local Food Products
-              </h1>
-              <p className='text-xl mb-8 leading-relaxed'>Locally made. Naturally nourishing. Proudly Namibian.</p>
-              <p className='text-lg mb-8 opacity-90'>{companyInfo.description}</p>
+              <h1 className='text-5xl md:text-6xl font-bold mb-6 leading-tight'>{t('home.heroTitle')}</h1>
+              <p className='text-xl mb-8 leading-relaxed'>{t('home.heroTagline')}</p>
+              <p className='text-lg mb-8 opacity-90'>{t('brand.description')}</p>
               <div className='flex flex-col sm:flex-row gap-4'>
                 <Link
-                  to='/products'
+                  to={localePath('/products', locale)}
                   className='bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-center'
                 >
-                  Explore Our Products
+                  {t('cta.exploreProducts')}
                 </Link>
                 <a
                   href={contactInfo.phone.url}
                   className='border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors duration-200 text-center'
                 >
-                  Call Now
+                  {t('cta.callNow')}
                 </a>
               </div>
             </div>
@@ -68,10 +70,8 @@ const Index = () => {
       <section className='py-20 bg-gray-50'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
-            <h2 className='text-4xl font-bold text-gray-800 mb-6'>Featured Products</h2>
-            <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-              Discover our range of authentic Namibian food products, made with love and local ingredients
-            </p>
+            <h2 className='text-4xl font-bold text-gray-800 mb-6'>{t('home.featuredTitle')}</h2>
+            <p className='text-xl text-gray-600 max-w-3xl mx-auto'>{t('home.featuredSubtitle')}</p>
           </div>
 
           {/* Featured Product Showcase */}
@@ -79,23 +79,20 @@ const Index = () => {
             <div className='bg-white rounded-2xl shadow-xl overflow-hidden'>
               <div className='grid grid-cols-1 lg:grid-cols-2'>
                 <div className='p-8 lg:p-12 flex flex-col justify-center'>
-                  <h3 className='text-3xl font-bold text-gray-800 mb-6'>Authentic Namibian Products</h3>
-                  <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
-                    From our family to yours - traditional recipes crafted with locally sourced ingredients, bringing
-                    the authentic taste of Namibia to your table.
-                  </p>
+                  <h3 className='text-3xl font-bold text-gray-800 mb-6'>{t('home.showcaseTitle')}</h3>
+                  <p className='text-lg text-gray-600 mb-6 leading-relaxed'>{t('home.showcaseText')}</p>
                   <div className='space-y-4'>
                     <div className='flex items-center space-x-3'>
                       <Heart className='text-red-600' size={20} />
-                      <span className='text-gray-700'>100% Local Ingredients</span>
+                      <span className='text-gray-700'>{t('home.localIngredients')}</span>
                     </div>
                     <div className='flex items-center space-x-3'>
                       <Award className='text-yellow-500' size={20} />
-                      <span className='text-gray-700'>Traditional Recipes</span>
+                      <span className='text-gray-700'>{t('home.traditionalRecipes')}</span>
                     </div>
                     <div className='flex items-center space-x-3'>
                       <Star className='text-green-600' size={20} />
-                      <span className='text-gray-700'>Premium Quality</span>
+                      <span className='text-gray-700'>{t('home.premiumQuality')}</span>
                     </div>
                   </div>
                 </div>
@@ -119,15 +116,12 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Mahangu Pasta</h3>
-              <p className='text-gray-600 mb-6'>
-                Wholesome, gluten-friendly, and high in fiber. Made from 100% Namibian millet in various shapes
-                including Fusilli and Radiatori.
-              </p>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>{t('home.cardPasta.title')}</h3>
+              <p className='text-gray-600 mb-6'>{t('home.cardPasta.text')}</p>
               <ul className='text-sm text-gray-500 space-y-1'>
-                <li>✓ Gluten-friendly</li>
-                <li>✓ High in fiber</li>
-                <li>✓ Various shapes</li>
+                <li>✓ {t('home.cardPasta.f1')}</li>
+                <li>✓ {t('home.cardPasta.f2')}</li>
+                <li>✓ {t('home.cardPasta.f3')}</li>
               </ul>
             </div>
 
@@ -139,15 +133,12 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Pasta Sauces</h3>
-              <p className='text-gray-600 mb-6'>
-                Ready-made sauces bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato
-                Purée and Chilli varieties.
-              </p>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>{t('home.cardSauces.title')}</h3>
+              <p className='text-gray-600 mb-6'>{t('home.cardSauces.text')}</p>
               <ul className='text-sm text-gray-500 space-y-1'>
-                <li>✓ Real tomatoes</li>
-                <li>✓ Local flavors</li>
-                <li>✓ Multiple varieties</li>
+                <li>✓ {t('home.cardSauces.f1')}</li>
+                <li>✓ {t('home.cardSauces.f2')}</li>
+                <li>✓ {t('home.cardSauces.f3')}</li>
               </ul>
             </div>
 
@@ -159,15 +150,12 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Mozzarella Cheese</h3>
-              <p className='text-gray-600 mb-6'>
-                Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, and fresh
-                salads.
-              </p>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>{t('home.cardCheese.title')}</h3>
+              <p className='text-gray-600 mb-6'>{t('home.cardCheese.text')}</p>
               <ul className='text-sm text-gray-500 space-y-1'>
-                <li>✓ Soft &amp; stretchy</li>
-                <li>✓ Perfect for cooking</li>
-                <li>✓ Versatile use</li>
+                <li>✓ {t('home.cardCheese.f1')}</li>
+                <li>✓ {t('home.cardCheese.f2')}</li>
+                <li>✓ {t('home.cardCheese.f3')}</li>
               </ul>
             </div>
 
@@ -179,25 +167,22 @@ const Index = () => {
                   className='w-full h-48 object-cover rounded-lg mx-auto'
                 />
               </div>
-              <h3 className='text-2xl font-bold text-gray-800 mb-4'>Traditional African Foods</h3>
-              <p className='text-gray-600 mb-6'>
-                Mahangu Instant Porridge and Mahangu Rusks - naturally gluten-free breakfast and snack staples made with
-                100% Namibian pearl millet.
-              </p>
+              <h3 className='text-2xl font-bold text-gray-800 mb-4'>{t('home.cardBreakfast.title')}</h3>
+              <p className='text-gray-600 mb-6'>{t('home.cardBreakfast.text')}</p>
               <ul className='text-sm text-gray-500 space-y-1'>
-                <li>✓ Made with 100% mahangu</li>
-                <li>✓ Naturally gluten free</li>
-                <li>✓ Ready in seconds</li>
+                <li>✓ {t('home.cardBreakfast.f1')}</li>
+                <li>✓ {t('home.cardBreakfast.f2')}</li>
+                <li>✓ {t('home.cardBreakfast.f3')}</li>
               </ul>
             </div>
           </div>
 
           <div className='text-center'>
             <Link
-              to='/products'
+              to={localePath('/products', locale)}
               className='bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 inline-block'
             >
-              View All Products
+              {t('cta.viewAllProducts')}
             </Link>
           </div>
         </div>
@@ -208,36 +193,29 @@ const Index = () => {
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
-              <h2 className='text-4xl font-bold text-gray-800 mb-6'>Our Mission</h2>
+              <h2 className='text-4xl font-bold text-gray-800 mb-6'>{t('home.missionTitle')}</h2>
               <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
-                At {companyInfo.name}, we believe in {companyInfo.description} We specialize in traditional Namibian
-                foods crafted with care, tradition, and innovation.
+                {t('home.missionText', { name: companyInfo.name, description: t('brand.description') })}
               </p>
-              <p className='text-lg text-gray-600 mb-8 leading-relaxed'>
-                Our commitment to supporting local farmers and celebrating Namibian culture drives everything we do.
-                From farm to table, we ensure quality and authenticity in every product.
-              </p>
+              <p className='text-lg text-gray-600 mb-8 leading-relaxed'>{t('home.missionText2')}</p>
               <Link
-                to='/about'
+                to={localePath('/about', locale)}
                 className='bg-yellow-400 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-200 inline-block'
               >
-                Learn More About Us
+                {t('cta.learnMoreAboutUs')}
               </Link>
             </div>
             <div className='bg-gradient-to-br from-yellow-400 to-red-500 rounded-2xl p-8 text-white'>
-              <h3 className='text-2xl font-bold mb-6'>Our Vision</h3>
-              <p className='text-lg leading-relaxed mb-6'>
-                "To empower healthy living across Africa with locally sourced, proudly Namibian food products that
-                celebrate our roots and nourish our communities."
-              </p>
+              <h3 className='text-2xl font-bold mb-6'>{t('home.visionTitle')}</h3>
+              <p className='text-lg leading-relaxed mb-6'>{t('home.visionText')}</p>
               <div className='grid grid-cols-2 gap-4 text-center'>
                 <div>
                   <div className='text-3xl font-bold'>100%</div>
-                  <div className='text-sm opacity-90'>Local Sourced</div>
+                  <div className='text-sm opacity-90'>{t('home.localSourced')}</div>
                 </div>
                 <div>
                   <div className='text-3xl font-bold'>15+</div>
-                  <div className='text-sm opacity-90'>Years Experience</div>
+                  <div className='text-sm opacity-90'>{t('home.yearsExperience')}</div>
                 </div>
               </div>
             </div>
@@ -248,11 +226,8 @@ const Index = () => {
       {/* Contact CTA Section */}
       <section className='py-20 bg-gray-800 text-white'>
         <div className='container mx-auto px-4 text-center'>
-          <h2 className='text-4xl font-bold mb-6'>Ready to Taste Namibia?</h2>
-          <p className='text-xl mb-8 max-w-3xl mx-auto text-gray-300'>
-            Contact us today to learn more about our products or place an order. We're here to bring authentic Namibian
-            flavors to your table.
-          </p>
+          <h2 className='text-4xl font-bold mb-6'>{t('home.readyTitle')}</h2>
+          <p className='text-xl mb-8 max-w-3xl mx-auto text-gray-300'>{t('home.readyText')}</p>
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8'>
             <a
@@ -267,15 +242,15 @@ const Index = () => {
               className='flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-semibold transition-colors duration-200'
             >
               <Mail size={20} />
-              <span>Email Us</span>
+              <span>{t('cta.emailUs')}</span>
             </a>
           </div>
 
           <Link
-            to='/contact'
+            to={localePath('/contact', locale)}
             className='bg-yellow-400 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-200 inline-block'
           >
-            Visit Our Contact Page
+            {t('cta.visitContactPage')}
           </Link>
         </div>
       </section>
