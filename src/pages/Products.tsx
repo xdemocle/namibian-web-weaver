@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { useT } from '../i18n';
 
+import Thumbnail from '@/components/Thumbnail';
 const Products = () => {
   const t = useT();
 
@@ -185,9 +186,10 @@ const Products = () => {
           <div className='mb-16'>
             <Card className='overflow-hidden'>
               <AspectRatio ratio={16 / 9}>
-                <img
+                <Thumbnail
                   src='/uploads/products/range-banner.jpg'
                   alt='The LizWise product range - mahangu pasta, porridge, rusks and crackers'
+                  priority
                   className='object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300'
                   onClick={() =>
                     handleImageClick(
@@ -210,7 +212,7 @@ const Products = () => {
               <Card key={index} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
                 <div className={`${product.color} h-2`}></div>
                 <AspectRatio ratio={4 / 3} className='bg-gray-100'>
-                  <img
+                  <Thumbnail
                     src={product.image}
                     alt={product.title}
                     className='object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -241,7 +243,7 @@ const Products = () => {
             <div className='bg-white rounded-2xl shadow-xl overflow-hidden'>
               <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-8'>
                 <div>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/pasta-fusilli.jpg'
                     alt='Fusilli Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -256,7 +258,7 @@ const Products = () => {
                   <p className='text-gray-600'>{t('products.pasta.fusilli.text')}</p>
                 </div>
                 <div>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/pasta-radiatori.jpg'
                     alt='Radiatori Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -271,7 +273,7 @@ const Products = () => {
                   <p className='text-gray-600'>{t('products.pasta.radiatori.text')}</p>
                 </div>
                 <div>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/pasta-maccheroni.jpg'
                     alt='Maccheroni Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -286,7 +288,7 @@ const Products = () => {
                   <p className='text-gray-600'>{t('products.pasta.maccheroni.text')}</p>
                 </div>
                 <div>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/pasta-shell.jpg'
                     alt='Shell Mahangu Pasta - Pearl Millet 500g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -307,7 +309,7 @@ const Products = () => {
             <div className='bg-green-50 rounded-2xl p-8'>
               <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                 <div className='bg-white p-6 rounded-lg shadow-sm'>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/sauce-bolognese.jpg'
                     alt='Bolognaise Sauce 250ml'
                     className='w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -317,7 +319,7 @@ const Products = () => {
                   <p className='text-gray-600'>{t('products.sauce.bolognaise.text')}</p>
                 </div>
                 <div className='bg-white p-6 rounded-lg shadow-sm'>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/sauce-tomato.jpg'
                     alt='Tomato Purée Sauce 250ml'
                     className='w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -327,7 +329,7 @@ const Products = () => {
                   <p className='text-gray-600'>{t('products.sauce.tomato.text')}</p>
                 </div>
                 <div className='bg-white p-6 rounded-lg shadow-sm'>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/sauce-chilli.jpg'
                     alt='Tomato Purée Chilli Sauce 250ml'
                     className='w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -350,7 +352,7 @@ const Products = () => {
                 <div className='bg-white rounded-lg shadow-sm overflow-hidden'>
                   <div className='md:flex'>
                     <div className='md:w-2/5'>
-                      <img
+                      <Thumbnail
                         src='/uploads/products/porridge.jpg'
                         alt='LizWise Mahangu Instant Porridge - Pearl Millet 500g'
                         className='w-full h-full object-contain bg-gray-50 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -379,7 +381,7 @@ const Products = () => {
                 <div className='bg-white rounded-lg shadow-sm overflow-hidden'>
                   <div className='md:flex'>
                     <div className='md:w-2/5'>
-                      <img
+                      <Thumbnail
                         src='/uploads/products/rusks.jpg'
                         alt='LizWise Mahangu Rusks - Pearl Millet 500g'
                         className='w-full h-full object-contain bg-gray-50 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -412,7 +414,7 @@ const Products = () => {
             <div className='bg-yellow-50 rounded-2xl p-8'>
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
                 <div>
-                  <img
+                  <Thumbnail
                     src='/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg'
                     alt='LizWise Dairy Crafters Mozzarella Cheese - Product of Namibia'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -427,7 +429,7 @@ const Products = () => {
                   <p className='text-gray-600'>{t('products.cheese.classic.text')}</p>
                 </div>
                 <div>
-                  <img
+                  <Thumbnail
                     src='/uploads/334bac1f-2873-4490-bad4-d86057baaf2e.jpg'
                     alt='Smoked Mozzarella Cheese - Dairy Crafters 250g'
                     className='w-full h-64 object-cover rounded-lg mb-4 cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -451,7 +453,7 @@ const Products = () => {
             <div className='bg-white rounded-2xl shadow-lg p-8'>
               <div className='md:flex'>
                 <div className='md:w-1/2'>
-                  <img
+                  <Thumbnail
                     src='/uploads/products/crackers.jpg'
                     alt='Mr Millet Crackers - Original Flavoured Snack'
                     className='w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300'

@@ -7,6 +7,7 @@ import { localePath, useLocale, useT } from '../i18n';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
+import Thumbnail from '@/components/Thumbnail';
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -248,7 +249,7 @@ const Journey = () => {
               {journeyImages.map((image, index) => (
                 <Card key={index} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
                   <AspectRatio ratio={4 / 3}>
-                    <img
+                    <Thumbnail
                       src={image.src}
                       alt={image.alt}
                       className='object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300'
@@ -271,7 +272,7 @@ const Journey = () => {
               {makingImages.map((image, index) => (
                 <Card key={index} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
                   <AspectRatio ratio={1}>
-                    <img
+                    <Thumbnail
                       src={image.src}
                       alt={image.alt}
                       className='object-cover w-full h-full cursor-pointer hover:scale-105 transition-transform duration-300'

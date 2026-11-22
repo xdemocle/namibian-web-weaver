@@ -13,8 +13,8 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
     "generate:seo": "bun scripts/generate-seo-files.mjs",
-    "check-format": "prettier --check \"src/**/*.{ts,tsx,js,jsx}\"",
-    "prebuild": "bun run generate:seo"
+    "thumbs": "bun scripts/generate-thumbnails.mjs",
+    "check-format": "prettier --check \"src/**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
