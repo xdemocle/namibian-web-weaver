@@ -318,24 +318,6 @@ export const af: Record<string, string> = {
     'Beleef die outentieke smaak van Namibië met ons plaaslik bekome, tradisioneel vervaardigde produkte. Perfek vir gesinne wat gehalte en voeding waardeer.',
 
   // products structured data
-  'products.schema.pasta.name': 'Mahangu Pasta',
-  'products.schema.pasta.description':
-    'Voedsame, glutenvriendelik en ryk aan vesel. Beskikbaar in Fusilli, Radiatori, Maccheroni en Shell-vorms. 100% Namibiese kleingem, 500g.',
-  'products.schema.sauces.name': 'Ready-Made Pasta Sauces',
-  'products.schema.sauces.description':
-    'Bars van plaaslike smaak, gemaak van regte tamaties. Beskikbaar in Bolognaise, Tomato Purée en Tomato Puree Chilli, 250ml.',
-  'products.schema.cheese.name': 'Mozzarella Cheese',
-  'products.schema.cheese.description':
-    'Sag, rekbaar en perfek vir kook tuis. Ideaal vir pizzas, pastabakes, toebies, vars slaaie of enige iets waarmee jy dit wil kombineer.',
-  'products.schema.crackers.name': 'Mr Millet Crackers',
-  'products.schema.crackers.description':
-    "Oorspronklik gearomatiseerde gom-crackers. Knap, gemaak van plaaslik bekome gom en 'n lekkere daaglikse snack, 300g.",
-  'products.schema.porridge.name': 'Mahangu Instant Porridge',
-  'products.schema.porridge.description':
-    'Voedingstik, voedsam en binne sekondes gereed. Gemaak met 100% mahangu (kleingem), 500g.',
-  'products.schema.rusks.name': 'Mahangu Rusks',
-  'products.schema.rusks.description':
-    'Knap mahangu-beskuitjies gemaak met 100% mahangu (kleingem). Natuurlik glutenvry en perfek vir koffie, tee en versnapping, 500g.',
 
   // ---------------------------------------------------------------- contact page
   'contact.seoTitle': 'Kontak LizWise - Bestel ons Namibiese voedselprodukte',

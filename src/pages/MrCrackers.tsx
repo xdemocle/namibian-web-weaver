@@ -6,22 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 
-const schemaMarkup = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'Mr Millet Crackers',
-  description:
-    'Discover our premium Mr Millet Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.',
-  image: `${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`,
-  brand: {
-    '@type': 'Brand',
-    name: 'LizWise',
-  },
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/InStock',
-  },
-};
+// No Product structured data: no price, nothing sold online (see Products.tsx).
 
 const MrCrackers = () => {
   const [lightboxImage, setLightboxImage] = useState<{
@@ -82,7 +67,6 @@ const MrCrackers = () => {
         description='Discover our premium Mr Millet Crackers range made with authentic Namibian mahangu. Crispy, nutritious, and perfect for any occasion.'
         path='/mr-crackers'
         image={`${companyInfo.website}/uploads/mr-crackers/Mahangu_Delight_Mr_Crackers_mockups.pdf-images-0.jpg`}
-        schemaMarkup={schemaMarkup}
       />
 
       <div className='py-16 bg-gradient-to-br from-amber-50 to-yellow-50'>
