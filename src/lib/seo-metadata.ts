@@ -30,45 +30,6 @@ export const organizationSchema = {
   },
 };
 
-export const productSchemas = {
-  mahangu: {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'Mahangu Pasta',
-    description:
-      'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, shells, Maccheroni and other various shapes. 100% Namibian millet.',
-    image: `${companyInfo.website}/uploads/products/cat-pasta.jpg`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-    },
-  },
-  sauces: {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'Ready-Made Pasta Sauces',
-    description:
-      'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Purée and Chilli.',
-    image: `${companyInfo.website}/uploads/products/card-sauces.jpg`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-    },
-  },
-  mozzarella: {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'Mozzarella Cheese',
-    description:
-      'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
-    image: `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-    },
-  },
-};
-
 /**
  * Helper function to generate page metadata
  */

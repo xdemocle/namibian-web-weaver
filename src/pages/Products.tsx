@@ -23,97 +23,10 @@ const Products = () => {
     setLightboxImage(null);
   };
 
-  const schemaMarkup = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        item: {
-          '@type': 'Product',
-          name: t('products.schema.pasta.name'),
-          description: t('products.schema.pasta.description'),
-          image: `${companyInfo.website}/uploads/products/cat-pasta.jpg`,
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-          },
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        item: {
-          '@type': 'Product',
-          name: t('products.schema.sauces.name'),
-          description: t('products.schema.sauces.description'),
-          image: `${companyInfo.website}/uploads/products/card-sauces.jpg`,
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-          },
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        item: {
-          '@type': 'Product',
-          name: t('products.schema.cheese.name'),
-          description: t('products.schema.cheese.description'),
-          image: `${companyInfo.website}/uploads/0c10c80d-b1c6-4cc9-bfe3-a3549278aed9.jpg`,
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-          },
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        item: {
-          '@type': 'Product',
-          name: t('products.schema.crackers.name'),
-          description: t('products.schema.crackers.description'),
-          image: `${companyInfo.website}/uploads/products/crackers.jpg`,
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-          },
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        item: {
-          '@type': 'Product',
-          name: t('products.schema.porridge.name'),
-          description: t('products.schema.porridge.description'),
-          image: `${companyInfo.website}/uploads/products/porridge.jpg`,
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-          },
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        item: {
-          '@type': 'Product',
-          name: t('products.schema.rusks.name'),
-          description: t('products.schema.rusks.description'),
-          image: `${companyInfo.website}/uploads/products/rusks.jpg`,
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-          },
-        },
-      },
-    ],
-  };
-
+  // No Product structured data here (2026-11-24): this page lists ranges, has no
+  // prices and sells nothing online. Google only accepts Product markup on a
+  // single-product page with a price, and Search Console flagged the old
+  // ItemList (offers without price) in Merchant listings and Product snippets.
   const products = [
     {
       title: t('products.card.pasta.title'),
@@ -172,7 +85,6 @@ const Products = () => {
         description={t('products.seoDescription')}
         path='/products'
         image={`${companyInfo.website}/products-og-image.jpg`}
-        schemaMarkup={schemaMarkup}
       />
       <div className='py-16 bg-gradient-to-br from-red-50 to-yellow-50'>
         <div className='container mx-auto px-4'>

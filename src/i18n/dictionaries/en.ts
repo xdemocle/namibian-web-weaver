@@ -316,24 +316,6 @@ export const en: Record<string, string> = {
     'Experience the authentic flavors of Namibia with our locally sourced, traditionally crafted products. Perfect for families who value quality and nutrition.',
 
   // products structured data
-  'products.schema.pasta.name': 'Mahangu Pasta',
-  'products.schema.pasta.description':
-    'Wholesome, gluten-friendly, and high in fiber. Available in Fusilli, Radiatori, Maccheroni and Shell shapes. 100% Namibian pearl millet, 500g.',
-  'products.schema.sauces.name': 'Ready-Made Pasta Sauces',
-  'products.schema.sauces.description':
-    'Bursting with local flavor, made from real tomatoes. Available in Bolognaise, Tomato Puree and Tomato Puree Chilli, 250ml.',
-  'products.schema.cheese.name': 'Mozzarella Cheese',
-  'products.schema.cheese.description':
-    'Soft, stretchy, and perfect for home cooking. Ideal for pizzas, pasta bakes, sandwiches, fresh salads or anything you would like to pair it with.',
-  'products.schema.crackers.name': 'Mr Millet Crackers',
-  'products.schema.crackers.description':
-    'Original flavoured millet crackers. Crisp, made from locally sourced millet and a tasty everyday snack, 300g.',
-  'products.schema.porridge.name': 'Mahangu Instant Porridge',
-  'products.schema.porridge.description':
-    'Nutritious, wholesome and ready in seconds. Made with 100% mahangu (pearl millet), 500g.',
-  'products.schema.rusks.name': 'Mahangu Rusks',
-  'products.schema.rusks.description':
-    'Crisp mahangu rusks made with 100% mahangu (pearl millet). Naturally gluten-free and perfect for coffee, tea and snacking, 500g.',
 
   // ---------------------------------------------------------------- contact page
   'contact.seoTitle': 'Contact LizWise - Order Our Namibian Food Products',
